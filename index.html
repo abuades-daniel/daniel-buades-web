@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daniel Buades | Jazz Drummer</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background:#111;
+    color:white;
+    line-height:1.6;
+}
+
+header{
+    position:fixed;
+    width:100%;
+    background:rgba(0,0,0,.9);
+    padding:20px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+}
+
+.logo{
+    font-size:1.5rem;
+    font-weight:bold;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    letter-spacing: 3px;
+    color: #c8a96b;
+}
+
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+}
+
+.hero{
+    height:100vh;
+    background:url("img/baterista.jpg") center center/cover;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.hero-content{
+    background:rgba(0,0,0,.5);
+    padding:40px;
+    border-radius:10px;
+}
+
+.hero h1{
+    font-size:4rem;
+}
+
+.hero p{
+    font-size:1.5rem;
+    margin-top:10px;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 24px;
+    background:#c8a96b;
+    color:black;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+section{
+    max-width:1200px;
+    margin:auto;
+    padding:100px 30px;
+}
+
+h2{
+    margin-bottom:30px;
+    color:#c8a96b;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.gallery img{
+    width:100%;
+    border-radius:8px;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="logo">DANIEL BUADES</div>
+
+    <nav>
+        <a href="#biografia">Biografía</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#musica">Música</a>
+        <a href="#galeria">Galería</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Daniel Buades</h1>
+        
+		<p>Jazz, ritmo y alma en cada golpe</p>
+		<p>El lenguaje del jazz contado desde la batería</p>
+    </div>
+</section>
+
+<section id="biografia">
+    <h2>Biografía</h2>
+    <p>Biografía profesional del músico...</p>
+</section>
+
+<section id="proyectos">
+    <h2>Proyectos</h2>
+    <p>Información sobre grupos, colaboraciones y giras.</p>
+</section>
+
+<section id="musica">
+    <h2>Música</h2>
+    <p>Aquí puedes incrustar Spotify, YouTube o Bandcamp.</p>
+</section>
+
+<section id="galeria">
+    <h2>Galería</h2>
+    <div class="gallery">
+        img/foto1.jpg
+        /foto2.jpg">
+        ">
+    </div>
+</section>
+
+<section id="contacto">
+    <h2>Contacto</h2>
+    <p>Email: contacto@tudominio.com</p>
+</section>
+
+</body>
+</html>
