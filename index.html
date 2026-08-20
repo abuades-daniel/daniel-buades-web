@@ -5,19 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Daniel Buades — Drummer & Composer</title>
 
-  <!-- Similar typography to the original site -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
 
   <style>
+
+    /* =====================================================
+       RESET
+    ===================================================== */
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
-    html, body {
+    html,
+    body {
       width: 100%;
       height: 100%;
       overflow: hidden;
@@ -29,72 +35,108 @@
       font-family: "Montserrat", Arial, sans-serif;
     }
 
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
     .hero {
       position: relative;
       width: 100%;
       height: 100vh;
       min-height: 620px;
       overflow: hidden;
+
       background:
-        linear-gradient(rgba(0,0,0,.08), rgba(0,0,0,.08)),
-        url("img/foto-portada.jpg") center center / cover no-repeat;
+        linear-gradient(
+          rgba(0,0,0,.08),
+          rgba(0,0,0,.08)
+        ),
+        url("img/foto-portada.jpg")
+        center center / cover no-repeat;
     }
 
-    /* Very subtle darkening, matching the moody original */
     .hero::after {
       content: "";
       position: absolute;
       inset: 0;
+
       background: linear-gradient(
         90deg,
         rgba(0,0,0,.10) 0%,
         rgba(0,0,0,.02) 55%,
         rgba(0,0,0,.08) 100%
       );
+
       pointer-events: none;
     }
 
-    /* ---------- HEADER ---------- */
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
 
     header {
       position: absolute;
-      z-index: 10;
+      z-index: 30;
+
       top: 0;
       left: 0;
+
       width: 100%;
       height: 134px;
+
       display: flex;
       align-items: center;
+
       padding: 0 5.4% 0 3.9%;
     }
 
+
+    /* =====================================================
+       BRAND
+    ===================================================== */
+
     .brand {
       flex: 0 0 auto;
+
       color: #fff;
       text-decoration: none;
+
       font-family: "Cormorant Garamond", Georgia, serif;
       font-size: 29px;
       line-height: 1;
       letter-spacing: -.6px;
+
       white-space: nowrap;
     }
+
+
+    /* =====================================================
+       DESKTOP NAVIGATION
+    ===================================================== */
 
     nav {
       display: flex;
       align-items: center;
+
       gap: 33px;
       margin-left: 54px;
     }
 
     nav a {
       position: relative;
+
       color: #fff;
       text-decoration: none;
+
       font-family: "Montserrat", Arial, sans-serif;
       font-size: 17px;
       font-weight: 400;
       line-height: 1;
+
       white-space: nowrap;
+
       transition: opacity .25s ease;
     }
 
@@ -102,18 +144,32 @@
       opacity: .65;
     }
 
+
+    /* =====================================================
+       HEADER RIGHT
+    ===================================================== */
+
     .header-right {
       margin-left: auto;
+
       display: flex;
       align-items: center;
+
       gap: 25px;
     }
+
+
+    /* =====================================================
+       SOCIALS
+    ===================================================== */
 
     .socials {
       display: flex;
       align-items: center;
+
       gap: 24px;
       margin-right: 22px;
+
       transform: translateY(0);
     }
 
@@ -121,11 +177,17 @@
       display: flex;
       align-items: center;
       justify-content: center;
+
       color: #fff;
+
       width: 25px;
       height: 25px;
+
       text-decoration: none;
-      transition: transform .2s ease, opacity .2s ease;
+
+      transition:
+        transform .2s ease,
+        opacity .2s ease;
     }
 
     .socials a:hover {
@@ -136,6 +198,7 @@
     .socials svg {
       width: 23px;
       height: 23px;
+
       fill: none;
       stroke: currentColor;
       stroke-width: 1.8;
@@ -146,19 +209,31 @@
       stroke: none;
     }
 
+
+    /* =====================================================
+       HOME BUTTON
+    ===================================================== */
+
     .home-btn {
       display: flex;
       align-items: center;
       justify-content: center;
+
       width: 118px;
       height: 75px;
+
       border: 1px solid rgba(255,255,255,.95);
       border-radius: 50%;
+
       color: #fff;
       text-decoration: none;
+
       font-family: "Cormorant Garamond", Georgia, serif;
       font-size: 21px;
-      transition: background .25s ease, color .25s ease;
+
+      transition:
+        background .25s ease,
+        color .25s ease;
     }
 
     .home-btn:hover {
@@ -166,44 +241,120 @@
       color: #111;
     }
 
-    /* ---------- HERO TEXT ---------- */
+
+    /* =====================================================
+       HERO TEXT
+    ===================================================== */
 
     .hero-copy {
       position: absolute;
       z-index: 5;
+
       left: 8.2%;
       top: 27.3%;
+
       width: 560px;
     }
 
     .hero-copy h1 {
       color: #fff;
+
       font-family: "Allura", "Brush Script MT", cursive;
       font-size: clamp(68px, 5.1vw, 91px);
       font-weight: 400;
+
       line-height: .95;
       letter-spacing: 1px;
+
       text-shadow: 0 1px 7px rgba(0,0,0,.12);
     }
 
     .hero-copy p {
       margin-top: 35px;
       margin-left: 11.5%;
+
       color: #fff;
+
       font-family: "Montserrat", Arial, sans-serif;
       font-size: clamp(23px, 1.7vw, 31px);
       font-weight: 300;
+
       line-height: 1;
       white-space: nowrap;
     }
 
-    /* ---------- RESPONSIVE ---------- */
+
+    /* =====================================================
+       MOBILE TOGGLE
+    ===================================================== */
 
     .mobile-toggle {
       display: none;
+
+      position: relative;
+
+      width: 48px;
+      height: 48px;
+
+      border: 1px solid rgba(255,255,255,.8);
+      border-radius: 50%;
+
+      align-items: center;
+      justify-content: center;
+
+      color: #fff;
+      background: transparent;
+
+      cursor: pointer;
+
+      padding: 0;
+
+      z-index: 50;
     }
 
+    .mobile-toggle span,
+    .mobile-toggle span::before,
+    .mobile-toggle span::after {
+      display: block;
+
+      width: 19px;
+      height: 1px;
+
+      background: currentColor;
+
+      content: "";
+
+      position: absolute;
+
+      transition:
+        transform .25s ease,
+        background .2s ease;
+    }
+
+    .mobile-toggle span::before {
+      transform: translateY(-6px);
+    }
+
+    .mobile-toggle span::after {
+      transform: translateY(6px);
+    }
+
+
+    /* =====================================================
+       MOBILE MENU
+    ===================================================== */
+
+    .mobile-menu {
+      display: none;
+    }
+
+
+    /* =====================================================
+       TABLET / SMALL DESKTOP
+    ===================================================== */
+
     @media (max-width: 1250px) {
+
       header {
         padding-left: 3%;
         padding-right: 3%;
@@ -230,12 +381,20 @@
       .home-btn {
         width: 100px;
         height: 64px;
+
         font-size: 19px;
       }
     }
 
+
+    /* =====================================================
+       MOBILE
+    ===================================================== */
+
     @media (max-width: 980px) {
-      html, body {
+
+      html,
+      body {
         overflow: auto;
       }
 
@@ -244,9 +403,14 @@
         height: 100vh;
       }
 
+
+      /* HEADER */
+
       header {
         height: 95px;
+
         padding: 24px 25px 0;
+
         align-items: center;
       }
 
@@ -254,51 +418,45 @@
         font-size: 26px;
       }
 
+
+      /* HIDE DESKTOP NAV */
+
       nav,
       .socials {
         display: none;
       }
 
+
+      /* HEADER RIGHT */
+
       .header-right {
         margin-left: auto;
       }
 
+
+      /* MOBILE BUTTON */
+
       .mobile-toggle {
         display: flex;
-        width: 48px;
-        height: 48px;
-        border: 1px solid rgba(255,255,255,.8);
-        border-radius: 50%;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        background: transparent;
-        cursor: pointer;
       }
 
-      .mobile-toggle span,
-      .mobile-toggle span::before,
-      .mobile-toggle span::after {
-        display: block;
-        width: 19px;
-        height: 1px;
-        background: currentColor;
-        content: "";
-        position: absolute;
-      }
 
-      .mobile-toggle span::before { transform: translateY(-6px); }
-      .mobile-toggle span::after  { transform: translateY(6px); }
+      /* HOME BUTTON */
 
       .home-btn {
         width: 88px;
         height: 54px;
+
         font-size: 18px;
       }
+
+
+      /* HERO TEXT */
 
       .hero-copy {
         left: 7%;
         top: 30%;
+
         width: 86%;
       }
 
@@ -309,11 +467,98 @@
       .hero-copy p {
         margin-left: 5%;
         margin-top: 28px;
+
         font-size: clamp(19px, 4vw, 27px);
+      }
+
+
+      /* =================================================
+         MOBILE MENU
+      ================================================= */
+
+      .mobile-menu {
+        position: fixed;
+
+        z-index: 25;
+
+        top: 95px;
+        left: 20px;
+        right: 20px;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 24px;
+
+        padding: 30px 25px;
+
+        background: rgba(8,8,8,.94);
+
+        border: 1px solid rgba(255,255,255,.25);
+
+        opacity: 0;
+        visibility: hidden;
+
+        transform: translateY(-10px);
+
+        pointer-events: none;
+
+        transition:
+          opacity .25s ease,
+          transform .25s ease,
+          visibility .25s ease;
+      }
+
+      .mobile-menu.open {
+        opacity: 1;
+        visibility: visible;
+
+        transform: translateY(0);
+
+        pointer-events: auto;
+      }
+
+      .mobile-menu a {
+        color: #fff;
+
+        text-decoration: none;
+
+        font-family: "Montserrat", Arial, sans-serif;
+        font-size: 18px;
+        font-weight: 300;
+
+        transition: opacity .2s ease;
+      }
+
+      .mobile-menu a:hover {
+        opacity: .6;
+      }
+
+
+      /* =================================================
+         HAMBURGER → X
+      ================================================= */
+
+      .mobile-toggle.open span {
+        background: transparent;
+      }
+
+      .mobile-toggle.open span::before {
+        transform: rotate(45deg);
+      }
+
+      .mobile-toggle.open span::after {
+        transform: rotate(-45deg);
       }
     }
 
+
+    /* =====================================================
+       SMALL MOBILE
+    ===================================================== */
+
     @media (max-width: 560px) {
+
       .hero {
         background-position: 62% center;
       }
@@ -333,178 +578,345 @@
       .hero-copy p {
         margin-left: 0;
         margin-top: 25px;
+
         font-size: 19px;
       }
+
+      .mobile-menu {
+        left: 15px;
+        right: 15px;
+
+        padding: 28px 22px;
+      }
     }
-/* ---------- MOBILE MENU ---------- */
-
-.mobile-menu {
-  display: none;
-}
-
-@media (max-width: 980px) {
-  .mobile-menu {
-    position: fixed;
-    z-index: 20;
-    top: 95px;
-    left: 20px;
-    right: 20px;
-
-    padding: 30px 25px;
-
-    background: rgba(8, 8, 8, .94);
-    border: 1px solid rgba(255,255,255,.25);
-
-    flex-direction: column;
-    gap: 24px;
-
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-    transition:
-      opacity .25s ease,
-      transform .25s ease,
-      visibility .25s ease;
-  }
-
-  .mobile-menu.open {
-    display: flex;
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
-
-  .mobile-menu a {
-    color: #fff;
-    text-decoration: none;
-    font-family: "Montserrat", Arial, sans-serif;
-    font-size: 18px;
-    font-weight: 300;
-  }
-
-  .mobile-menu a:hover {
-    opacity: .6;
-  }
-
-  /* Animación del botón hamburguesa */
-
-  .mobile-toggle span {
-    transition: background .2s ease;
-  }
-
-  .mobile-toggle span::before,
-  .mobile-toggle span::after {
-    transition: transform .25s ease;
-  }
-
-  .mobile-toggle.open span {
-    background: transparent;
-  }
-
-  .mobile-toggle.open span::before {
-    transform: rotate(45deg);
-  }
-
-  .mobile-toggle.open span::after {
-    transform: rotate(-45deg);
-  }
-}
 
   </style>
 </head>
 
+
 <body>
+
   <main class="hero">
 
+    <!-- =================================================
+         HEADER
+    ================================================= -->
+
     <header>
-      <a class="brand" href="#home">Daniel Buades</a>
+
+      <a class="brand" href="#home">
+        Daniel Buades
+      </a>
+
+
+      <!-- DESKTOP NAVIGATION -->
 
       <nav aria-label="Main navigation">
-        <a href="biography.html">Biography</a>
-        <a href="videos.html">Videos</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="concerts.html">Concerts</a>
-        <a href="contact.html">Contact</a>
+
+        <a href="biography.html">
+          Biography
+        </a>
+
+        <a href="videos.html">
+          Videos
+        </a>
+
+        <a href="gallery.html">
+          Gallery
+        </a>
+
+        <a href="concerts.html">
+          Concerts
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
       </nav>
 
+
+      <!-- HEADER RIGHT -->
+
       <div class="header-right">
+
+
+        <!-- SOCIAL NETWORKS -->
+
         <div class="socials" aria-label="Social networks">
 
+
           <!-- Instagram -->
+
           <a href="#" aria-label="Instagram">
+
             <svg viewBox="0 0 24 24">
-              <rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"></rect>
-              <circle cx="12" cy="12" r="4.1"></circle>
-              <circle class="fill-icon" cx="17.5" cy="6.7" r="1.1"></circle>
+
+              <rect
+                x="3.2"
+                y="3.2"
+                width="17.6"
+                height="17.6"
+                rx="5">
+              </rect>
+
+              <circle
+                cx="12"
+                cy="12"
+                r="4.1">
+              </circle>
+
+              <circle
+                class="fill-icon"
+                cx="17.5"
+                cy="6.7"
+                r="1.1">
+              </circle>
+
             </svg>
+
           </a>
+
 
           <!-- Spotify -->
+
           <a href="#" aria-label="Spotify">
-            <svg class="fill-icon" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="11"></circle>
-              <path d="M7 9.1c3.8-1.1 7.5-.8 10.5.4" stroke="#111" stroke-width="1.5" fill="none" stroke-linecap="round"></path>
-              <path d="M7.7 12c3.1-.8 6.3-.5 8.8.5" stroke="#111" stroke-width="1.5" fill="none" stroke-linecap="round"></path>
-              <path d="M8.5 14.8c2.4-.5 4.8-.3 6.7.5" stroke="#111" stroke-width="1.5" fill="none" stroke-linecap="round"></path>
+
+            <svg
+              class="fill-icon"
+              viewBox="0 0 24 24">
+
+              <circle
+                cx="12"
+                cy="12"
+                r="11">
+              </circle>
+
+              <path
+                d="M7 9.1c3.8-1.1 7.5-.8 10.5.4"
+                stroke="#111"
+                stroke-width="1.5"
+                fill="none"
+                stroke-linecap="round">
+              </path>
+
+              <path
+                d="M7.7 12c3.1-.8 6.3-.5 8.8.5"
+                stroke="#111"
+                stroke-width="1.5"
+                fill="none"
+                stroke-linecap="round">
+              </path>
+
+              <path
+                d="M8.5 14.8c2.4-.5 4.8-.3 6.7.5"
+                stroke="#111"
+                stroke-width="1.5"
+                fill="none"
+                stroke-linecap="round">
+              </path>
+
             </svg>
+
           </a>
+
 
           <!-- Facebook -->
+
           <a href="#" aria-label="Facebook">
-            <svg class="fill-icon" viewBox="0 0 24 24">
-              <path d="M13.8 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.2V10H8v3h2.6v8h3.2z"></path>
+
+            <svg
+              class="fill-icon"
+              viewBox="0 0 24 24">
+
+              <path
+                d="M13.8 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.2V10H8v3h2.6v8h3.2z">
+              </path>
+
             </svg>
+
           </a>
 
+
           <!-- YouTube -->
+
           <a href="#" aria-label="YouTube">
-            <svg class="fill-icon" viewBox="0 0 24 24">
-              <path d="M22 7.2c-.2-1.1-1.1-2-2.2-2.2C18 4.7 15.1 4.5 12 4.5s-6 .2-7.8.5C3.1 5.2 2.2 6.1 2 7.2c-.3 1.5-.4 3-.4 4.8s.1 3.3.4 4.8c.2 1.1 1.1 2 2.2 2.2 1.8.3 4.7.5 7.8.5s6-.2 7.8-.5c1.1-.2 2-1.1 2.2-2.2.3-1.5.4-3 .4-4.8s-.1-3.3-.4-4.8zM10 15.5v-7l6 3.5-6 3.5z"></path>
+
+            <svg
+              class="fill-icon"
+              viewBox="0 0 24 24">
+
+              <path
+                d="M22 7.2c-.2-1.1-1.1-2-2.2-2.2C18 4.7 15.1 4.5 12 4.5s-6 .2-7.8.5C3.1 5.2 2.2 6.1 2 7.2c-.3 1.5-.4 3-.4 4.8s.1 3.3.4 4.8c.2 1.1 1.1 2 2.2 2.2 1.8.3 4.7.5 7.8.5s6-.2 7.8-.5c1.1-.2 2-1.1 2.2-2.2.3-1.5.4-3 .4-4.8s-.1-3.3-.4-4.8zM10 15.5v-7l6 3.5-6 3.5z">
+              </path>
+
             </svg>
+
           </a>
 
         </div>
 
-        <a class="home-btn" href="#home">Home</a>
 
-        <button class="mobile-toggle" aria-label="Open menu">
+        <!-- HOME -->
+
+        <a class="home-btn" href="#home">
+          Home
+        </a>
+
+
+        <!-- MOBILE MENU BUTTON -->
+
+        <button
+          class="mobile-toggle"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu">
+
           <span></span>
+
         </button>
+
       </div>
+
     </header>
 
-    <section class="hero-copy" id="home">
-      <h1>Daniel Buades</h1>
-      <p>Drummer - Composer</p>
+
+    <!-- =================================================
+         MOBILE MENU
+    ================================================= -->
+
+    <div
+      class="mobile-menu"
+      id="mobile-menu">
+
+      <a href="biography.html">
+        Biography
+      </a>
+
+      <a href="videos.html">
+        Videos
+      </a>
+
+      <a href="gallery.html">
+        Gallery
+      </a>
+
+      <a href="concerts.html">
+        Concerts
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </div>
+
+
+    <!-- =================================================
+         HERO TEXT
+    ================================================= -->
+
+    <section
+      class="hero-copy"
+      id="home">
+
+      <h1>
+        Daniel Buades
+      </h1>
+
+      <p>
+        Drummer - Composer
+      </p>
+
     </section>
 
   </main>
-<script>
-  const toggle = document.querySelector(".mobile-toggle");
-  const menu = document.querySelector("#mobile-menu");
 
-  toggle.addEventListener("click", () => {
-    const isOpen = menu.classList.toggle("open");
 
-    toggle.classList.toggle("open", isOpen);
+  <!-- ===================================================
+       JAVASCRIPT
+  =================================================== -->
 
-    toggle.setAttribute("aria-expanded", isOpen);
-    toggle.setAttribute(
-      "aria-label",
-      isOpen ? "Close menu" : "Open menu"
-    );
-  });
+  <script>
 
-  // Cerrar el menú al pulsar un enlace
-  menu.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      menu.classList.remove("open");
-      toggle.classList.remove("open");
-      toggle.setAttribute("aria-expanded", "false");
-      toggle.setAttribute("aria-label", "Open menu");
+    const toggle = document.querySelector(".mobile-toggle");
+    const menu = document.querySelector("#mobile-menu");
+
+
+    /* OPEN / CLOSE MENU */
+
+    toggle.addEventListener("click", () => {
+
+      const isOpen = menu.classList.toggle("open");
+
+      toggle.classList.toggle("open", isOpen);
+
+      toggle.setAttribute(
+        "aria-expanded",
+        isOpen
+      );
+
+      toggle.setAttribute(
+        "aria-label",
+        isOpen
+          ? "Close menu"
+          : "Open menu"
+      );
+
     });
-  });
-</script>
+
+
+    /* CLOSE MENU WHEN CLICKING A LINK */
+
+    menu.querySelectorAll("a").forEach(link => {
+
+      link.addEventListener("click", () => {
+
+        menu.classList.remove("open");
+
+        toggle.classList.remove("open");
+
+        toggle.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+        toggle.setAttribute(
+          "aria-label",
+          "Open menu"
+        );
+
+      });
+
+    });
+
+
+    /* CLOSE MENU WITH ESCAPE */
+
+    document.addEventListener("keydown", (event) => {
+
+      if (event.key === "Escape") {
+
+        menu.classList.remove("open");
+
+        toggle.classList.remove("open");
+
+        toggle.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+        toggle.setAttribute(
+          "aria-label",
+          "Open menu"
+        );
+
+      }
+
+    });
+
+  </script>
 
 </body>
 </html>
