@@ -1,0 +1,730 @@
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+body {
+    background: #111;
+    color: #fff;
+
+    font-family: "Inter", Arial, sans-serif;
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 92px;
+
+    z-index: 50;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 48px;
+
+    color: #fff;
+}
+
+
+/* LOGO */
+
+.brand {
+    flex-shrink: 0;
+
+    color: #fff;
+
+    text-decoration: none;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 25px;
+    font-weight: 400;
+
+    line-height: 1;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   NAVEGACIÓN
+========================= */
+
+nav {
+    display: flex;
+    align-items: center;
+
+    gap: 32px;
+
+    margin-left: 55px;
+}
+
+nav a {
+    position: relative;
+
+    color: rgba(255, 255, 255, .95);
+
+    text-decoration: none;
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
+
+    font-size: 16px;
+    font-weight: 400;
+
+    line-height: 1;
+
+    white-space: nowrap;
+
+    transition:
+        opacity .25s ease,
+        color .25s ease;
+}
+
+nav a:hover {
+    opacity: .55;
+}
+
+nav a.active {
+    color: #fff;
+}
+
+
+/* Página activa */
+
+nav a.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    bottom: -8px;
+
+    height: 1px;
+
+    background: #fff;
+
+    opacity: .9;
+}
+
+
+/* =========================
+   PARTE DERECHA
+========================= */
+
+.header-right {
+    margin-left: auto;
+
+    display: flex;
+    align-items: center;
+
+    gap: 28px;
+}
+
+
+/* =========================
+   REDES
+========================= */
+
+.socials {
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+}
+
+.socials a {
+    width: 22px;
+    height: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #fff;
+
+    text-decoration: none;
+
+    opacity: .95;
+
+    transition:
+        opacity .25s ease,
+        transform .25s ease;
+}
+
+.socials a:hover {
+    opacity: .55;
+
+    transform:
+        translateY(-1px);
+}
+
+.socials svg {
+    width: 19px;
+    height: 19px;
+
+    display: block;
+
+    fill: none;
+
+    stroke: #fff;
+
+    stroke-width: 1.5;
+}
+
+.socials svg.fill-icon,
+.socials svg.facebook,
+.socials svg.youtube {
+    stroke: none;
+    fill: #fff;
+}
+
+.socials .spotify {
+    stroke: none;
+}
+
+
+/* =========================
+   HOME
+========================= */
+
+.home-btn {
+    width: 82px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, .75);
+
+    border-radius: 22px;
+
+    color: #fff;
+
+    text-decoration: none;
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
+
+    font-size: 14px;
+    font-weight: 400;
+
+    transition:
+        background .3s ease,
+        color .3s ease;
+}
+
+.home-btn:hover {
+    background: #fff;
+    color: #111;
+}
+
+
+/* =========================
+   CONTACT PAGE
+========================= */
+
+.contact-page {
+    min-height: 100vh;
+
+    padding:
+        170px
+        8vw
+        90px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #111 0%,
+            #171717 100%
+        );
+}
+
+
+/* =========================
+   CONTACT SECTION
+========================= */
+
+.contact-section {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(280px, .75fr)
+        minmax(400px, 1.25fr);
+
+    gap: 100px;
+
+    align-items: start;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.contact-intro {
+    padding-top: 15px;
+}
+
+.eyebrow {
+    margin: 0 0 24px;
+
+    color: rgba(255, 255, 255, .55);
+
+    font-size: 12px;
+
+    letter-spacing: .18em;
+
+    font-weight: 500;
+}
+
+.contact-intro h1 {
+    margin: 0;
+
+    color: #fff;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: clamp(48px, 6vw, 78px);
+
+    font-weight: 400;
+
+    line-height: .95;
+
+    letter-spacing: -.03em;
+}
+
+.intro-text {
+    max-width: 380px;
+
+    margin:
+        32px
+        0
+        0;
+
+    color: rgba(255, 255, 255, .65);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.contact-form {
+    width: 100%;
+}
+
+
+/* FORM ROW */
+
+.form-row {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap: 30px;
+}
+
+
+/* FORM GROUP */
+
+.form-group {
+    margin-bottom: 32px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 11px;
+
+    color: rgba(255, 255, 255, .72);
+
+    font-size: 12px;
+
+    letter-spacing: .04em;
+}
+
+
+/* INPUTS */
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    border: 0;
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, .35);
+
+    border-radius: 0;
+
+    outline: none;
+
+    padding:
+        10px
+        0
+        13px;
+
+    background: transparent;
+
+    color: #fff;
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
+
+    font-size: 16px;
+
+    transition:
+        border-color .25s ease;
+}
+
+.form-group textarea {
+    min-height: 150px;
+
+    resize: vertical;
+
+    line-height: 1.6;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-bottom-color: #fff;
+}
+
+
+/* PLACEHOLDER */
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, .3);
+}
+
+
+/* =========================
+   SEND BUTTON
+========================= */
+
+.send-btn {
+    position: relative;
+
+    width: 160px;
+    height: 48px;
+
+    margin-top: 5px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .75);
+
+    border-radius: 25px;
+
+    background: transparent;
+
+    color: #fff;
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition:
+        background .3s ease,
+        color .3s ease,
+        opacity .3s ease;
+}
+
+.send-btn:hover:not(:disabled) {
+    background: #fff;
+    color: #111;
+}
+
+.send-btn:disabled {
+    cursor: default;
+
+    opacity: .55;
+}
+
+
+/* LOADING */
+
+.btn-loading {
+    display: none;
+}
+
+.send-btn.loading .btn-text {
+    display: none;
+}
+
+.send-btn.loading .btn-loading {
+    display: inline;
+}
+
+
+/* =========================
+   FORM MESSAGE
+========================= */
+
+.form-message {
+    min-height: 25px;
+
+    margin-top: 22px;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+.form-message.success {
+    color: rgba(255, 255, 255, .8);
+}
+
+.form-message.error {
+    color: #ff8e8e;
+}
+
+
+/* =========================
+   HONEYPOT
+========================= */
+
+.hidden-field {
+    position: absolute;
+
+    left: -9999px;
+
+    width: 1px;
+    height: 1px;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   MOBILE MENU BUTTON
+========================= */
+
+.mobile-toggle {
+    display: none;
+
+    width: 30px;
+    height: 30px;
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.mobile-toggle span,
+.mobile-toggle span::before,
+.mobile-toggle span::after {
+    display: block;
+
+    width: 24px;
+    height: 1px;
+
+    background: #fff;
+}
+
+.mobile-toggle span {
+    position: relative;
+}
+
+.mobile-toggle span::before,
+.mobile-toggle span::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+}
+
+.mobile-toggle span::before {
+    top: -7px;
+}
+
+.mobile-toggle span::after {
+    top: 7px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1100px) {
+
+    header {
+        padding: 0 35px;
+    }
+
+    .brand {
+        font-size: 23px;
+    }
+
+    nav {
+        gap: 24px;
+
+        margin-left: 40px;
+    }
+
+    nav a {
+        font-size: 15px;
+    }
+
+    .contact-section {
+        gap: 60px;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 850px) {
+
+    header {
+        height: 78px;
+
+        padding: 0 22px;
+    }
+
+    .brand {
+        font-size: 22px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .socials {
+        display: none;
+    }
+
+    .home-btn {
+        display: none;
+    }
+
+    .mobile-toggle {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .contact-page {
+        padding:
+            130px
+            25px
+            60px;
+    }
+
+
+    .contact-section {
+        display: block;
+
+        max-width: 650px;
+    }
+
+
+    .contact-intro {
+        padding-top: 0;
+
+        margin-bottom: 55px;
+    }
+
+
+    .contact-intro h1 {
+        font-size: 52px;
+    }
+
+
+    .intro-text {
+        font-size: 14px;
+    }
+
+
+    .form-row {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 500px) {
+
+    .contact-page {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .contact-intro h1 {
+        font-size: 45px;
+    }
+
+    .send-btn {
+        width: 100%;
+    }
+}
