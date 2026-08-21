@@ -4,109 +4,229 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Daniel Buades | Web Oficial</title>
+<title>Mis Conciertos</title>
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
 
 body{
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    font-family:Arial, sans-serif;
-
-    background:
-    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
-    url("img/daniel-buades.jpg");
-
-    background-size:cover;
-    background-position:center;
-    background-attachment:fixed;
-
-    color:white;
+margin:0;
+background:#111;
+color:white;
+font-family:Arial,sans-serif;
 }
 
-.container{
-    max-width:800px;
-    padding:40px;
+header{
+text-align:center;
+padding:30px;
 }
 
 h1{
-    font-size:4rem;
-    letter-spacing:4px;
-    margin-bottom:20px;
+margin:0;
 }
 
-.subtitle{
-    font-size:1.5rem;
-    color:#d4af37;
-    margin-bottom:30px;
+.tabs{
+display:flex;
+justify-content:center;
+gap:10px;
+margin-bottom:25px;
 }
 
-.message{
-    font-size:1.2rem;
-    line-height:1.8;
-    color:#e5e5e5;
+.tab{
+cursor:pointer;
+border:none;
+padding:12px 20px;
+border-radius:8px;
+background:#333;
+color:white;
+font-size:16px;
 }
 
-.social{
-    margin-top:40px;
+.tab.active{
+background:#e63946;
 }
 
-.social a{
-    color:white;
-    text-decoration:none;
-    margin:0 15px;
-    font-size:1.1rem;
+.contenedor{
+max-width:1200px;
+margin:auto;
+padding:20px;
 }
 
-.social a:hover{
-    color:#d4af37;
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+gap:20px;
 }
 
-footer{
-    position:absolute;
-    bottom:20px;
-    width:100%;
-    color:#ccc;
-    font-size:0.9rem;
+.card{
+background:#1e1e1e;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 3px 10px rgba(0,0,0,0.4);
 }
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.info{
+padding:15px;
+}
+
+.fecha{
+color:#fcbf49;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+.ciudad{
+font-size:22px;
+margin-bottom:5px;
+}
+
+.sala{
+color:#ddd;
+margin-bottom:15px;
+}
+
+.boton{
+display:inline-block;
+text-decoration:none;
+background:#e63946;
+color:white;
+padding:10px 15px;
+border-radius:6px;
+}
+
+.oculto{
+display:none;
+}
+
 </style>
 </head>
-
 <body>
 
-<div class="container">
+<header>
+<h1>🎸 Agenda de Conciertos</h1>
+</header>
 
-    <h1>DANIEL BUADES</h1>
+<div class="tabs">
+<button class="tab active" id="btnFuturos">
+Próximos conciertos
+</button>
 
-    <div class="subtitle">
-        Jazz Drummer
-    </div>
+<button class="tab" id="btnPasados">
+Conciertos pasados
+</button>
+</div>
 
-    <div class="message">
-        La nueva web oficial está actualmente en construcción.<br>
-        Muy pronto estará disponible con información sobre proyectos,
-        grabaciones, conciertos, galería y contacto.
-    </div>
+<div class="contenedor">
 
-    <div class="social">
-        #>
-        #
-        #
-    </div>
+<div id="futuros" class="grid"></div>
+
+<div id="pasados" class="grid oculto"></div>
 
 </div>
 
-<footer>
-    © 2026 Daniel Buades. Todos los derechos reservados.
-</footer>
+<script>
+
+// PEGA AQUÍ TU URL CSV DE GOOGLE SHEETS
+
+const CSV_URL =
+"https://docs.google.com/spreadsheets/d/e/2PACX-1vQT3WRJmZJrhXe_cdV5yy3sR9UchUccNSRkujL4M8xys56NvGQF2YueJkLzcVJSS6WL3pTkic5o7QhI/pub?gid=0&single=true&output=csv";
+
+async function cargarConciertos(){
+
+const respuesta = await fetch(CSV_URL);
+const csv = await respuesta.text();
+
+const filas = csv.trim().split("\n").slice(1);
+
+const conciertos = filas.map(fila => {
+
+const columnas = fila.split(",");
+
+return {
+fecha: columnas[0],
+ciudad: columnas[1],
+sala: columnas[2],
+entradas: columnas[3],
+foto: columnas[4]
+};
+});
+
+const futuros = document.getElementById("futuros");
+const pasados = document.getElementById("pasados");
+
+const hoy = new Date();
+
+conciertos.forEach(c => {
+
+const fechaConcierto = new Date(c.fecha);
+
+const tarjeta = `
+<div class="card">
+
+${c.foto}
+
+<div class="info">
+
+<div class="fecha">
+${c.fecha}
+</div>
+
+<div class="ciudad">
+${c.ciudad}
+</div>
+
+<div class="sala">
+${c.sala}
+</div>
+
+${c.entradas}
+Comprar entradas
+</a>
+
+</div>
+
+</div>
+`;
+
+if(fechaConcierto >= hoy){
+futuros.innerHTML += tarjeta;
+}else{
+pasados.innerHTML += tarjeta;
+}
+
+});
+
+}
+
+cargarConciertos();
+
+const btnFuturos = document.getElementById("btnFuturos");
+const btnPasados = document.getElementById("btnPasados");
+
+btnFuturos.onclick = () => {
+
+futuros.classList.remove("oculto");
+pasados.classList.add("oculto");
+
+btnFuturos.classList.add("active");
+btnPasados.classList.remove("active");
+};
+
+btnPasados.onclick = () => {
+
+futuros.classList.add("oculto");
+pasados.classList.remove("oculto");
+
+btnPasados.classList.add("active");
+btnFuturos.classList.remove("active");
+};
+
+</script>
 
 </body>
 </html>
