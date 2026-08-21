@@ -6,73 +6,22 @@
 
 <title>Daniel Buades - Concerts</title>
 
-<link href="httpsCormorant+Garamond:wght@400;500&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
-
 <style>
 
-*{
-box-sizing:border-box;
-margin:0;
-padding:0;
-}
-
 body{
+margin:0;
 background:#111;
 color:white;
-font-family:"Montserrat",sans-serif;
+font-family:Arial,sans-serif;
 }
 
 header{
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:25px 40px;
-border-bottom:1px solid rgba(255,255,255,.1);
-}
-
-.brand{
-color:white;
-text-decoration:none;
-font-family:"Cormorant Garamond",serif;
-font-size:32px;
-}
-
-nav{
-display:flex;
-gap:25px;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-transition:.3s;
-}
-
-nav a:hover{
-opacity:.7;
-}
-
-.socials{
-display:flex;
-gap:15px;
-}
-
-.socials a{
-color:white;
-text-decoration:none;
-}
-
-.mobile-toggle{
-display:none;
-}
-
-.mobile-menu{
-display:none;
+text-align:center;
+padding:30px;
 }
 
 h1{
-text-align:center;
-margin:30px 0;
+margin:0;
 }
 
 .tabs{
@@ -112,12 +61,12 @@ gap:20px;
 background:#1e1e1e;
 border-radius:12px;
 overflow:hidden;
-box-shadow:0 3px 10px rgba(0,0,0,.4);
+box-shadow:0 3px 10px rgba(0,0,0,0.4);
 }
 
 .card img{
 width:100%;
-height:240px;
+height:220px;
 object-fit:cover;
 }
 
@@ -132,7 +81,7 @@ margin-bottom:10px;
 }
 
 .ciudad{
-font-size:24px;
+font-size:22px;
 margin-bottom:5px;
 }
 
@@ -173,25 +122,13 @@ color:#ccc;
 margin-top:30px;
 }
 
-footer{
-padding:40px 20px;
-text-align:center;
-color:#aaa;
-}
-
-@media(max-width:900px){
-
-header{
-flex-wrap:wrap;
-gap:20px;
-justify-content:center;
-}
-
-nav{
-flex-wrap:wrap;
-justify-content:center;
-}
-
+footer {
+  position: relative;
+  width: 100%;
+  padding: 20px 20px 25px;
+  color: #ccc;
+  font-size: 0.9rem;
+  text-align: center;
 }
 
 </style>
@@ -199,29 +136,10 @@ justify-content:center;
 <body>
 
 <header>
-
-<a class="brand" href="index.html">
-Daniel Buades
-</a>
-
-<nav>
-ography.html">Biography</a>
-<a href="videos.html">Videos</a>
-<a href="gallery.html">Gallery</a>
-<a href="concerts.html">Concerts</a>
-<a href="contact.html">Contact</a>
-</nav>
-
-<div class="socials">
-#Instagram</a>
-#
-<a href="#">Facebook</a>
-<a hrefr>
-
-<h1>Concerts</h1>
+<h1>🎵 Daniel Buades Concerts</h1>
+</header>
 
 <div class="tabs">
-
 <button class="tab active" id="btnFuturos">
 Upcoming concerts
 </button>
@@ -229,7 +147,6 @@ Upcoming concerts
 <button class="tab" id="btnPasados">
 Past concerts
 </button>
-
 </div>
 
 <div class="contenedor">
@@ -241,6 +158,10 @@ Past concerts
 </div>
 
 <script>
+
+// =============================
+// PEGA AQUÍ TU URL DE GOOGLE SHEETS
+// =============================
 
 const CSV_URL =
 "https://docs.google.com/spreadsheets/d/e/2PACX-1vQT3WRJmZJrhXe_cdV5yy3sR9UchUccNSRkujL4M8xys56NvGQF2YueJkLzcVJSS6WL3pTkic5o7QhI/pub?gid=0&single=true&output=csv";
@@ -265,7 +186,6 @@ sala: columnas[2]?.trim(),
 entradas: columnas[3]?.trim(),
 foto: columnas[4]?.trim()
 };
-
 });
 
 const futuros = document.getElementById("futuros");
@@ -277,7 +197,7 @@ let numFuturos = 0;
 let numPasados = 0;
 
 conciertos
-.sort((a,b)=>new Date(a.fecha)-new Date(b.fecha))
+.sort((a,b) => new Date(a.fecha) - new Date(b.fecha))
 .forEach(c => {
 
 const fechaConcierto = new Date(c.fecha);
@@ -286,19 +206,20 @@ const esFuturo = fechaConcierto >= hoy;
 const accion = esFuturo
 ? `
 ${c.entradas}
-Buy tickets
+Comprar entradas
 </a>
 `
 : `
 <span class="realizado">
-✓ Concert performed
+✓ Concierto realizado
 </span>
 `;
 
 const tarjeta = `
 <div class="card">
 
-<img
+${c.foto}
+
 <div class="info">
 
 <div class="fecha">
@@ -330,14 +251,14 @@ numPasados++;
 
 });
 
-if(numFuturos===0){
+if(numFuturos === 0){
 futuros.innerHTML =
-'<p class="mensaje">No upcoming concerts.</p>';
+'<p class="mensaje">There are no concerts scheduled.</p>';
 }
 
-if(numPasados===0){
+if(numPasados === 0){
 pasados.innerHTML =
-'<p class="mensaje">No past concerts.</p>';
+'<p class="mensaje">There are no past concerts yet.</p>';
 }
 
 }catch(error){
@@ -346,24 +267,16 @@ console.error(error);
 
 document.getElementById("futuros").innerHTML =
 '<p class="mensaje">Error loading concerts.</p>';
-
 }
-
 }
 
 cargarConciertos();
 
-const btnFuturos =
-document.getElementById("btnFuturos");
+const btnFuturos = document.getElementById("btnFuturos");
+const btnPasados = document.getElementById("btnPasados");
 
-const btnPasados =
-document.getElementById("btnPasados");
-
-const futuros =
-document.getElementById("futuros");
-
-const pasados =
-document.getElementById("pasados");
+const futuros = document.getElementById("futuros");
+const pasados = document.getElementById("pasados");
 
 btnFuturos.onclick = () => {
 
@@ -372,7 +285,6 @@ pasados.classList.add("oculto");
 
 btnFuturos.classList.add("active");
 btnPasados.classList.remove("active");
-
 };
 
 btnPasados.onclick = () => {
@@ -382,14 +294,12 @@ pasados.classList.remove("oculto");
 
 btnPasados.classList.add("active");
 btnFuturos.classList.remove("active");
-
 };
 
 </script>
-
-<footer>
-© 2026 Daniel Buades. All rights reserved.
-</footer>
+ <footer>
+      © 2026 Daniel Buades. All rights reserved.
+  </footer>
 
 </body>
 </html>
