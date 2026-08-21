@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Agenda de Conciertos</title>
+<title>Mis Conciertos</title>
 
 <style>
 
@@ -99,27 +99,8 @@ padding:10px 15px;
 border-radius:6px;
 }
 
-.boton:hover{
-background:#d62839;
-}
-
-.realizado{
-display:inline-block;
-background:#444;
-color:#ddd;
-padding:10px 15px;
-border-radius:6px;
-font-size:14px;
-}
-
 .oculto{
 display:none;
-}
-
-.mensaje{
-text-align:center;
-color:#ccc;
-margin-top:30px;
 }
 
 </style>
@@ -127,7 +108,7 @@ margin-top:30px;
 <body>
 
 <header>
-<h1>🎵 Agenda de Conciertos</h1>
+<h1>🎸 Agenda de Conciertos</h1>
 </header>
 
 <div class="tabs">
@@ -150,16 +131,12 @@ Conciertos pasados
 
 <script>
 
-// =============================
-// PEGA AQUÍ TU URL DE GOOGLE SHEETS
-// =============================
+// PEGA AQUÍ TU URL CSV DE GOOGLE SHEETS
 
 const CSV_URL =
 "https://docs.google.com/spreadsheets/d/e/2PACX-1vQT3WRJmZJrhXe_cdV5yy3sR9UchUccNSRkujL4M8xys56NvGQF2YueJkLzcVJSS6WL3pTkic5o7QhI/pub?gid=0&single=true&output=csv";
 
 async function cargarConciertos(){
-
-try{
 
 const respuesta = await fetch(CSV_URL);
 const csv = await respuesta.text();
@@ -171,11 +148,11 @@ const conciertos = filas.map(fila => {
 const columnas = fila.split(",");
 
 return {
-fecha: columnas[0]?.trim(),
-ciudad: columnas[1]?.trim(),
-sala: columnas[2]?.trim(),
-entradas: columnas[3]?.trim(),
-foto: columnas[4]?.trim()
+fecha: columnas[0],
+ciudad: columnas[1],
+sala: columnas[2],
+entradas: columnas[3],
+foto: columnas[4]
 };
 });
 
@@ -184,27 +161,9 @@ const pasados = document.getElementById("pasados");
 
 const hoy = new Date();
 
-let numFuturos = 0;
-let numPasados = 0;
-
-conciertos
-.sort((a,b) => new Date(a.fecha) - new Date(b.fecha))
-.forEach(c => {
+conciertos.forEach(c => {
 
 const fechaConcierto = new Date(c.fecha);
-const esFuturo = fechaConcierto >= hoy;
-
-const accion = esFuturo
-? `
-${c.entradas}
-Comprar entradas
-</a>
-`
-: `
-<span class="realizado">
-✓ Concierto realizado
-</span>
-`;
 
 const tarjeta = `
 <div class="card">
@@ -225,49 +184,29 @@ ${c.ciudad}
 ${c.sala}
 </div>
 
-${accion}
+${c.entradas}
+Comprar entradas
+</a>
 
 </div>
 
 </div>
 `;
 
-if(esFuturo){
+if(fechaConcierto >= hoy){
 futuros.innerHTML += tarjeta;
-numFuturos++;
 }else{
 pasados.innerHTML += tarjeta;
-numPasados++;
 }
 
 });
 
-if(numFuturos === 0){
-futuros.innerHTML =
-'<p class="mensaje">No hay conciertos programados.</p>';
-}
-
-if(numPasados === 0){
-pasados.innerHTML =
-'<p class="mensaje">Todavía no hay conciertos pasados.</p>';
-}
-
-}catch(error){
-
-console.error(error);
-
-document.getElementById("futuros").innerHTML =
-'<p class="mensaje">Error cargando los conciertos.</p>';
-}
 }
 
 cargarConciertos();
 
 const btnFuturos = document.getElementById("btnFuturos");
 const btnPasados = document.getElementById("btnPasados");
-
-const futuros = document.getElementById("futuros");
-const pasados = document.getElementById("pasados");
 
 btnFuturos.onclick = () => {
 
