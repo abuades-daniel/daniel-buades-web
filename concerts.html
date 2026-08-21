@@ -267,4 +267,27 @@ const btnFuturos = document.getElementById("btnFuturos");
 const btnPasados = document.getElementById("btnPasados");
 
 const futuros = document.getElementById("futuros");
-const pasados = document.getElementById
+const pasados = document.getElementById("pasados");
+
+btnFuturos.onclick = () => {
+
+futuros.classList.remove("oculto");
+pasados.classList.add("oculto");
+
+btnFuturos.classList.add("active");
+btnPasados.classList.remove("active");
+};
+
+btnPasados.onclick = () => {
+
+futuros.classList.add("oculto");
+pasados.classList.remove("oculto");
+
+btnPasados.classList.add("active");
+btnFuturos.classList.remove("active");
+};
+
+</script>
+
+</body>
+</html>
