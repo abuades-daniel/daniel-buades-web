@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Agenda de Conciertos</title>
+<title>Daniel Buades - Concerts</title>
 
 <style>
 
@@ -122,21 +122,30 @@ color:#ccc;
 margin-top:30px;
 }
 
+footer {
+  position: relative;
+  width: 100%;
+  padding: 20px 20px 25px;
+  color: #ccc;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
 </style>
 </head>
 <body>
 
 <header>
-<h1>🎵 Agenda de Conciertos</h1>
+<h1>🎵 Daniel Buades Concerts</h1>
 </header>
 
 <div class="tabs">
 <button class="tab active" id="btnFuturos">
-Próximos conciertos
+Upcoming concerts
 </button>
 
 <button class="tab" id="btnPasados">
-Conciertos pasados
+Past concerts
 </button>
 </div>
 
@@ -244,12 +253,12 @@ numPasados++;
 
 if(numFuturos === 0){
 futuros.innerHTML =
-'<p class="mensaje">No hay conciertos programados.</p>';
+'<p class="mensaje">There are no concerts scheduled.</p>';
 }
 
 if(numPasados === 0){
 pasados.innerHTML =
-'<p class="mensaje">Todavía no hay conciertos pasados.</p>';
+'<p class="mensaje">There are no past concerts yet.</p>';
 }
 
 }catch(error){
@@ -257,7 +266,7 @@ pasados.innerHTML =
 console.error(error);
 
 document.getElementById("futuros").innerHTML =
-'<p class="mensaje">Error cargando los conciertos.</p>';
+'<p class="mensaje">Error loading concerts.</p>';
 }
 }
 
@@ -288,6 +297,9 @@ btnFuturos.classList.remove("active");
 };
 
 </script>
+ <footer>
+      © 2026 Daniel Buades. All rights reserved.
+  </footer>
 
 </body>
 </html>
