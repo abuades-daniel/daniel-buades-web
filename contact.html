@@ -1,388 +1,1886 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Contact — Daniel Buades | Drummer & Composer</title>
-    <meta name="description" content="Contact Daniel Buades for concerts, collaborations and musical projects.">
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <title>
+    Contact — Daniel Buades | Drummer & Composer
+  </title>
+
+  <meta
+    name="description"
+    content="Contact Daniel Buades for concerts, collaborations and musical projects.">
 
 
-    <link rel="stylesheet" href="./contact.css">
+  <!-- =====================================================
+       GOOGLE FONTS
+  ====================================================== -->
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap"
-        rel="stylesheet"
-    >
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500&family=Montserrat:wght@300;400;500&display=swap"
+    rel="stylesheet">
+
+
+  <style>
+
+
+    /* =====================================================
+       GENERAL
+    ===================================================== */
+
+    * {
+
+      box-sizing: border-box;
+
+      margin: 0;
+
+      padding: 0;
+
+    }
+
+
+    html {
+
+      width: 100%;
+
+      min-height: 100%;
+
+      background: #080808;
+
+    }
+
+
+    body {
+
+      width: 100%;
+
+      min-height: 100vh;
+
+      background: #080808;
+
+      color: white;
+
+      font-family:
+        "Montserrat",
+        Arial,
+        sans-serif;
+
+      overflow-x: hidden;
+
+    }
+
+
+    /* =====================================================
+       CABECERA CON FOTO
+    ===================================================== */
+
+    .top-section {
+
+      position: relative;
+
+      width: 100%;
+
+      min-height: 190px;
+
+      background:
+
+        linear-gradient(
+          rgba(0,0,0,.10),
+          rgba(0,0,0,.10)
+        ),
+
+        url("img/foto-portada.jpg")
+        center 35%
+        / cover
+        no-repeat;
+
+      overflow: hidden;
+
+    }
+
+
+    .top-section::after {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      background:
+
+        linear-gradient(
+          90deg,
+          rgba(0,0,0,.15) 0%,
+          rgba(0,0,0,.03) 55%,
+          rgba(0,0,0,.12) 100%
+        );
+
+      pointer-events: none;
+
+    }
+
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
+
+    header {
+
+      position: relative;
+
+      z-index: 10;
+
+      width: 100%;
+
+      height: 134px;
+
+      display: flex;
+
+      align-items: center;
+
+      padding:
+        0
+        5.4%
+        0
+        3.9%;
+
+    }
+
+
+    .brand {
+
+      flex: 0 0 auto;
+
+      color: white;
+
+      text-decoration: none;
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 29px;
+
+      line-height: 1;
+
+      letter-spacing: -.6px;
+
+      white-space: nowrap;
+
+    }
+
+
+    /* =====================================================
+       MENÚ
+    ===================================================== */
+
+    nav {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 33px;
+
+      margin-left: 54px;
+
+    }
+
+
+    nav a {
+
+      position: relative;
+
+      color: white;
+
+      text-decoration: none;
+
+      font-family:
+        "Montserrat",
+        Arial,
+        sans-serif;
+
+      font-size: 17px;
+
+      font-weight: 400;
+
+      line-height: 1;
+
+      white-space: nowrap;
+
+      transition:
+        opacity .25s ease;
+
+    }
+
+
+    nav a:hover {
+
+      opacity: .65;
+
+    }
+
+
+    nav a.active {
+
+      opacity: .65;
+
+    }
+
+
+    /* =====================================================
+       PARTE DERECHA DEL HEADER
+    ===================================================== */
+
+    .header-right {
+
+      margin-left: auto;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 25px;
+
+    }
+
+
+    /* =====================================================
+       REDES SOCIALES
+    ===================================================== */
+
+    .socials {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 24px;
+
+      margin-right: 22px;
+
+    }
+
+
+    .socials a {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      width: 25px;
+
+      height: 25px;
+
+      color: white;
+
+      text-decoration: none;
+
+      transition:
+        transform .2s ease,
+        opacity .2s ease;
+
+    }
+
+
+    .socials a:hover {
+
+      transform:
+        translateY(-2px);
+
+      opacity: .7;
+
+    }
+
+
+    .socials svg {
+
+      width: 23px;
+
+      height: 23px;
+
+      fill: none;
+
+      stroke: currentColor;
+
+      stroke-width: 1.8;
+
+    }
+
+
+    .socials .fill-icon {
+
+      fill: currentColor;
+
+      stroke: none;
+
+    }
+
+
+    /* =====================================================
+       HOME
+    ===================================================== */
+
+    .home-btn {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      width: 118px;
+
+      height: 75px;
+
+      border:
+        1px solid
+        rgba(255,255,255,.95);
+
+      border-radius: 50%;
+
+      color: white;
+
+      text-decoration: none;
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 21px;
+
+      transition:
+        background .25s ease,
+        color .25s ease;
+
+    }
+
+
+    .home-btn:hover {
+
+      background:
+        rgba(255,255,255,.95);
+
+      color: #111;
+
+    }
+
+
+    /* =====================================================
+       MENÚ MÓVIL
+    ===================================================== */
+
+    .mobile-toggle {
+
+      display: none;
+
+      width: 48px;
+
+      height: 48px;
+
+      border:
+        1px solid
+        rgba(255,255,255,.8);
+
+      border-radius: 50%;
+
+      align-items: center;
+
+      justify-content: center;
+
+      color: white;
+
+      background: transparent;
+
+      cursor: pointer;
+
+    }
+
+
+    .mobile-toggle span,
+    .mobile-toggle span::before,
+    .mobile-toggle span::after {
+
+      display: block;
+
+      position: absolute;
+
+      width: 19px;
+
+      height: 1px;
+
+      background: currentColor;
+
+      content: "";
+
+    }
+
+
+    .mobile-toggle span::before {
+
+      transform:
+        translateY(-6px);
+
+    }
+
+
+    .mobile-toggle span::after {
+
+      transform:
+        translateY(6px);
+
+    }
+
+
+    .mobile-menu {
+
+      display: none;
+
+      position: absolute;
+
+      z-index: 20;
+
+      top: 95px;
+
+      right: 25px;
+
+      width: 220px;
+
+      flex-direction: column;
+
+      background:
+        rgba(10,10,10,.97);
+
+      border:
+        1px solid
+        rgba(255,255,255,.15);
+
+      padding:
+        10px 0;
+
+    }
+
+
+    .mobile-menu a {
+
+      padding:
+        15px 20px;
+
+      color: white;
+
+      text-decoration: none;
+
+      font-size: 14px;
+
+    }
+
+
+    .mobile-menu a:hover {
+
+      background:
+        rgba(255,255,255,.08);
+
+    }
+
+
+    /* =====================================================
+       CONTENIDO CONTACT
+    ===================================================== */
+
+    .contact-page {
+
+      width: 100%;
+
+      min-height: calc(100vh - 190px);
+
+      background: #080808;
+
+    }
+
+
+    .contact-section {
+
+      width: 100%;
+
+      max-width: 1200px;
+
+      margin: 0 auto;
+
+      padding:
+        70px
+        5%
+        100px;
+
+      display: grid;
+
+      grid-template-columns:
+        minmax(280px, .8fr)
+        minmax(350px, 1.2fr);
+
+      gap: 100px;
+
+      align-items: start;
+
+    }
+
+
+    /* =====================================================
+       INTRO
+    ===================================================== */
+
+    .contact-intro {
+
+      padding-top: 15px;
+
+    }
+
+
+    .eyebrow {
+
+      color: #c9a96e;
+
+      font-size: 12px;
+
+      font-weight: 500;
+
+      letter-spacing: 2.5px;
+
+      margin-bottom: 18px;
+
+    }
+
+
+    .contact-intro h1 {
+
+      color: white;
+
+      font-family:
+        "Allura",
+        "Brush Script MT",
+        cursive;
+
+      font-size:
+        clamp(
+          60px,
+          6vw,
+          88px
+        );
+
+      font-weight: 400;
+
+      line-height: .9;
+
+      margin-bottom: 30px;
+
+    }
+
+
+    .intro-text {
+
+      max-width: 420px;
+
+      color: #aaa;
+
+      font-size: 15px;
+
+      font-weight: 300;
+
+      line-height: 1.8;
+
+    }
+
+
+    /* =====================================================
+       FORMULARIO
+    ===================================================== */
+
+    .contact-form {
+
+      width: 100%;
+
+    }
+
+
+    .form-row {
+
+      display: grid;
+
+      grid-template-columns:
+        1fr
+        1fr;
+
+      gap: 20px;
+
+    }
+
+
+    .form-group {
+
+      margin-bottom: 25px;
+
+    }
+
+
+    .form-group label {
+
+      display: block;
+
+      color: #ddd;
+
+      font-size: 12px;
+
+      font-weight: 400;
+
+      letter-spacing: .5px;
+
+      margin-bottom: 9px;
+
+    }
+
+
+    .form-group input,
+    .form-group textarea {
+
+      display: block;
+
+      width: 100%;
+
+      border:
+        1px solid
+        rgba(255,255,255,.22);
+
+      border-radius: 0;
+
+      outline: none;
+
+      background:
+        rgba(255,255,255,.035);
+
+      color: white;
+
+      font-family:
+        "Montserrat",
+        Arial,
+        sans-serif;
+
+      font-size: 14px;
+
+      font-weight: 300;
+
+      transition:
+        border-color .25s ease,
+        background .25s ease;
+
+    }
+
+
+    .form-group input {
+
+      height: 48px;
+
+      padding:
+        0
+        14px;
+
+    }
+
+
+    .form-group textarea {
+
+      min-height: 150px;
+
+      resize: vertical;
+
+      padding: 14px;
+
+      line-height: 1.6;
+
+    }
+
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+
+      border-color:
+        rgba(255,255,255,.7);
+
+      background:
+        rgba(255,255,255,.06);
+
+    }
+
+
+    /* =====================================================
+       HONEYPOT
+    ===================================================== */
+
+    .hidden-field {
+
+      position: absolute;
+
+      left: -9999px;
+
+      width: 1px;
+
+      height: 1px;
+
+      overflow: hidden;
+
+    }
+
+
+    /* =====================================================
+       BOTÓN SEND
+    ===================================================== */
+
+    .send-btn {
+
+      position: relative;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      min-width: 165px;
+
+      height: 48px;
+
+      padding:
+        0
+        24px;
+
+      border:
+        1px solid
+        rgba(255,255,255,.8);
+
+      border-radius: 30px;
+
+      background: white;
+
+      color: #111;
+
+      font-family:
+        "Montserrat",
+        Arial,
+        sans-serif;
+
+      font-size: 13px;
+
+      font-weight: 400;
+
+      cursor: pointer;
+
+      transition:
+        background .25s ease,
+        color .25s ease,
+        border-color .25s ease;
+
+    }
+
+
+    .send-btn:hover {
+
+      background: transparent;
+
+      color: white;
+
+      border-color: white;
+
+    }
+
+
+    .send-btn:disabled {
+
+      opacity: .6;
+
+      cursor:
+        not-allowed;
+
+    }
+
+
+    .btn-loading {
+
+      display: none;
+
+    }
+
+
+    .send-btn.loading .btn-text {
+
+      display: none;
+
+    }
+
+
+    .send-btn.loading .btn-loading {
+
+      display: inline;
+
+    }
+
+
+    /* =====================================================
+       MENSAJE FORMULARIO
+    ===================================================== */
+
+    .form-message {
+
+      min-height: 25px;
+
+      margin-top: 18px;
+
+      font-size: 13px;
+
+      line-height: 1.5;
+
+    }
+
+
+    .form-message.success {
+
+      color: #b9cdb3;
+
+    }
+
+
+    .form-message.error {
+
+      color: #d98d8d;
+
+    }
+
+
+    /* =====================================================
+       RESPONSIVE 1250
+    ===================================================== */
+
+    @media (max-width: 1250px) {
+
+
+      header {
+
+        padding-left: 3%;
+
+        padding-right: 3%;
+
+      }
+
+
+      nav {
+
+        gap: 21px;
+
+        margin-left: 35px;
+
+      }
+
+
+      nav a {
+
+        font-size: 15px;
+
+      }
+
+
+      .socials {
+
+        gap: 15px;
+
+        margin-right: 8px;
+
+      }
+
+
+      .header-right {
+
+        gap: 12px;
+
+      }
+
+
+      .home-btn {
+
+        width: 100px;
+
+        height: 64px;
+
+        font-size: 19px;
+
+      }
+
+
+      .contact-section {
+
+        gap: 60px;
+
+      }
+
+    }
+
+
+    /* =====================================================
+       RESPONSIVE 980
+    ===================================================== */
+
+    @media (max-width: 980px) {
+
+
+      .top-section {
+
+        min-height: 150px;
+
+      }
+
+
+      header {
+
+        height: 95px;
+
+        padding:
+          24px
+          25px
+          0;
+
+      }
+
+
+      .brand {
+
+        font-size: 26px;
+
+      }
+
+
+      nav,
+      .socials {
+
+        display: none;
+
+      }
+
+
+      .header-right {
+
+        margin-left: auto;
+
+      }
+
+
+      .mobile-toggle {
+
+        display: flex;
+
+      }
+
+
+      .home-btn {
+
+        width: 88px;
+
+        height: 54px;
+
+        font-size: 18px;
+
+      }
+
+
+      .contact-section {
+
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+        padding:
+          55px
+          7%
+          80px;
+
+      }
+
+
+      .contact-intro {
+
+        padding-top: 0;
+
+      }
+
+
+      .contact-intro h1 {
+
+        font-size:
+          clamp(
+            60px,
+            10vw,
+            82px
+          );
+
+      }
+
+    }
+
+
+    /* =====================================================
+       RESPONSIVE 560
+    ===================================================== */
+
+    @media (max-width: 560px) {
+
+
+      .top-section {
+
+        min-height: 125px;
+
+        background-position:
+          62% center;
+
+      }
+
+
+      .home-btn {
+
+        display: none;
+
+      }
+
+
+      .contact-section {
+
+        padding:
+          45px
+          20px
+          65px;
+
+        gap: 35px;
+
+      }
+
+
+      .contact-intro h1 {
+
+        font-size: 65px;
+
+      }
+
+
+      .intro-text {
+
+        font-size: 14px;
+
+        line-height: 1.7;
+
+      }
+
+
+      .form-row {
+
+        grid-template-columns: 1fr;
+
+        gap: 0;
+
+      }
+
+
+      .form-group {
+
+        margin-bottom: 22px;
+
+      }
+
+
+      .form-group input {
+
+        height: 46px;
+
+      }
+
+
+      .form-group textarea {
+
+        min-height: 140px;
+
+      }
+
+
+      .send-btn {
+
+        width: 100%;
+
+      }
+
+    }
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer {
+      position: relative;
+
+      width: 100%;
+
+      padding: 20px 20px 30px;
+
+      color: #666;
+
+      font-size: 11px;
+
+      text-align: center;
+
+      background: #080808;
+    }
+
+
+  </style>
+
 </head>
+
 
 <body>
 
-<header>
 
-    <a class="brand" href="index.html">
+  <!-- =====================================================
+       CABECERA
+  ====================================================== -->
+
+  <section class="top-section">
+
+
+    <header>
+
+
+      <!-- NOMBRE -->
+
+      <a
+        class="brand"
+        href="index.html">
+
         Daniel Buades
-    </a>
 
-    <nav aria-label="Main navigation">
-        <a href="biography.html">Biography</a>
-        <a href="videos.html">Videos</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="concerts.html">Concerts</a>
-        <a href="contact.html" class="active">Contact</a>
-    </nav>
+      </a>
 
-    <div class="header-right">
 
-        <div class="socials" aria-label="Social networks">
+      <!-- MENÚ -->
 
-            <!-- Instagram -->
-            <a href="#" aria-label="Instagram">
-                <svg viewBox="0 0 24 24">
-                    <rect
-                        x="3.2"
-                        y="3.2"
-                        width="17.6"
-                        height="17.6"
-                        rx="5">
-                    </rect>
+      <nav aria-label="Main navigation">
 
-                    <circle
-                        cx="12"
-                        cy="12"
-                        r="4.1">
-                    </circle>
+        <a href="biography.html">
+          Biography
+        </a>
 
-                    <circle
-                        class="fill-icon"
-                        cx="17.5"
-                        cy="6.7"
-                        r="1.1">
-                    </circle>
-                </svg>
-            </a>
+        <a href="videos.html">
+          Videos
+        </a>
 
-            <!-- Spotify -->
-            <a href="#" aria-label="Spotify">
-                <svg class="fill-icon" viewBox="0 0 24 24">
+        <a href="gallery.html">
+          Gallery
+        </a>
 
-                    <circle cx="12" cy="12" r="11"></circle>
+        <a href="concerts.html">
+          Concerts
+        </a>
 
-                    <path
-                        d="M7 9.1c3.8-1.1 7.5-.8 10.5.4"
-                        stroke="#111"
-                        stroke-width="1.5"
-                        fill="none"
-                        stroke-linecap="round">
-                    </path>
+        <a
+          href="contact.html"
+          class="active">
 
-                    <path
-                        d="M7.7 12c3.1-.8 6.3-.5 8.8.5"
-                        stroke="#111"
-                        stroke-width="1.5"
-                        fill="none"
-                        stroke-linecap="round">
-                    </path>
+          Contact
 
-                    <path
-                        d="M8.5 14.8c2.4-.5 4.8-.3 6.7.5"
-                        stroke="#111"
-                        stroke-width="1.5"
-                        fill="none"
-                        stroke-linecap="round">
-                    </path>
+        </a>
 
-                </svg>
-            </a>
+      </nav>
 
-            <!-- Facebook -->
-            <a href="#" aria-label="Facebook">
-                <svg class="fill-icon" viewBox="0 0 24 24">
 
-                    <path
-                        d="M13.8 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.2V10H8v3h2.6v8h3.2z">
-                    </path>
+      <!-- DERECHA -->
 
-                </svg>
-            </a>
+      <div class="header-right">
 
-            <!-- YouTube -->
-            <a href="#" aria-label="YouTube">
-                <svg class="fill-icon" viewBox="0 0 24 24">
 
-                    <path
-                        d="M22 7.2c-.2-1.1-1.1-2-2.2-2.2C18 4.7 15.1 4.5 12 4.5s-6 .2-7.8.5C3.1 5.2 2.2 6.1 2 7.2c-.3 1.5-.4 3-.4 4.8s.1 3.3.4 4.8c.2 1.1 1.1 2 2.2 2.2 1.8.3 4.7.5 7.8.5s6-.2 7.8-.5c1.1-.2 2-1.1 2.2-2.2.3-1.5.4-3 .4-4.8s-.1-3.3-.4-4.8zM10 15.5v-7l6 3.5-6 3.5z">
-                    </path>
+        <!-- REDES -->
 
-                </svg>
-            </a>
+        <div
+          class="socials"
+          aria-label="Social networks">
+
+
+          <!-- INSTAGRAM -->
+
+          <a
+            href="#"
+            aria-label="Instagram">
+
+            <svg viewBox="0 0 24 24">
+
+              <rect
+                x="3.2"
+                y="3.2"
+                width="17.6"
+                height="17.6"
+                rx="5">
+              </rect>
+
+              <circle
+                cx="12"
+                cy="12"
+                r="4.1">
+              </circle>
+
+              <circle
+                class="fill-icon"
+                cx="17.5"
+                cy="6.7"
+                r="1.1">
+              </circle>
+
+            </svg>
+
+          </a>
+
+
+          <!-- SPOTIFY -->
+
+          <a
+            href="#"
+            aria-label="Spotify">
+
+            <svg
+              class="fill-icon"
+              viewBox="0 0 24 24">
+
+              <circle
+                cx="12"
+                cy="12"
+                r="11">
+              </circle>
+
+              <path
+                d="M7 9.1c3.8-1.1 7.5-.8 10.5.4"
+                stroke="#111"
+                stroke-width="1.5"
+                fill="none"
+                stroke-linecap="round">
+              </path>
+
+              <path
+                d="M7.7 12c3.1-.8 6.3-.5 8.8.5"
+                stroke="#111"
+                stroke-width="1.5"
+                fill="none"
+                stroke-linecap="round">
+              </path>
+
+              <path
+                d="M8.5 14.8c2.4-.5 4.8-.3 6.7.5"
+                stroke="#111"
+                stroke-width="1.5"
+                fill="none"
+                stroke-linecap="round">
+              </path>
+
+            </svg>
+
+          </a>
+
+
+          <!-- FACEBOOK -->
+
+          <a
+            href="#"
+            aria-label="Facebook">
+
+            <svg
+              class="fill-icon"
+              viewBox="0 0 24 24">
+
+              <path
+                d="M13.8 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.2V10H8v3h2.6v8h3.2z">
+              </path>
+
+            </svg>
+
+          </a>
+
+
+          <!-- YOUTUBE -->
+
+          <a
+            href="#"
+            aria-label="YouTube">
+
+            <svg
+              class="fill-icon"
+              viewBox="0 0 24 24">
+
+              <path
+                d="M22 7.2c-.2-1.1-1.1-2-2.2-2.2C18 4.7 15.1 4.5 12 4.5s-6 .2-7.8.5C3.1 5.2 2.2 6.1 2 7.2c-.3 1.5-.4 3-.4 4.8s.1 3.3.4 4.8c.2 1.1 1.1 2 2.2 2.2 1.8.3 4.7.5 7.8.5s6-.2 7.8-.5c1.1-.2 2-1.1-2.2-2.2.3-1.5.4-3 .4-4.8s-.1-3.3-.4-4.8zM10 15.5v-7l6 3.5-6 3.5z">
+              </path>
+
+            </svg>
+
+          </a>
 
         </div>
 
-        <a class="home-btn" href="index.html">
-            Home
+
+        <!-- HOME -->
+
+        <a
+          class="home-btn"
+          href="index.html">
+
+          Home
+
         </a>
 
+
+        <!-- BOTÓN MÓVIL -->
+
         <button
-            class="mobile-toggle"
-            aria-label="Open menu"
-            type="button">
-            <span></span>
+          class="mobile-toggle"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          type="button">
+
+          <span></span>
+
         </button>
+
+      </div>
+
+    </header>
+
+
+    <!-- ===================================================
+         MENÚ MÓVIL
+    ==================================================== -->
+
+    <div
+      class="mobile-menu"
+      id="mobile-menu">
+
+      <a href="biography.html">
+        Biography
+      </a>
+
+      <a href="videos.html">
+        Videos
+      </a>
+
+      <a href="gallery.html">
+        Gallery
+      </a>
+
+      <a href="concerts.html">
+        Concerts
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
 
     </div>
 
-</header>
+
+  </section>
 
 
-<main class="contact-page">
+  <!-- =====================================================
+       CONTENIDO CONTACT
+  ====================================================== -->
+
+  <main class="contact-page">
+
 
     <section class="contact-section">
 
-        <div class="contact-intro">
 
-            <p class="eyebrow">
-                CONTACT
-            </p>
+      <!-- INTRO -->
 
-            <h1>
-                Get in touch
-            </h1>
+      <div class="contact-intro">
 
-            <p class="intro-text">
-                For bookings, performances, collaborations, or lessons,
-                feel free to get in touch.
-            </p>
+
+        <p class="eyebrow">
+
+          CONTACT
+
+        </p>
+
+
+        <h1>
+
+          Get in touch
+
+        </h1>
+
+
+        <p class="intro-text">
+
+          For bookings, performances, collaborations,
+          or lessons, feel free to get in touch.
+
+        </p>
+
+      </div>
+
+
+      <!-- FORMULARIO -->
+
+      <form
+        id="contact-form"
+        class="contact-form"
+        novalidate>
+
+
+        <!-- NOMBRE / APELLIDO -->
+
+        <div class="form-row">
+
+
+          <div class="form-group">
+
+            <label for="nombre">
+
+              First name
+
+            </label>
+
+
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              autocomplete="given-name"
+              required>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="apellido">
+
+              Last name
+
+            </label>
+
+
+            <input
+              type="text"
+              id="apellido"
+              name="apellido"
+              autocomplete="family-name"
+              required>
+
+          </div>
+
 
         </div>
 
 
-        <form
-            id="contact-form"
-            class="contact-form"
-            novalidate>
+        <!-- EMAIL -->
 
-            <div class="form-row">
+        <div class="form-group">
 
-                <div class="form-group">
+          <label for="email">
 
-                    <label for="nombre">
-                        First name
-                    </label>
+            Email
 
-                    <input
-                        type="text"
-                        id="nombre"
-                        name="nombre"
-                        autocomplete="given-name"
-                        required>
-
-                </div>
+          </label>
 
 
-                <div class="form-group">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            autocomplete="email"
+            required>
 
-                    <label for="apellido">
-                        Last name
-                    </label>
-
-                    <input
-                        type="text"
-                        id="apellido"
-                        name="apellido"
-                        autocomplete="family-name"
-                        required>
-
-                </div>
-
-            </div>
+        </div>
 
 
-            <div class="form-group">
+        <!-- MENSAJE -->
 
-                <label for="email">
-                    Email
-                </label>
+        <div class="form-group">
 
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    autocomplete="email"
-                    required>
+          <label for="mensaje">
 
-            </div>
+            Message
+
+          </label>
 
 
-            <div class="form-group">
+          <textarea
+            id="mensaje"
+            name="mensaje"
+            rows="6"
+            required></textarea>
 
-                <label for="mensaje">
-                    Message
-                </label>
-
-                <textarea
-                    id="mensaje"
-                    name="mensaje"
-                    rows="6"
-                    required>
-                </textarea>
-
-            </div>
+        </div>
 
 
-            <!-- Honeypot anti-spam -->
-            <div class="hidden-field" aria-hidden="true">
+        <!-- HONEYPOT -->
 
-                <label for="website">
-                    Website
-                </label>
-
-                <input
-                    type="text"
-                    id="website"
-                    name="website"
-                    tabindex="-1"
-                    autocomplete="off">
-
-            </div>
+        <div
+          class="hidden-field"
+          aria-hidden="true">
 
 
-            <button
-                type="submit"
-                class="send-btn"
-                id="send-btn">
+          <label for="website">
 
-                <span class="btn-text">
-                    Send message
-                </span>
+            Website
 
-                <span
-                    class="btn-loading"
-                    aria-hidden="true">
-                    Sending...
-                </span>
-
-            </button>
+          </label>
 
 
-            <div
-                id="form-message"
-                class="form-message"
-                role="status"
-                aria-live="polite">
-            </div>
+          <input
+            type="text"
+            id="website"
+            name="website"
+            tabindex="-1"
+            autocomplete="off">
 
-        </form>
+        </div>
+
+
+        <!-- BOTÓN -->
+
+        <button
+          type="submit"
+          class="send-btn"
+          id="send-btn">
+
+
+          <span class="btn-text">
+
+            Send message
+
+          </span>
+
+
+          <span
+            class="btn-loading"
+            aria-hidden="true">
+
+            Sending...
+
+          </span>
+
+
+        </button>
+
+
+        <!-- MENSAJE -->
+
+        <div
+          id="form-message"
+          class="form-message"
+          role="status"
+          aria-live="polite">
+
+        </div>
+
+
+      </form>
+
 
     </section>
 
-</main>
+
+  </main>
+
+  <!-- =======================================================
+       FOOTER
+  ======================================================== -->
+
+  <footer>
+
+    © 2026 Daniel Buades. All rights reserved.
+
+  </footer>
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
+  <script>
 
 
-<script>
+    /* =====================================================
+       FORMULARIO
+    ===================================================== */
 
-const form = document.getElementById("contact-form");
-const button = document.getElementById("send-btn");
-const message = document.getElementById("form-message");
-
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzfWL9XxD3xpMV58ZstWS1wDZyF6WiRXsOxaoP_hRdpo3uMPl4r3LpuFWUWWQYoZLnriQ/exec";
-
-
-form.addEventListener("submit", async function(event) {
-
-    event.preventDefault();
-
-    message.textContent = "";
-    message.className = "form-message";
+    const form =
+      document.getElementById(
+        "contact-form"
+      );
 
 
-    /* Anti-spam */
-
-    const website = document.getElementById("website").value;
-
-    if (website.trim() !== "") {
-        return;
-    }
+    const button =
+      document.getElementById(
+        "send-btn"
+      );
 
 
-    /* Validación */
-
-    if (!form.checkValidity()) {
-
-        form.reportValidity();
-
-        return;
-    }
+    const message =
+      document.getElementById(
+        "form-message"
+      );
 
 
-    button.disabled = true;
-    button.classList.add("loading");
+    /* =====================================================
+       GOOGLE APPS SCRIPT
+    ===================================================== */
+
+    const SCRIPT_URL =
+      "https://script.google.com/macros/s/AKfycbzfWL9XxD3xpMV58ZstWS1wDZyF6WiRXsOxaoP_hRdpo3uMPl4r3LpuFWUWWQYoZLnriQ/exec";
 
 
-    const data = {
+    /* =====================================================
+       ENVIAR FORMULARIO
+    ===================================================== */
 
-        nombre:
-            document.getElementById("nombre").value.trim(),
-
-        apellido:
-            document.getElementById("apellido").value.trim(),
-
-        email:
-            document.getElementById("email").value.trim(),
-
-        mensaje:
-            document.getElementById("mensaje").value.trim()
-
-    };
+    form.addEventListener(
+      "submit",
+      async function(event) {
 
 
-    try {
+        event.preventDefault();
 
-        await fetch(
-            SCRIPT_URL,
-            {
-                method: "POST",
 
-                mode: "no-cors",
+        message.textContent = "";
 
-                headers: {
-                    "Content-Type": "text/plain;charset=utf-8"
-                },
+        message.className =
+          "form-message";
 
-                body: JSON.stringify(data)
-            }
+
+        /* -----------------------------------------------
+           ANTI-SPAM
+        ------------------------------------------------ */
+
+        const website =
+          document.getElementById(
+            "website"
+          ).value;
+
+
+        if (
+          website.trim() !== ""
+        ) {
+
+          return;
+
+        }
+
+
+        /* -----------------------------------------------
+           VALIDACIÓN
+        ------------------------------------------------ */
+
+        if (
+          !form.checkValidity()
+        ) {
+
+          form.reportValidity();
+
+          return;
+
+        }
+
+
+        /* -----------------------------------------------
+           ESTADO CARGANDO
+        ------------------------------------------------ */
+
+        button.disabled = true;
+
+        button.classList.add(
+          "loading"
         );
 
 
-        form.reset();
+        /* -----------------------------------------------
+           DATOS
+        ------------------------------------------------ */
 
-        message.textContent =
+        const data = {
+
+          nombre:
+            document
+              .getElementById("nombre")
+              .value
+              .trim(),
+
+          apellido:
+            document
+              .getElementById("apellido")
+              .value
+              .trim(),
+
+          email:
+            document
+              .getElementById("email")
+              .value
+              .trim(),
+
+          mensaje:
+            document
+              .getElementById("mensaje")
+              .value
+              .trim()
+
+        };
+
+
+        /* -----------------------------------------------
+           ENVIAR
+        ------------------------------------------------ */
+
+        try {
+
+
+          await fetch(
+
+            SCRIPT_URL,
+
+            {
+
+              method: "POST",
+
+              mode: "no-cors",
+
+              headers: {
+
+                "Content-Type":
+                  "text/plain;charset=utf-8"
+
+              },
+
+              body:
+                JSON.stringify(data)
+
+            }
+
+          );
+
+
+          /* ---------------------------------------------
+             ÉXITO
+          ---------------------------------------------- */
+
+          form.reset();
+
+
+          message.textContent =
             "Thank you. Your message has been sent successfully.";
 
-        message.classList.add("success");
+
+          message.classList.add(
+            "success"
+          );
 
 
-    } catch (error) {
+        }
 
-        console.error(error);
 
-        message.textContent =
+        catch (error) {
+
+
+          console.error(error);
+
+
+          message.textContent =
             "Something went wrong. Please try again.";
 
-        message.classList.add("error");
 
-    }
+          message.classList.add(
+            "error"
+          );
+
+        }
 
 
-    button.disabled = false;
-    button.classList.remove("loading");
+        /* -----------------------------------------------
+           RESTAURAR BOTÓN
+        ------------------------------------------------ */
 
-});
+        button.disabled = false;
 
-</script>
+        button.classList.remove(
+          "loading"
+        );
+
+
+      }
+    );
+
+
+    /* =====================================================
+       MENÚ MÓVIL
+    ===================================================== */
+
+    const mobileToggle =
+      document.querySelector(
+        ".mobile-toggle"
+      );
+
+
+    const mobileMenu =
+      document.getElementById(
+        "mobile-menu"
+      );
+
+
+    mobileToggle.addEventListener(
+      "click",
+      () => {
+
+
+        const abierto =
+          mobileToggle.getAttribute(
+            "aria-expanded"
+          ) === "true";
+
+
+        mobileToggle.setAttribute(
+          "aria-expanded",
+          String(!abierto)
+        );
+
+
+        mobileMenu.style.display =
+          abierto
+            ? "none"
+            : "flex";
+
+
+      }
+    );
+
+
+  </script>
+
 
 </body>
+
 </html>

@@ -7,17 +7,25 @@
     <title>Gallery — Daniel Buades | Drummer & Composer</title>
     <meta name="description" content="Explore photos and gallery of Daniel Buades, drummer and composer.">
 
-
-    <!-- Tipografías -->
+    <!-- TIPOGRAFÍAS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500&family=Montserrat:wght@300;400&display=swap"
+        rel="stylesheet"
+    >
 
     <style>
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
         html {
@@ -25,481 +33,431 @@
         }
 
         body {
-            background: #080b0c;
+            width: 100%;
+            min-height: 100%;
+            background: #080808;
             color: #fff;
-            font-family: "Inter", sans-serif;
+            font-family: "Montserrat", Arial, sans-serif;
             overflow-x: hidden;
         }
 
-/* =========================
-   HEADER
-========================= */
 
-header {
-    position: absolute;
-    top: 0;
-    left: 0;
+        /* =========================================================
+           HEADER
+           EXACTAMENTE IGUAL AL DE LA PÁGINA INICIAL
+        ========================================================= */
 
-    width: 100%;
-    height: 92px;
+        header {
+            position: absolute;
+            z-index: 50;
 
-    z-index: 50;
+            top: 0;
+            left: 0;
 
-    display: flex;
-    align-items: center;
+            width: 100%;
+            height: 134px;
 
-    padding: 0 48px;
+            display: flex;
+            align-items: center;
 
-    box-sizing: border-box;
+            padding: 0 5.4% 0 3.9%;
 
-    color: #fff;
-}
+            color: #fff;
+        }
 
 
-/* =========================
-   LOGO
-========================= */
+        /* =========================================================
+           LOGO
+        ========================================================= */
 
-.brand {
-    flex-shrink: 0;
+        .brand {
+            flex: 0 0 auto;
 
-    color: #fff;
-    text-decoration: none;
+            color: #fff;
+            text-decoration: none;
 
-    font-family: Georgia, "Times New Roman", serif;
+            font-family: "Cormorant Garamond", Georgia, serif;
 
-    font-size: 25px;
-    font-weight: 400;
+            font-size: 29px;
+            font-weight: 400;
 
-    line-height: 1;
+            line-height: 1;
 
-    white-space: nowrap;
-}
+            letter-spacing: -.6px;
 
+            white-space: nowrap;
+        }
 
-/* =========================
-   NAVEGACIÓN
-========================= */
 
-nav {
-    display: flex;
-    align-items: center;
+        /* =========================================================
+           NAVEGACIÓN
+        ========================================================= */
 
-    gap: 32px;
+        nav {
+            display: flex;
+            align-items: center;
 
-    margin-left: 55px;
-}
+            gap: 33px;
 
-nav a {
-    position: relative;
+            margin-left: 54px;
+        }
 
-    color: rgba(255, 255, 255, .95);
+        nav a {
+            position: relative;
 
-    text-decoration: none;
+            color: #fff;
+            text-decoration: none;
 
-    font-family: "Inter", Arial, sans-serif;
+            font-family: "Montserrat", Arial, sans-serif;
 
-    font-size: 16px;
-    font-weight: 400;
+            font-size: 17px;
+            font-weight: 400;
 
-    line-height: 1;
+            line-height: 1;
 
-    white-space: nowrap;
+            white-space: nowrap;
 
-    transition:
-        opacity .25s ease,
-        color .25s ease;
-}
+            transition: opacity .25s ease;
+        }
 
-nav a:hover {
-    opacity: .55;
-}
+        nav a:hover {
+            opacity: .65;
+        }
 
 
-nav a.active {
-    color: #fff;
-}
+        /* =========================================================
+           PÁGINA ACTIVA
+           
+           SOLO LA PÁGINA ACTUAL TIENE SUBRAYADO
+        ========================================================= */
 
+        nav a.active::after {
+            content: "";
 
-/* Página activa */
+            position: absolute;
 
-nav a.active::after {
-    content: "";
+            left: 0;
+            right: 0;
 
-    position: absolute;
+            bottom: -9px;
 
-    left: 0;
-    right: 0;
-    bottom: -7px;
+            height: 1px;
 
-    height: 1px;
+            background: rgba(255,255,255,.95);
+        }
 
-    background: #fff;
 
-    opacity: .9;
-}
+        /* =========================================================
+           PARTE DERECHA
+        ========================================================= */
 
-/* =========================
-   PARTE DERECHA
-========================= */
+        .header-right {
+            margin-left: auto;
 
-.header-right {
-    margin-left: auto;
+            display: flex;
+            align-items: center;
 
-    display: flex;
-    align-items: center;
+            gap: 25px;
+        }
 
-    gap: 28px;
-}
 
+        /* =========================================================
+           REDES SOCIALES
+        ========================================================= */
 
-/* =========================
-   REDES SOCIALES
-========================= */
+        .socials {
+            display: flex;
+            align-items: center;
 
-.socials {
-    display: flex;
-    align-items: center;
+            gap: 24px;
 
-    gap: 16px;
-}
+            margin-right: 22px;
+        }
 
-.socials a {
-    width: 22px;
-    height: 22px;
+        .socials a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+            width: 25px;
+            height: 25px;
 
-    color: #fff;
+            color: #fff;
 
-    text-decoration: none;
+            text-decoration: none;
 
-    opacity: .95;
+            transition:
+                transform .2s ease,
+                opacity .2s ease;
+        }
 
-    transition:
-        opacity .25s ease,
-        transform .25s ease;
-}
+        .socials a:hover {
+            transform: translateY(-2px);
+            opacity: .7;
+        }
 
-.socials a:hover {
-    opacity: .55;
-    transform: translateY(-1px);
-}
+        .socials svg {
+            width: 23px;
+            height: 23px;
 
-.socials svg {
-    width: 19px;
-    height: 19px;
+            fill: none;
 
-    display: block;
+            stroke: currentColor;
+            stroke-width: 1.8;
+        }
 
-    fill: none;
+        .socials .fill-icon {
+            fill: currentColor;
+            stroke: none;
+        }
 
-    stroke: #fff;
 
-    stroke-width: 1.5;
-}
+        /* =========================================================
+           BOTÓN HOME
+        ========================================================= */
 
+        .home-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-/* Iconos rellenos */
+            width: 118px;
+            height: 75px;
 
-.socials svg.fill-icon,
-.socials svg.facebook,
-.socials svg.youtube {
-    stroke: none;
-    fill: #fff;
-}
+            border: 1px solid rgba(255,255,255,.95);
 
+            border-radius: 50%;
 
-/* Spotify */
+            color: #fff;
+            text-decoration: none;
 
-.socials .spotify {
-    stroke: none;
-}
+            font-family: "Cormorant Garamond", Georgia, serif;
 
+            font-size: 21px;
 
-/* =========================
-   BOTÓN HOME
-========================= */
+            transition:
+                background .25s ease,
+                color .25s ease;
+        }
 
-.home-btn {
-    width: 82px;
-    height: 40px;
+        .home-btn:hover {
+            background: rgba(255,255,255,.95);
+            color: #111;
+        }
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
-    border: 1px solid rgba(255, 255, 255, .75);
+        /* =========================================================
+           MENÚ MÓVIL
+        ========================================================= */
 
-    border-radius: 22px;
+        .mobile-toggle {
+            display: none;
 
-    color: #fff;
+            position: relative;
 
-    text-decoration: none;
+            width: 48px;
+            height: 48px;
 
-    font-family: "Inter", Arial, sans-serif;
+            border: 1px solid rgba(255,255,255,.8);
 
-    font-size: 14px;
-    font-weight: 400;
+            border-radius: 50%;
 
-    transition:
-        background .3s ease,
-        color .3s ease;
-}
+            align-items: center;
+            justify-content: center;
 
-.home-btn:hover {
-    background: #fff;
-    color: #111;
-}
+            color: white;
+            background: transparent;
 
+            cursor: pointer;
+        }
 
-/* =========================
-   RESPONSIVE
-========================= */
+        .mobile-toggle span,
+        .mobile-toggle span::before,
+        .mobile-toggle span::after {
+            display: block;
 
-@media (max-width: 1200px) {
+            position: absolute;
 
-    header {
-        padding: 0 35px;
-    }
+            width: 19px;
+            height: 1px;
 
-    .brand {
-        font-size: 23px;
-    }
+            background: currentColor;
 
-    nav {
-        gap: 24px;
-        margin-left: 40px;
-    }
+            content: "";
+        }
 
-    nav a {
-        font-size: 15px;
-    }
+        .mobile-toggle span::before {
+            transform: translateY(-6px);
+        }
 
-    .socials {
-        gap: 13px;
-    }
+        .mobile-toggle span::after {
+            transform: translateY(6px);
+        }
 
-    .socials a {
-        width: 21px;
-        height: 21px;
-    }
 
-    .socials svg {
-        width: 18px;
-        height: 18px;
-    }
-}
+        /* =========================================================
+           MENÚ MÓVIL DESPLEGABLE
+        ========================================================= */
 
+        .mobile-menu {
+            position: fixed;
 
-/* =========================
-   TABLET / MOBILE
-========================= */
+            top: 95px;
+            left: 0;
 
-@media (max-width: 900px) {
+            width: 100%;
 
-    header {
-        height: 78px;
-        padding: 0 25px;
-    }
+            z-index: 40;
 
-    .brand {
-        font-size: 22px;
-    }
+            display: none;
 
-    nav {
-        display: none;
-    }
+            flex-direction: column;
 
-    .socials {
-        display: none;
-    }
+            padding: 20px 25px 25px;
 
-    .home-btn {
-        display: none;
-    }
+            background: rgba(8,8,8,.96);
 
-    .mobile-toggle {
-        display: flex;
-    }
-}
+            backdrop-filter: blur(10px);
+        }
 
+        .mobile-menu a {
+            color: white;
+            text-decoration: none;
 
-/* =========================
-   TABLET
-========================= */
+            font-family: "Montserrat", Arial, sans-serif;
 
-@media (max-width: 1100px) {
+            font-size: 17px;
 
-    header {
-        padding-left: 40px;
-        padding-right: 40px;
-    }
+            padding: 14px 0;
 
-    nav {
-        gap: 23px;
-        margin-left: 30px;
-    }
+            border-bottom: 1px solid rgba(255,255,255,.12);
+        }
 
-    nav a {
-        font-size: 10px;
-    }
+        .mobile-menu a:last-child {
+            border-bottom: none;
+        }
 
-    .header-right {
-        gap: 23px;
-    }
+        .mobile-menu a.active {
+            opacity: .65;
+        }
 
-    .socials {
-        gap: 18px;
-    }
-}
 
+        /* =========================================================
+           HERO / CABECERA DE GALLERY
+        ========================================================= */
 
-/* =========================
-   MÓVIL
-========================= */
+        .hero {
+            position: relative;
 
-@media (max-width: 850px) {
+            width: 100%;
+            height: 365px;
 
-    header {
-        height: 70px;
-        padding: 0 24px;
-    }
+            overflow: hidden;
 
-    nav {
-        display: none;
-    }
+            display: flex;
+            align-items: flex-end;
 
-    .header-right {
-        gap: 18px;
-    }
+            padding: 0 8.2% 70px;
 
-    .socials {
-        gap: 16px;
-    }
+            background:
+                linear-gradient(
+                    rgba(5,10,12,.12),
+                    rgba(5,10,12,.12)
+                ),
+                url("./img/videos-bg.jpg")
+                center center / cover no-repeat;
+        }
 
-    .home-btn {
-        width: 57px;
-        height: 36px;
-    }
-}
+        .hero::after {
+            content: "";
 
+            position: absolute;
+            inset: 0;
 
-@media (max-width: 500px) {
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(0,0,0,.10) 0%,
+                    rgba(0,0,0,.02) 55%,
+                    rgba(0,0,0,.08) 100%
+                );
 
-    header {
-        padding: 0 20px;
-    }
+            pointer-events: none;
+        }
 
-    .brand {
-        font-size: 13px;
-    }
+        .hero-content {
+            position: relative;
 
-    .socials {
-        gap: 13px;
-    }
+            z-index: 5;
+        }
 
-    .socials a {
-        width: 12px;
-        height: 12px;
-    }
+        .hero h1 {
+            color: #fff;
 
-    .socials svg {
-        width: 12px;
-        height: 12px;
-    }
+            font-family: "Cormorant Garamond", Georgia, serif;
 
-    .home-btn {
-        display: none;
-    }
-}
+            font-size: 52px;
+            font-weight: 400;
 
+            font-style: italic;
 
+            line-height: 1;
 
-        /* =========================
-           HERO
-        ========================= */
+            letter-spacing: 1px;
+        }
 
-.hero {
-    height: 365px;
 
-    position: relative;
-    overflow: hidden;
-
-    display: flex;
-    align-items: flex-end;
-
-    padding: 0 46px 137px;
-
-    background-image:
-        linear-gradient(
-            rgba(5, 10, 12, .10),
-            rgba(5, 10, 12, .10)
-        ),
-        url("./img/fondo-gallery.png");
-
-    background-size: cover;
-    background-position: center;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 5;
-}
-
-.hero h1 {
-    margin: 0;
-
-    color: #fff;
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 52px;
-    font-weight: 400;
-
-    font-style: italic;
-
-    letter-spacing: 2px;
-}
-
-
-        /* =========================
+        /* =========================================================
            GALERÍA
-        ========================= */
+        ========================================================= */
 
-.gallery {
-    width: 100%;
-    display: flex;
-    align-items: flex-start;
-    gap: 0;
-    background: #090b0c;
-}
+        .gallery {
+            width: 100%;
 
-.gallery-column {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-}
+            display: flex;
+            align-items: flex-start;
 
-.photo {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    cursor: pointer;
-}
+            background: #090b0c;
+        }
 
-.photo img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
+        .gallery-column {
+            width: 50%;
 
-.photo:hover img {
-    transform: scale(1.03);
-    filter: brightness(.7);
-}
+            display: flex;
+            flex-direction: column;
+        }
+
+        .photo {
+            position: relative;
+
+            width: 100%;
+
+            overflow: hidden;
+
+            cursor: pointer;
+        }
+
+        .photo img {
+            display: block;
+
+            width: 100%;
+            height: auto;
+
+            transition:
+                transform .5s ease,
+                filter .5s ease;
+        }
+
+        .photo:hover img {
+            transform: scale(1.03);
+
+            filter: brightness(.7);
+        }
+
+
+        /* =========================================================
+           OVERLAY
+        ========================================================= */
 
         .photo-overlay {
             position: absolute;
@@ -517,7 +475,8 @@ nav a.active::after {
                 );
 
             opacity: 0;
-            transition: .4s;
+
+            transition: opacity .4s ease;
         }
 
         .photo:hover .photo-overlay {
@@ -526,54 +485,50 @@ nav a.active::after {
 
         .photo-title {
             font-family: "Cormorant Garamond", serif;
+
             font-size: 25px;
+
             font-style: italic;
         }
 
-        /* Foto 3 grande */
-/*
-        .photo:nth-child(3) {
-            grid-column: 1 / 3;
-            height: 480px;
-        }
-*/
-        /* =========================
+
+        /* =========================================================
            FOOTER
-        ========================= */
+        ========================================================= */
 
         footer {
-            min-height: 180px;
-            background: #080a0b;
+            min-height: 150px;
+
+            width: 100%;
 
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
 
             padding: 40px 46px;
 
+            background: #080a0b;
+
             border-top: 1px solid rgba(255,255,255,.08);
-        }
 
-        footer .footer-name {
-            font-family: Georgia, serif;
-            font-size: 14px;
-        }
-
-        footer p {
             color: rgba(255,255,255,.5);
+
             font-size: 11px;
+
+            text-align: center;
         }
 
-        /* =========================
+
+        /* =========================================================
            LIGHTBOX
-        ========================= */
+        ========================================================= */
 
         .lightbox {
             position: fixed;
-            inset: 0;
-            z-index: 100;
 
-            background: rgba(0,0,0,.92);
+            inset: 0;
+
+            z-index: 100;
 
             display: flex;
             align-items: center;
@@ -581,10 +536,12 @@ nav a.active::after {
 
             padding: 40px;
 
+            background: rgba(0,0,0,.92);
+
             opacity: 0;
             visibility: hidden;
 
-            transition: .3s;
+            transition: opacity .3s ease;
         }
 
         .lightbox.active {
@@ -595,19 +552,23 @@ nav a.active::after {
         .lightbox img {
             max-width: 92vw;
             max-height: 88vh;
+
             object-fit: contain;
 
-            box-shadow: 0 20px 80px rgba(0,0,0,.6);
+            box-shadow:
+                0 20px 80px rgba(0,0,0,.6);
         }
 
         .close {
             position: absolute;
+
             top: 25px;
             right: 35px;
 
+            border: 0;
+
             color: white;
             background: none;
-            border: 0;
 
             font-size: 30px;
             font-weight: 200;
@@ -616,243 +577,418 @@ nav a.active::after {
         }
 
 
-        /* =========================
+        /* =========================================================
            RESPONSIVE
-        ========================= */
+        ========================================================= */
 
-    @media (max-width: 1250px) {
-      header { padding-left: 3%; padding-right: 3%; }
-      nav { gap: 21px; margin-left: 35px; }
-      nav a { font-size: 15px; }
-      .socials { gap: 15px; margin-right: 8px; }
-      .header-right { gap: 12px; }
-      .home-btn { width: 100px; height: 64px; font-size: 19px; }
-      .video-grid { column-gap: 28px; }
-    }
-
-    @media (max-width: 980px) {
-      header {
-        height: 95px;
-        padding: 24px 25px 0;
-        align-items: center;
-      }
-      .brand { font-size: 26px; }
-      nav, .socials { display: none; }
-      .header-right { margin-left: auto; }
-      .mobile-toggle {
-        display: flex;
-        width: 48px;
-        height: 48px;
-        border: 1px solid rgba(255,255,255,.8);
-        border-radius: 50%;
-        align-items: center;
-        justify-content: center;
-        background: transparent;
-      }
-
-
-        @media (max-width: 850px) {
+        @media (max-width: 1250px) {
 
             header {
-                padding: 0 22px;
+                padding-left: 3%;
+                padding-right: 3%;
             }
 
             nav {
-                display: none;
+                gap: 21px;
+                margin-left: 35px;
+            }
+
+            nav a {
+                font-size: 15px;
             }
 
             .socials {
                 gap: 15px;
+                margin-right: 8px;
             }
 
-            .home-button {
+            .header-right {
+                gap: 12px;
+            }
+
+            .home-btn {
+                width: 100px;
+                height: 64px;
+
+                font-size: 19px;
+            }
+        }
+
+
+        @media (max-width: 980px) {
+
+            header {
+                height: 95px;
+
+                padding: 24px 25px 0;
+
+                align-items: center;
+            }
+
+            .brand {
+                font-size: 26px;
+            }
+
+            nav,
+            .socials {
                 display: none;
+            }
+
+            .header-right {
+                margin-left: auto;
+            }
+
+            .home-btn {
+                width: 88px;
+                height: 54px;
+
+                font-size: 18px;
+            }
+
+            .mobile-toggle {
+                display: flex;
             }
 
             .hero {
                 height: 330px;
-                padding: 0 28px 70px;
-            }
 
-            .gallery {
-                grid-template-columns: 1fr;
-            }
-
-            .photo {
-                height: 300px;
-            }
-
-            .photo:nth-child(3) {
-                grid-column: auto;
-                height: 300px;
-            }
-
-            footer {
-                padding: 35px 25px;
-                flex-direction: column;
-                gap: 20px;
-                align-items: flex-start;
-            }
-        }
-
-        @media (max-width: 500px) {
-
-            .socials a:nth-child(n+3) {
-                display: none;
-            }
-
-            .hero {
-                height: 300px;
+                padding:
+                    0
+                    7%
+                    60px;
             }
 
             .hero h1 {
                 font-size: 48px;
             }
+        }
 
-            .photo {
-                height: 270px;
+
+        @media (max-width: 560px) {
+
+            header {
+                height: 90px;
+
+                padding:
+                    20px 20px 0;
+            }
+
+            .brand {
+                font-size: 24px;
+            }
+
+            .home-btn {
+                display: none;
+            }
+
+            .mobile-toggle {
+                width: 45px;
+                height: 45px;
+            }
+
+            .mobile-menu {
+                top: 90px;
+            }
+
+            .hero {
+                height: 300px;
+
+                padding:
+                    0
+                    7%
+                    45px;
+            }
+
+            .hero h1 {
+                font-size: 44px;
+            }
+
+            .gallery {
+                flex-direction: column;
+            }
+
+            .gallery-column {
+                width: 100%;
+            }
+
+            footer {
+                min-height: 130px;
+
+                padding:
+                    30px 20px;
             }
         }
+
     </style>
 </head>
 
 
 <body>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
 <header>
 
     <a class="brand" href="index.html">
         Daniel Buades
     </a>
 
+
     <nav aria-label="Main navigation">
-        <a href="biography.html">Biography</a>
-        <a href="videos.html">Videos</a>
-        <a href="gallery.html" class="active">Gallery</a>
-        <a href="concerts.html">Concerts</a>
-        <a href="contact.html">Contact</a>
+
+        <a href="biography.html">
+            Biography
+        </a>
+
+        <a href="videos.html">
+            Videos
+        </a>
+
+        <!-- PÁGINA ACTIVA -->
+        <a href="gallery.html" class="active">
+            Gallery
+        </a>
+
+        <a href="concerts.html">
+            Concerts
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
     </nav>
+
 
     <div class="header-right">
 
-        <div class="socials">
+
+        <!-- REDES -->
+
+        <div class="socials" aria-label="Social networks">
+
 
             <!-- Instagram -->
+
             <a href="#" aria-label="Instagram">
+
                 <svg viewBox="0 0 24 24">
-                    <rect x="3.5" y="3.5"
-                          width="17" height="17"
-                          rx="4.5"></rect>
 
-                    <circle cx="12" cy="12" r="4"></circle>
+                    <rect
+                        x="3.2"
+                        y="3.2"
+                        width="17.6"
+                        height="17.6"
+                        rx="5">
+                    </rect>
 
-                    <circle class="fill-icon"
-                            cx="17.5"
-                            cy="6.7"
-                            r="1.1"></circle>
+                    <circle
+                        cx="12"
+                        cy="12"
+                        r="4.1">
+                    </circle>
+
+                    <circle
+                        class="fill-icon"
+                        cx="17.5"
+                        cy="6.7"
+                        r="1.1">
+                    </circle>
+
                 </svg>
+
             </a>
+
 
             <!-- Spotify -->
+
             <a href="#" aria-label="Spotify">
-                <svg class="spotify" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="10"></circle>
 
-                    <path d="M7 9.3c3.4-1 7.2-.8 10.2.4"
-                          stroke="#111"
-                          stroke-width="1.5"
-                          fill="none"
-                          stroke-linecap="round"></path>
+                <svg
+                    class="fill-icon"
+                    viewBox="0 0 24 24">
 
-                    <path d="M7.5 12.1c3-.8 6.3-.6 8.9.4"
-                          stroke="#111"
-                          stroke-width="1.5"
-                          fill="none"
-                          stroke-linecap="round"></path>
+                    <circle
+                        cx="12"
+                        cy="12"
+                        r="11">
+                    </circle>
 
-                    <path d="M8.3 14.8c2.3-.5 4.7-.3 6.6.5"
-                          stroke="#111"
-                          stroke-width="1.5"
-                          fill="none"
-                          stroke-linecap="round"></path>
+                    <path
+                        d="M7 9.1c3.8-1.1 7.5-.8 10.5.4"
+                        stroke="#111"
+                        stroke-width="1.5"
+                        fill="none"
+                        stroke-linecap="round">
+                    </path>
+
+                    <path
+                        d="M7.7 12c3.1-.8 6.3-.5 8.8.5"
+                        stroke="#111"
+                        stroke-width="1.5"
+                        fill="none"
+                        stroke-linecap="round">
+                    </path>
+
+                    <path
+                        d="M8.5 14.8c2.4-.5 4.8-.3 6.7.5"
+                        stroke="#111"
+                        stroke-width="1.5"
+                        fill="none"
+                        stroke-linecap="round">
+                    </path>
+
                 </svg>
+
             </a>
+
 
             <!-- Facebook -->
+
             <a href="#" aria-label="Facebook">
-                <svg class="facebook" viewBox="0 0 24 24">
-                    <path d="M13.7 21v-8h2.7l.4-3h-3.1V8.1
-                             c0-.9.3-1.5 1.6-1.5h1.7V3.9
-                             c-.3 0-1.3-.1-2.4-.1
-                             -2.4 0-4.1 1.5-4.1 4.2V10H8v3h2.5v8z">
+
+                <svg
+                    class="fill-icon"
+                    viewBox="0 0 24 24">
+
+                    <path
+                        d="M13.8 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.2V10H8v3h2.6v8h3.2z">
                     </path>
+
                 </svg>
+
             </a>
 
+
             <!-- YouTube -->
+
             <a href="#" aria-label="YouTube">
-                <svg class="youtube" viewBox="0 0 24 24">
-                    <path d="M21.8 7.3c-.2-1-1-1.8-2-2
-                             -1.8-.4-4.7-.6-7.8-.6
-                             -3.1 0-6 .2-7.8.6
-                             -1 .2-1.8 1-2 2
-                             -.3 1.4-.4 3-.4 4.7
-                             0 1.7.1 3.3.4 4.7
-                             .2 1 1 1.8 2 2
-                             1.8.4 4.7.6 7.8.6
-                             3.1 0 6-.2 7.8-.6
-                             1-.2 1.8-1 2-2
-                             .3-1.4.4-3 .4-4.7
-                             0-1.7-.1-3.3-.4-4.7z">
+
+                <svg
+                    class="fill-icon"
+                    viewBox="0 0 24 24">
+
+                    <path
+                        d="M22 7.2c-.2-1.1-1.1-2-2.2-2.2C18 4.7 15.1 4.5 12 4.5s-6 .2-7.8.5C3.1 5.2 2.2 6.1 2 7.2c-.3 1.5-.4 3-.4 4.8s.1 3.3.4 4.8c.2 1.1 1.1 2 2.2 2.2 1.8.3 4.7.5 7.8.5s6-.2 7.8-.5c1.1-.2 2-1.1 2.2-2.2.3-1.5.4-3 .4-4.8s-.1-3.3-.4-4.8zM10 15.5v-7l6 3.5-6 3.5z">
                     </path>
 
-                    <path d="M10 15.5v-7l6 3.5z"
-                          fill="#111">
-                    </path>
                 </svg>
+
             </a>
 
         </div>
 
-        <a class="home-btn" href="index.html">
+
+        <!-- HOME -->
+
+        <a
+            class="home-btn"
+            href="index.html">
+
             Home
+
         </a>
+
+
+        <!-- MOBILE -->
+
+        <button
+            class="mobile-toggle"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false">
+
+            <span></span>
+
+        </button>
 
     </div>
 
 </header>
 
 
-    <!-- =========================
-         CABECERA
-    ========================= -->
+<!-- =========================================================
+     MENÚ MÓVIL
+========================================================= -->
 
-    <section class="hero">
+<div class="mobile-menu" id="mobile-menu">
 
-        <div class="hero-content">
-            <h1>Gallery</h1>
-        </div>
+    <a href="biography.html">
+        Biography
+    </a>
 
-    </section>
+    <a href="videos.html">
+        Videos
+    </a>
+
+    <a href="gallery.html" class="active">
+        Gallery
+    </a>
+
+    <a href="concerts.html">
+        Concerts
+    </a>
+
+    <a href="contact.html">
+        Contact
+    </a>
+
+</div>
 
 
-    <!-- =========================
-         GALERÍA — 6 FOTOS
-    ========================= -->
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            Gallery
+        </h1>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     GALERÍA
+========================================================= -->
 
 <section class="gallery">
+
 
     <div class="gallery-column">
 
         <div class="photo">
-            <img src="img/foto1.webp" alt="Fotografía 1">
+
+            <img
+                src="img/foto1.webp"
+                alt="Daniel Buades - Gallery photograph 1">
+
         </div>
 
-        <div class="photo">
-            <img src="img/foto4.webp" alt="Fotografía 4">
-        </div>
 
         <div class="photo">
-            <img src="img/foto5.webp" alt="Fotografía 5">
+
+            <img
+                src="img/foto4.webp"
+                alt="Daniel Buades - Gallery photograph 4">
+
+        </div>
+
+
+        <div class="photo">
+
+            <img
+                src="img/foto5.webp"
+                alt="Daniel Buades - Gallery photograph 5">
+
         </div>
 
     </div>
@@ -861,15 +997,29 @@ nav a.active::after {
     <div class="gallery-column">
 
         <div class="photo">
-            <img src="img/foto2.webp" alt="Fotografía 2">
+
+            <img
+                src="img/foto2.webp"
+                alt="Daniel Buades - Gallery photograph 2">
+
         </div>
 
-        <div class="photo">
-            <img src="img/foto3.webp" alt="Fotografía 3">
-        </div>
 
         <div class="photo">
-            <img src="img/foto6.webp" alt="Fotografía 6">
+
+            <img
+                src="img/foto3.webp"
+                alt="Daniel Buades - Gallery photograph 3">
+
+        </div>
+
+
+        <div class="photo">
+
+            <img
+                src="img/foto6.webp"
+                alt="Daniel Buades - Gallery photograph 6">
+
         </div>
 
     </div>
@@ -877,80 +1027,139 @@ nav a.active::after {
 </section>
 
 
+<!-- =========================================================
+     FOOTER
+========================================================= -->
 
-    <!-- =========================
-         FOOTER
-    ========================= -->
+<footer>
 
-    <footer>
+    © 2026 Daniel Buades. All rights reserved.
 
-        <div class="footer-name">
-            Daniel Buades
-        </div>
-
-        <p>
-            © 2026 — All rights reserved
-        </p>
-
-    </footer>
+</footer>
 
 
-    <!-- =========================
-         LIGHTBOX
-    ========================= -->
+<!-- =========================================================
+     LIGHTBOX
+========================================================= -->
 
-    <div class="lightbox" id="lightbox">
+<div
+    class="lightbox"
+    id="lightbox">
 
-        <button class="close" id="close">
-            ×
-        </button>
+    <button
+        class="close"
+        id="close"
+        aria-label="Close image">
 
-        <img id="lightboxImage" src="" alt="">
+        ×
 
-    </div>
+    </button>
+
+    <img
+        id="lightboxImage"
+        src=""
+        alt="">
+
+</div>
 
 
-    <script>
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
 
-        const photos = document.querySelectorAll(".photo img");
-        const lightbox = document.getElementById("lightbox");
-        const lightboxImage = document.getElementById("lightboxImage");
-        const close = document.getElementById("close");
+<script>
 
-        photos.forEach(photo => {
+    /* =========================
+       LIGHTBOX
+    ========================= */
 
-            photo.addEventListener("click", () => {
+    const photos =
+        document.querySelectorAll(".photo img");
 
-                lightboxImage.src = photo.src;
-                lightboxImage.alt = photo.alt;
+    const lightbox =
+        document.getElementById("lightbox");
 
-                lightbox.classList.add("active");
+    const lightboxImage =
+        document.getElementById("lightboxImage");
 
-            });
+    const close =
+        document.getElementById("close");
+
+
+    photos.forEach(photo => {
+
+        photo.addEventListener("click", () => {
+
+            lightboxImage.src =
+                photo.src;
+
+            lightboxImage.alt =
+                photo.alt;
+
+            lightbox.classList.add("active");
 
         });
 
-        close.addEventListener("click", () => {
+    });
+
+
+    close.addEventListener("click", () => {
+
+        lightbox.classList.remove("active");
+
+    });
+
+
+    lightbox.addEventListener("click", event => {
+
+        if (event.target === lightbox) {
+
             lightbox.classList.remove("active");
-        });
 
-        lightbox.addEventListener("click", (e) => {
+        }
 
-            if (e.target === lightbox) {
-                lightbox.classList.remove("active");
-            }
+    });
 
-        });
 
-        document.addEventListener("keydown", (e) => {
+    document.addEventListener("keydown", event => {
 
-            if (e.key === "Escape") {
-                lightbox.classList.remove("active");
-            }
+        if (event.key === "Escape") {
 
-        });
+            lightbox.classList.remove("active");
 
-    </script>
+        }
+
+    });
+
+
+    /* =========================
+       MENÚ MÓVIL
+    ========================= */
+
+    const mobileToggle =
+        document.querySelector(".mobile-toggle");
+
+    const mobileMenu =
+        document.getElementById("mobile-menu");
+
+
+    mobileToggle.addEventListener("click", () => {
+
+        const abierto =
+            mobileToggle.getAttribute("aria-expanded") === "true";
+
+        mobileToggle.setAttribute(
+            "aria-expanded",
+            String(!abierto)
+        );
+
+        mobileMenu.style.display =
+            abierto ? "none" : "flex";
+
+    });
+
+</script>
+
 
 </body>
 </html>

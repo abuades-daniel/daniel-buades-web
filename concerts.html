@@ -1,306 +1,1369 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Daniel Buades - Concerts</title>
+  <title>Daniel Buades — Concerts</title>
 
-<style>
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
-body{
-margin:0;
-background:#111;
-color:white;
-font-family:Arial,sans-serif;
-}
+  <style>
 
-header{
-text-align:center;
-padding:30px;
-}
+    /* =========================================================
+       GENERAL
+    ========================================================= */
 
-h1{
-margin:0;
-}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-.tabs{
-display:flex;
-justify-content:center;
-gap:10px;
-margin-bottom:25px;
-}
+    html {
+      width: 100%;
+      min-height: 100%;
+      background: #080808;
+    }
 
-.tab{
-cursor:pointer;
-border:none;
-padding:12px 20px;
-border-radius:8px;
-background:#333;
-color:white;
-font-size:16px;
-}
+    body {
+      width: 100%;
+      min-height: 100vh;
+      background: #080808;
+      color: #fff;
+      font-family: "Montserrat", Arial, sans-serif;
+      overflow-x: hidden;
+    }
 
-.tab.active{
-background:#e63946;
-}
 
-.contenedor{
-max-width:1200px;
-margin:auto;
-padding:20px;
-}
+    /* =========================================================
+       CABECERA / MENÚ
+    ========================================================= */
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
-gap:20px;
-}
+    .top-section {
+      position: relative;
+      width: 100%;
+      min-height: 190px;
 
-.card{
-background:#1e1e1e;
-border-radius:12px;
-overflow:hidden;
-box-shadow:0 3px 10px rgba(0,0,0,0.4);
-}
+      background:
+        linear-gradient(rgba(0,0,0,.10), rgba(0,0,0,.10)),
+        url("img/foto-portada.jpg") center 35% / cover no-repeat;
 
-.card img{
-width:100%;
-height:220px;
-object-fit:cover;
-}
+      overflow: hidden;
+    }
 
-.info{
-padding:15px;
-}
+    .top-section::after {
+      content: "";
+      position: absolute;
+      inset: 0;
 
-.fecha{
-color:#fcbf49;
-font-weight:bold;
-margin-bottom:10px;
-}
+      background: linear-gradient(
+        90deg,
+        rgba(0,0,0,.15) 0%,
+        rgba(0,0,0,.03) 55%,
+        rgba(0,0,0,.12) 100%
+      );
 
-.ciudad{
-font-size:22px;
-margin-bottom:5px;
-}
+      pointer-events: none;
+    }
 
-.sala{
-color:#ddd;
-margin-bottom:15px;
-}
 
-.boton{
-display:inline-block;
-text-decoration:none;
-background:#e63946;
-color:white;
-padding:10px 15px;
-border-radius:6px;
-}
+    /* =========================================================
+       HEADER
+    ========================================================= */
 
-.boton:hover{
-background:#d62839;
-}
+    header {
+      position: relative;
+      z-index: 10;
 
-.realizado{
-display:inline-block;
-background:#444;
-color:#ddd;
-padding:10px 15px;
-border-radius:6px;
-font-size:14px;
-}
+      width: 100%;
+      height: 134px;
 
-.oculto{
-display:none;
-}
+      display: flex;
+      align-items: center;
 
-.mensaje{
-text-align:center;
-color:#ccc;
-margin-top:30px;
-}
+      padding: 0 5.4% 0 3.9%;
+    }
 
-footer {
-  position: relative;
-  width: 100%;
-  padding: 20px 20px 25px;
-  color: #ccc;
-  font-size: 0.9rem;
-  text-align: center;
-}
+    .brand {
+      flex: 0 0 auto;
 
-</style>
+      color: #fff;
+      text-decoration: none;
+
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 29px;
+      line-height: 1;
+      letter-spacing: -.6px;
+
+      white-space: nowrap;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 33px;
+
+      margin-left: 54px;
+    }
+
+    nav a {
+      position: relative;
+
+      color: #fff;
+      text-decoration: none;
+
+      font-family: "Montserrat", Arial, sans-serif;
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1;
+
+      white-space: nowrap;
+
+      transition: opacity .25s ease;
+    }
+
+    nav a:hover {
+      opacity: .65;
+    }
+
+    nav a.active {
+      opacity: .65;
+    }
+
+
+    /* =========================================================
+       PARTE DERECHA DEL HEADER
+    ========================================================= */
+
+    .header-right {
+      margin-left: auto;
+
+      display: flex;
+      align-items: center;
+
+      gap: 25px;
+    }
+
+
+    /* =========================================================
+       REDES SOCIALES
+    ========================================================= */
+
+    .socials {
+      display: flex;
+      align-items: center;
+
+      gap: 24px;
+      margin-right: 22px;
+    }
+
+    .socials a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 25px;
+      height: 25px;
+
+      color: #fff;
+      text-decoration: none;
+
+      transition:
+        transform .2s ease,
+        opacity .2s ease;
+    }
+
+    .socials a:hover {
+      transform: translateY(-2px);
+      opacity: .7;
+    }
+
+    .socials svg {
+      width: 23px;
+      height: 23px;
+
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+    }
+
+    .socials .fill-icon {
+      fill: currentColor;
+      stroke: none;
+    }
+
+
+    /* =========================================================
+       BOTÓN HOME
+    ========================================================= */
+
+    .home-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 118px;
+      height: 75px;
+
+      border: 1px solid rgba(255,255,255,.95);
+      border-radius: 50%;
+
+      color: #fff;
+      text-decoration: none;
+
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 21px;
+
+      transition:
+        background .25s ease,
+        color .25s ease;
+    }
+
+    .home-btn:hover {
+      background: rgba(255,255,255,.95);
+      color: #111;
+    }
+
+
+    /* =========================================================
+       MENÚ MÓVIL
+    ========================================================= */
+
+    .mobile-toggle {
+      display: none;
+
+      width: 48px;
+      height: 48px;
+
+      border: 1px solid rgba(255,255,255,.8);
+      border-radius: 50%;
+
+      align-items: center;
+      justify-content: center;
+
+      color: white;
+      background: transparent;
+
+      cursor: pointer;
+    }
+
+    .mobile-toggle span,
+    .mobile-toggle span::before,
+    .mobile-toggle span::after {
+      display: block;
+
+      width: 19px;
+      height: 1px;
+
+      background: currentColor;
+
+      content: "";
+
+      position: absolute;
+    }
+
+    .mobile-toggle span::before {
+      transform: translateY(-6px);
+    }
+
+    .mobile-toggle span::after {
+      transform: translateY(6px);
+    }
+
+    .mobile-menu {
+      display: none;
+    }
+
+
+    /* =========================================================
+       TÍTULO DE LA PÁGINA
+    ========================================================= */
+
+    .page-title {
+      position: relative;
+      z-index: 5;
+
+      text-align: center;
+
+      padding: 15px 20px 25px;
+    }
+
+    .page-title h1 {
+      color: #fff;
+
+      font-family: "Allura", "Brush Script MT", cursive;
+      font-size: clamp(52px, 5vw, 78px);
+      font-weight: 400;
+
+      line-height: .95;
+
+      text-shadow: 0 1px 7px rgba(0,0,0,.25);
+    }
+
+
+    /* =========================================================
+       CONTENIDO DE CONCIERTOS
+    ========================================================= */
+
+    .concerts-section {
+      position: relative;
+
+      width: 100%;
+
+      padding: 45px 5% 60px;
+
+      background:
+        linear-gradient(
+          rgba(8,8,8,.96),
+          rgba(8,8,8,.98)
+        );
+    }
+
+    .concerts-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+
+    /* =========================================================
+       PESTAÑAS
+    ========================================================= */
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      gap: 12px;
+
+      margin-bottom: 40px;
+    }
+
+    .tab {
+      cursor: pointer;
+
+      border: 1px solid rgba(255,255,255,.35);
+
+      padding: 12px 24px;
+
+      border-radius: 30px;
+
+      background: transparent;
+      color: #fff;
+
+      font-family: "Montserrat", Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+
+      transition:
+        background .25s ease,
+        color .25s ease,
+        border-color .25s ease;
+    }
+
+    .tab:hover {
+      border-color: rgba(255,255,255,.8);
+    }
+
+    .tab.active {
+      background: #fff;
+      color: #111;
+
+      border-color: #fff;
+    }
+
+
+    /* =========================================================
+       GRID
+    ========================================================= */
+
+    .grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(auto-fill, minmax(320px, 1fr));
+
+      gap: 28px;
+    }
+
+
+    /* =========================================================
+       TARJETAS
+    ========================================================= */
+
+    .card {
+      background: #171717;
+
+      border: 1px solid rgba(255,255,255,.08);
+
+      border-radius: 3px;
+
+      overflow: hidden;
+
+      box-shadow:
+        0 5px 20px rgba(0,0,0,.35);
+
+      transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+
+      box-shadow:
+        0 10px 30px rgba(0,0,0,.5);
+    }
+
+
+    /* =========================================================
+       FOTO DEL CONCIERTO
+    ========================================================= */
+
+    .card img {
+      display: block;
+
+      width: 100%;
+      height: 220px;
+
+      object-fit: cover;
+    }
+
+
+    /* =========================================================
+       INFORMACIÓN DE LA TARJETA
+    ========================================================= */
+
+    .info {
+      padding: 22px;
+    }
+
+    .fecha {
+      color: #c9a96e;
+
+      font-family: "Montserrat", Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+
+      letter-spacing: .5px;
+
+      margin-bottom: 12px;
+
+      text-transform: uppercase;
+    }
+
+    .ciudad {
+      color: #fff;
+
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 31px;
+      font-weight: 400;
+
+      line-height: 1;
+
+      margin-bottom: 8px;
+    }
+
+    .sala {
+      color: #bbb;
+
+      font-size: 14px;
+      font-weight: 300;
+
+      margin-bottom: 22px;
+    }
+
+
+    /* =========================================================
+       BOTÓN ENTRADAS
+    ========================================================= */
+
+    .boton {
+      display: inline-block;
+
+      text-decoration: none;
+
+      background: transparent;
+
+      color: #fff;
+
+      border: 1px solid rgba(255,255,255,.65);
+
+      padding: 10px 18px;
+
+      border-radius: 30px;
+
+      font-family: "Montserrat", Arial, sans-serif;
+      font-size: 13px;
+
+      transition:
+        background .25s ease,
+        color .25s ease,
+        border-color .25s ease;
+    }
+
+    .boton:hover {
+      background: #fff;
+      color: #111;
+
+      border-color: #fff;
+    }
+
+
+    /* =========================================================
+       CONCIERTO REALIZADO
+    ========================================================= */
+
+    .realizado {
+      display: inline-block;
+
+      background: transparent;
+
+      color: #888;
+
+      border: 1px solid #444;
+
+      padding: 10px 18px;
+
+      border-radius: 30px;
+
+      font-size: 12px;
+    }
+
+
+    /* =========================================================
+       MENSAJES
+    ========================================================= */
+
+    .oculto {
+      display: none;
+    }
+
+    .mensaje {
+      grid-column: 1 / -1;
+
+      text-align: center;
+
+      color: #888;
+
+      font-size: 14px;
+
+      padding: 50px 20px;
+    }
+
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer {
+      position: relative;
+
+      width: 100%;
+
+      padding: 20px 20px 30px;
+
+      color: #666;
+
+      font-size: 11px;
+
+      text-align: center;
+
+      background: #080808;
+    }
+
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 1250px) {
+
+      header {
+        padding-left: 3%;
+        padding-right: 3%;
+      }
+
+      nav {
+        gap: 21px;
+        margin-left: 35px;
+      }
+
+      nav a {
+        font-size: 15px;
+      }
+
+      .socials {
+        gap: 15px;
+        margin-right: 8px;
+      }
+
+      .header-right {
+        gap: 12px;
+      }
+
+      .home-btn {
+        width: 100px;
+        height: 64px;
+        font-size: 19px;
+      }
+    }
+
+
+    @media (max-width: 980px) {
+
+      .top-section {
+        min-height: 150px;
+      }
+
+      header {
+        height: 95px;
+
+        padding: 24px 25px 0;
+
+        align-items: center;
+      }
+
+      .brand {
+        font-size: 26px;
+      }
+
+      nav,
+      .socials {
+        display: none;
+      }
+
+      .header-right {
+        margin-left: auto;
+      }
+
+      .mobile-toggle {
+        display: flex;
+      }
+
+      .home-btn {
+        width: 88px;
+        height: 54px;
+
+        font-size: 18px;
+      }
+
+      .page-title {
+        padding-top: 8px;
+      }
+
+      .concerts-section {
+        padding-left: 4%;
+        padding-right: 4%;
+      }
+
+      .grid {
+        grid-template-columns:
+          repeat(auto-fill, minmax(280px, 1fr));
+      }
+    }
+
+
+    @media (max-width: 560px) {
+
+      .top-section {
+        min-height: 125px;
+
+        background-position: 62% center;
+      }
+
+      .home-btn {
+        display: none;
+      }
+
+      .page-title {
+        padding: 12px 15px 20px;
+      }
+
+      .page-title h1 {
+        font-size: 58px;
+      }
+
+      .concerts-section {
+        padding: 30px 18px 45px;
+      }
+
+      .tabs {
+        gap: 8px;
+        margin-bottom: 30px;
+      }
+
+      .tab {
+        padding: 10px 16px;
+        font-size: 12px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .card img {
+        height: 210px;
+      }
+
+      .ciudad {
+        font-size: 28px;
+      }
+    }
+
+  </style>
 </head>
+
+
 <body>
 
-<header>
-<h1>🎵 Daniel Buades Concerts</h1>
-</header>
 
-<div class="tabs">
-<button class="tab active" id="btnFuturos">
-Upcoming concerts
-</button>
+  <!-- =======================================================
+       CABECERA CON LA FOTO DE LA PÁGINA PRINCIPAL
+  ======================================================== -->
 
-<button class="tab" id="btnPasados">
-Past concerts
-</button>
-</div>
+  <section class="top-section">
 
-<div class="contenedor">
+    <header>
 
-<div id="futuros" class="grid"></div>
+      <!-- NOMBRE -->
+      <a class="brand" href="index.html">
+        Daniel Buades
+      </a>
 
-<div id="pasados" class="grid oculto"></div>
 
-</div>
+      <!-- MENÚ -->
+      <nav aria-label="Main navigation">
 
-<script>
+        <a href="biography.html">
+          Biography
+        </a>
 
-// =============================
-// PEGA AQUÍ TU URL DE GOOGLE SHEETS
-// =============================
+        <a href="videos.html">
+          Videos
+        </a>
 
-const CSV_URL =
-"https://docs.google.com/spreadsheets/d/e/2PACX-1vQT3WRJmZJrhXe_cdV5yy3sR9UchUccNSRkujL4M8xys56NvGQF2YueJkLzcVJSS6WL3pTkic5o7QhI/pub?gid=0&single=true&output=csv";
+        <a href="gallery.html">
+          Gallery
+        </a>
 
-async function cargarConciertos(){
+        <a href="concerts.html" class="active">
+          Concerts
+        </a>
 
-try{
+        <a href="contact.html">
+          Contact
+        </a>
 
-const respuesta = await fetch(CSV_URL);
-const csv = await respuesta.text();
+      </nav>
 
-const filas = csv.trim().split("\n").slice(1);
 
-const conciertos = filas.map(fila => {
+      <!-- PARTE DERECHA -->
+      <div class="header-right">
 
-const columnas = fila.split(",");
 
-return {
-fecha: columnas[0]?.trim(),
-ciudad: columnas[1]?.trim(),
-sala: columnas[2]?.trim(),
-entradas: columnas[3]?.trim(),
-foto: columnas[4]?.trim()
-};
-});
+        <!-- REDES SOCIALES -->
+        <div class="socials" aria-label="Social networks">
 
-const futuros = document.getElementById("futuros");
-const pasados = document.getElementById("pasados");
 
-const hoy = new Date();
+          <!-- INSTAGRAM -->
+          <a href="#" aria-label="Instagram">
 
-let numFuturos = 0;
-let numPasados = 0;
+            <svg viewBox="0 0 24 24">
 
-conciertos
-.sort((a,b) => new Date(a.fecha) - new Date(b.fecha))
-.forEach(c => {
+              <rect
+                x="3.2"
+                y="3.2"
+                width="17.6"
+                height="17.6"
+                rx="5">
+              </rect>
 
-const fechaConcierto = new Date(c.fecha);
-const esFuturo = fechaConcierto >= hoy;
+              <circle
+                cx="12"
+                cy="12"
+                r="4.1">
+              </circle>
 
-const accion = esFuturo
-? `
-${c.entradas}
-Comprar entradas
-</a>
-`
-: `
-<span class="realizado">
-✓ Concierto realizado
-</span>
-`;
+              <circle
+                class="fill-icon"
+                cx="17.5"
+                cy="6.7"
+                r="1.1">
+              </circle>
 
-const tarjeta = `
-<div class="card">
+            </svg>
 
-${c.foto}
+          </a>
 
-<div class="info">
 
-<div class="fecha">
-${c.fecha}
-</div>
+          <!-- SPOTIFY -->
+          <a href="#" aria-label="Spotify">
 
-<div class="ciudad">
-${c.ciudad}
-</div>
+            <svg
+              class="fill-icon"
+              viewBox="0 0 24 24">
 
-<div class="sala">
-${c.sala}
-</div>
+              <circle
+                cx="12"
+                cy="12"
+                r="11">
+              </circle>
 
-${accion}
+              <path
+                d="M7 9.1c3.8-1.1 7.5-.8 10.5.4"
+                stroke="#111"
+                stroke-width="1.5"
+                fill="none"
+                stroke-linecap="round">
+              </path>
 
-</div>
+              <path
+                d="M7.7 12c3.1-.8 6.3-.5 8.8.5"
+                stroke="#111"
+                stroke-width="1.5"
+                fill="none"
+                stroke-linecap="round">
+              </path>
 
-</div>
-`;
+              <path
+                d="M8.5 14.8c2.4-.5 4.8-.3 6.7.5"
+                stroke="#111"
+                stroke-width="1.5"
+                fill="none"
+                stroke-linecap="round">
+              </path>
 
-if(esFuturo){
-futuros.innerHTML += tarjeta;
-numFuturos++;
-}else{
-pasados.innerHTML += tarjeta;
-numPasados++;
-}
+            </svg>
 
-});
+          </a>
 
-if(numFuturos === 0){
-futuros.innerHTML =
-'<p class="mensaje">There are no concerts scheduled.</p>';
-}
 
-if(numPasados === 0){
-pasados.innerHTML =
-'<p class="mensaje">There are no past concerts yet.</p>';
-}
+          <!-- FACEBOOK -->
+          <a href="#" aria-label="Facebook">
 
-}catch(error){
+            <svg
+              class="fill-icon"
+              viewBox="0 0 24 24">
 
-console.error(error);
+              <path
+                d="M13.8 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.2V10H8v3h2.6v8h3.2z">
+              </path>
 
-document.getElementById("futuros").innerHTML =
-'<p class="mensaje">Error loading concerts.</p>';
-}
-}
+            </svg>
 
-cargarConciertos();
+          </a>
 
-const btnFuturos = document.getElementById("btnFuturos");
-const btnPasados = document.getElementById("btnPasados");
 
-const futuros = document.getElementById("futuros");
-const pasados = document.getElementById("pasados");
+          <!-- YOUTUBE -->
+          <a href="#" aria-label="YouTube">
 
-btnFuturos.onclick = () => {
+            <svg
+              class="fill-icon"
+              viewBox="0 0 24 24">
 
-futuros.classList.remove("oculto");
-pasados.classList.add("oculto");
+              <path
+                d="M22 7.2c-.2-1.1-1.1-2-2.2-2.2C18 4.7 15.1 4.5 12 4.5s-6 .2-7.8.5C3.1 5.2 2.2 6.1 2 7.2c-.3 1.5-.4 3-.4 4.8s.1 3.3.4 4.8c.2 1.1 1.1 2 2.2 2.2 1.8.3 4.7.5 7.8.5s6-.2 7.8-.5c1.1-.2 2-1.1 2.2-2.2.3-1.5.4-3 .4-4.8s-.1-3.3-.4-4.8zM10 15.5v-7l6 3.5-6 3.5z">
+              </path>
 
-btnFuturos.classList.add("active");
-btnPasados.classList.remove("active");
-};
+            </svg>
 
-btnPasados.onclick = () => {
+          </a>
 
-futuros.classList.add("oculto");
-pasados.classList.remove("oculto");
+        </div>
 
-btnPasados.classList.add("active");
-btnFuturos.classList.remove("active");
-};
 
-</script>
- <footer>
-      © 2026 Daniel Buades. All rights reserved.
+        <!-- HOME -->
+        <a class="home-btn" href="index.html">
+          Home
+        </a>
+
+
+        <!-- BOTÓN MÓVIL -->
+        <button
+          class="mobile-toggle"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu">
+
+          <span></span>
+
+        </button>
+
+      </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MENÚ MÓVIL
+    ====================================================== -->
+
+    <div
+      class="mobile-menu"
+      id="mobile-menu">
+
+      <a href="biography.html">
+        Biography
+      </a>
+
+      <a href="videos.html">
+        Videos
+      </a>
+
+      <a href="gallery.html">
+        Gallery
+      </a>
+
+      <a href="concerts.html">
+        Concerts
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </div>
+
+
+  </section>
+
+
+  <!-- =======================================================
+       TÍTULO
+  ======================================================== -->
+
+  <section class="page-title">
+
+    <h1>
+      Concerts
+    </h1>
+
+  </section>
+
+
+  <!-- =======================================================
+       CONCIERTOS
+  ======================================================== -->
+
+  <main class="concerts-section">
+
+    <div class="concerts-container">
+
+
+      <!-- PESTAÑAS -->
+
+      <div class="tabs">
+
+        <button
+          class="tab active"
+          id="btnFuturos">
+
+          Upcoming concerts
+
+        </button>
+
+
+        <button
+          class="tab"
+          id="btnPasados">
+
+          Past concerts
+
+        </button>
+
+      </div>
+
+
+      <!-- CONCIERTOS FUTUROS -->
+
+      <div
+        id="futuros"
+        class="grid">
+
+      </div>
+
+
+      <!-- CONCIERTOS PASADOS -->
+
+      <div
+        id="pasados"
+        class="grid oculto">
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- =======================================================
+       FOOTER
+  ======================================================== -->
+
+  <footer>
+
+    © 2026 Daniel Buades. All rights reserved.
+
   </footer>
+
+
+  <!-- =======================================================
+       JAVASCRIPT
+  ======================================================== -->
+
+  <script>
+
+    /* =======================================================
+       GOOGLE SHEETS
+    ======================================================== */
+
+    const CSV_URL =
+      "https://docs.google.com/spreadsheets/d/e/2PACX-1vQT3WRJmZJrhXe_cdV5yy3sR9UchUccNSRkujL4M8xys56NvGQF2YueJkLzcVJSS6WL3pTkic5o7QhI/pub?gid=0&single=true&output=csv";
+
+
+    /* =======================================================
+       CARGAR CONCIERTOS
+    ======================================================== */
+
+    async function cargarConciertos() {
+
+      try {
+
+        const respuesta = await fetch(CSV_URL);
+
+        if (!respuesta.ok) {
+          throw new Error("Could not load Google Sheets");
+        }
+
+        const csv = await respuesta.text();
+
+
+        /*
+         * Dividimos las filas del CSV.
+         */
+
+        const filas = csv
+          .trim()
+          .split(/\r?\n/)
+          .slice(1);
+
+
+        /*
+         * Convertimos cada fila en un concierto.
+         */
+
+        const conciertos = filas
+          .filter(fila => fila.trim() !== "")
+          .map(fila => {
+
+            const columnas = fila.split(",");
+
+            return {
+
+              fecha:
+                columnas[0]?.trim() || "",
+
+              ciudad:
+                columnas[1]?.trim() || "",
+
+              sala:
+                columnas[2]?.trim() || "",
+
+              entradas:
+                columnas[3]?.trim() || "",
+
+              foto:
+                columnas[4]?.trim() || ""
+
+            };
+
+          });
+
+
+        const futuros =
+          document.getElementById("futuros");
+
+        const pasados =
+          document.getElementById("pasados");
+
+
+        const hoy = new Date();
+
+        hoy.setHours(0, 0, 0, 0);
+
+
+        let numFuturos = 0;
+
+        let numPasados = 0;
+
+
+        /*
+         * Ordenamos por fecha.
+         */
+
+        conciertos
+          .sort((a, b) => {
+
+            return new Date(a.fecha) -
+                   new Date(b.fecha);
+
+          })
+
+
+          /*
+           * Creamos las tarjetas.
+           */
+
+          .forEach(c => {
+
+
+            const fechaConcierto =
+              new Date(c.fecha);
+
+
+            fechaConcierto.setHours(0, 0, 0, 0);
+
+
+            const esFuturo =
+              fechaConcierto >= hoy;
+
+
+            /*
+             * FOTO
+             *
+             * Se espera que la columna "foto"
+             * de Google Sheets contenga algo como:
+             *
+             * <img src="img/concierto.jpg">
+             *
+             */
+
+            const fotoHTML =
+              c.foto || "";
+
+
+            /*
+             * BOTÓN DE ENTRADAS
+             */
+
+            let accion;
+
+
+            if (esFuturo) {
+
+              accion = `
+
+                ${c.entradas}
+
+              `;
+
+            } else {
+
+              accion = `
+
+                <span class="realizado">
+                  ✓ Concert completed
+                </span>
+
+              `;
+
+            }
+
+
+            /*
+             * TARJETA
+             */
+
+            const tarjeta = `
+
+              <article class="card">
+
+                ${fotoHTML}
+
+                <div class="info">
+
+                  <div class="fecha">
+                    ${c.fecha}
+                  </div>
+
+                  <div class="ciudad">
+                    ${c.ciudad}
+                  </div>
+
+                  <div class="sala">
+                    ${c.sala}
+                  </div>
+
+                  ${accion}
+
+                </div>
+
+              </article>
+
+            `;
+
+
+            /*
+             * FUTUROS / PASADOS
+             */
+
+            if (esFuturo) {
+
+              futuros.innerHTML += tarjeta;
+
+              numFuturos++;
+
+            } else {
+
+              pasados.innerHTML += tarjeta;
+
+              numPasados++;
+
+            }
+
+          });
+
+
+        /*
+         * Si no hay conciertos futuros.
+         */
+
+        if (numFuturos === 0) {
+
+          futuros.innerHTML =
+            '<p class="mensaje">There are no concerts scheduled.</p>';
+
+        }
+
+
+        /*
+         * Si no hay conciertos pasados.
+         */
+
+        if (numPasados === 0) {
+
+          pasados.innerHTML =
+            '<p class="mensaje">There are no past concerts yet.</p>';
+
+        }
+
+      }
+
+
+      catch (error) {
+
+        console.error(error);
+
+        document.getElementById("futuros").innerHTML =
+          '<p class="mensaje">Error loading concerts.</p>';
+
+      }
+
+    }
+
+
+    /* =======================================================
+       INICIAR
+    ======================================================== */
+
+    cargarConciertos();
+
+
+    /* =======================================================
+       PESTAÑAS
+    ======================================================== */
+
+    const btnFuturos =
+      document.getElementById("btnFuturos");
+
+    const btnPasados =
+      document.getElementById("btnPasados");
+
+    const futuros =
+      document.getElementById("futuros");
+
+    const pasados =
+      document.getElementById("pasados");
+
+
+    /*
+     * UPCOMING
+     */
+
+    btnFuturos.onclick = () => {
+
+      futuros.classList.remove("oculto");
+
+      pasados.classList.add("oculto");
+
+      btnFuturos.classList.add("active");
+
+      btnPasados.classList.remove("active");
+
+    };
+
+
+    /*
+     * PAST
+     */
+
+    btnPasados.onclick = () => {
+
+      futuros.classList.add("oculto");
+
+      pasados.classList.remove("oculto");
+
+      btnPasados.classList.add("active");
+
+      btnFuturos.classList.remove("active");
+
+    };
+
+
+    /* =======================================================
+       MENÚ MÓVIL
+    ======================================================== */
+
+    const mobileToggle =
+      document.querySelector(".mobile-toggle");
+
+    const mobileMenu =
+      document.getElementById("mobile-menu");
+
+
+    mobileToggle.addEventListener("click", () => {
+
+      const abierto =
+        mobileToggle.getAttribute("aria-expanded") === "true";
+
+
+      mobileToggle.setAttribute(
+        "aria-expanded",
+        String(!abierto)
+      );
+
+
+      if (mobileMenu.style.display === "flex") {
+
+        mobileMenu.style.display = "none";
+
+      } else {
+
+        mobileMenu.style.display = "flex";
+
+      }
+
+    });
+
+  </script>
+
 
 </body>
 </html>
-
