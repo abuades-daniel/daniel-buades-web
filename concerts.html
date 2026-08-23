@@ -9,7 +9,11 @@
   <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500&family=Montserrat:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
 
@@ -77,7 +81,7 @@
 
     header {
       position: relative;
-      z-index: 10;
+      z-index: 110;
 
       width: 100%;
       height: 134px;
@@ -230,7 +234,8 @@
 
 
     /* =========================================================
-       MENÚ MÓVIL
+       BOTÓN MENÚ MÓVIL
+       IGUAL QUE VIDEOS
     ========================================================= */
 
     .mobile-toggle {
@@ -240,15 +245,21 @@
       height: 48px;
 
       border: 1px solid rgba(255,255,255,.8);
+
       border-radius: 50%;
 
       align-items: center;
       justify-content: center;
 
-      color: white;
+      color: #fff;
+
       background: transparent;
 
       cursor: pointer;
+
+      position: relative;
+
+      z-index: 120;
     }
 
     .mobile-toggle span,
@@ -274,8 +285,56 @@
       transform: translateY(6px);
     }
 
+
+    /* =========================================================
+       MENÚ MÓVIL
+       IGUAL QUE VIDEOS
+    ========================================================= */
+
     .mobile-menu {
-      display: none;
+      position: fixed;
+
+      z-index: 100;
+
+      top: 0;
+      right: 0;
+
+      width: 100%;
+      min-height: 100vh;
+
+      padding: 120px 40px 50px;
+
+      background: rgba(8,8,8,.97);
+
+      display: flex;
+      flex-direction: column;
+
+      align-items: center;
+
+      gap: 28px;
+
+      transform: translateX(100%);
+
+      transition: transform .35s ease;
+    }
+
+    .mobile-menu.open {
+      transform: translateX(0);
+    }
+
+    .mobile-menu a {
+      color: #fff;
+
+      text-decoration: none;
+
+      font-family: "Montserrat", Arial, sans-serif;
+
+      font-size: 22px;
+      font-weight: 300;
+    }
+
+    .mobile-menu a:hover {
+      opacity: .6;
     }
 
 
@@ -609,8 +668,10 @@
       .home-btn {
         width: 100px;
         height: 64px;
+
         font-size: 19px;
       }
+
     }
 
 
@@ -623,7 +684,10 @@
       header {
         height: 95px;
 
-        padding: 24px 25px 0;
+        padding:
+          24px
+          25px
+          0;
 
         align-items: center;
       }
@@ -641,15 +705,12 @@
         margin-left: auto;
       }
 
-      .mobile-toggle {
-        display: flex;
+      .home-btn {
+        display: none;
       }
 
-      .home-btn {
-        width: 88px;
-        height: 54px;
-
-        font-size: 18px;
+      .mobile-toggle {
+        display: flex;
       }
 
       .page-title {
@@ -665,6 +726,7 @@
         grid-template-columns:
           repeat(auto-fill, minmax(280px, 1fr));
       }
+
     }
 
 
@@ -714,6 +776,16 @@
       .ciudad {
         font-size: 28px;
       }
+
+    }
+
+
+    @media (max-width: 400px) {
+
+      .brand {
+        font-size: 24px;
+      }
+
     }
 
   </style>
@@ -732,12 +804,14 @@
     <header>
 
       <!-- NOMBRE -->
+
       <a class="brand" href="index.html">
         Daniel Buades
       </a>
 
 
-      <!-- MENÚ -->
+      <!-- MENÚ ESCRITORIO -->
+
       <nav aria-label="Main navigation">
 
         <a href="biography.html">
@@ -764,14 +838,17 @@
 
 
       <!-- PARTE DERECHA -->
+
       <div class="header-right">
 
 
         <!-- REDES SOCIALES -->
+
         <div class="socials" aria-label="Social networks">
 
 
           <!-- INSTAGRAM -->
+
           <a href="#" aria-label="Instagram">
 
             <svg viewBox="0 0 24 24">
@@ -803,6 +880,7 @@
 
 
           <!-- SPOTIFY -->
+
           <a href="#" aria-label="Spotify">
 
             <svg
@@ -845,6 +923,7 @@
 
 
           <!-- FACEBOOK -->
+
           <a href="#" aria-label="Facebook">
 
             <svg
@@ -861,6 +940,7 @@
 
 
           <!-- YOUTUBE -->
+
           <a href="#" aria-label="YouTube">
 
             <svg
@@ -879,12 +959,18 @@
 
 
         <!-- HOME -->
-        <a class="home-btn" href="index.html">
+
+        <a
+          class="home-btn"
+          href="index.html">
+
           Home
+
         </a>
 
 
         <!-- BOTÓN MÓVIL -->
+
         <button
           class="mobile-toggle"
           type="button"
@@ -930,7 +1016,6 @@
       </a>
 
     </div>
-
 
   </section>
 
@@ -1045,19 +1130,11 @@
         const csv = await respuesta.text();
 
 
-        /*
-         * Dividimos las filas del CSV.
-         */
-
         const filas = csv
           .trim()
           .split(/\r?\n/)
           .slice(1);
 
-
-        /*
-         * Convertimos cada fila en un concierto.
-         */
 
         const conciertos = filas
           .filter(fila => fila.trim() !== "")
@@ -1104,10 +1181,6 @@
         let numPasados = 0;
 
 
-        /*
-         * Ordenamos por fecha.
-         */
-
         conciertos
           .sort((a, b) => {
 
@@ -1116,10 +1189,6 @@
 
           })
 
-
-          /*
-           * Creamos las tarjetas.
-           */
 
           .forEach(c => {
 
@@ -1135,23 +1204,9 @@
               fechaConcierto >= hoy;
 
 
-            /*
-             * FOTO
-             *
-             * Se espera que la columna "foto"
-             * de Google Sheets contenga algo como:
-             *
-             * <img src="img/concierto.jpg">
-             *
-             */
-
             const fotoHTML =
               c.foto || "";
 
-
-            /*
-             * BOTÓN DE ENTRADAS
-             */
 
             let accion;
 
@@ -1176,10 +1231,6 @@
 
             }
 
-
-            /*
-             * TARJETA
-             */
 
             const tarjeta = `
 
@@ -1210,10 +1261,6 @@
             `;
 
 
-            /*
-             * FUTUROS / PASADOS
-             */
-
             if (esFuturo) {
 
               futuros.innerHTML += tarjeta;
@@ -1231,10 +1278,6 @@
           });
 
 
-        /*
-         * Si no hay conciertos futuros.
-         */
-
         if (numFuturos === 0) {
 
           futuros.innerHTML =
@@ -1242,10 +1285,6 @@
 
         }
 
-
-        /*
-         * Si no hay conciertos pasados.
-         */
 
         if (numPasados === 0) {
 
@@ -1293,10 +1332,6 @@
       document.getElementById("pasados");
 
 
-    /*
-     * UPCOMING
-     */
-
     btnFuturos.onclick = () => {
 
       futuros.classList.remove("oculto");
@@ -1309,10 +1344,6 @@
 
     };
 
-
-    /*
-     * PAST
-     */
 
     btnPasados.onclick = () => {
 
@@ -1329,6 +1360,7 @@
 
     /* =======================================================
        MENÚ MÓVIL
+       IGUAL QUE VIDEOS
     ======================================================== */
 
     const mobileToggle =
@@ -1340,27 +1372,37 @@
 
     mobileToggle.addEventListener("click", () => {
 
-      const abierto =
-        mobileToggle.getAttribute("aria-expanded") === "true";
-
+      const isOpen =
+        mobileMenu.classList.toggle("open");
 
       mobileToggle.setAttribute(
         "aria-expanded",
-        String(!abierto)
+        isOpen
       );
 
-
-      if (mobileMenu.style.display === "flex") {
-
-        mobileMenu.style.display = "none";
-
-      } else {
-
-        mobileMenu.style.display = "flex";
-
-      }
-
     });
+
+
+    /* =======================================================
+       CERRAR MENÚ AL PULSAR UNA OPCIÓN
+    ======================================================== */
+
+    mobileMenu
+      .querySelectorAll("a")
+      .forEach(link => {
+
+        link.addEventListener("click", () => {
+
+          mobileMenu.classList.remove("open");
+
+          mobileToggle.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+        });
+
+      });
 
   </script>
 
