@@ -42,35 +42,23 @@
     ===================================================== */
 
     * {
-
       box-sizing: border-box;
-
       margin: 0;
-
       padding: 0;
-
     }
 
 
     html {
-
       width: 100%;
-
       min-height: 100%;
-
       background: #080808;
-
     }
 
 
     body {
-
       width: 100%;
-
       min-height: 100vh;
-
       background: #080808;
-
       color: white;
 
       font-family:
@@ -79,7 +67,6 @@
         sans-serif;
 
       overflow-x: hidden;
-
     }
 
 
@@ -88,15 +75,12 @@
     ===================================================== */
 
     .top-section {
-
       position: relative;
 
       width: 100%;
-
       min-height: 190px;
 
       background:
-
         linear-gradient(
           rgba(0,0,0,.10),
           rgba(0,0,0,.10)
@@ -108,20 +92,16 @@
         no-repeat;
 
       overflow: hidden;
-
     }
 
 
     .top-section::after {
-
       content: "";
 
       position: absolute;
-
       inset: 0;
 
       background:
-
         linear-gradient(
           90deg,
           rgba(0,0,0,.15) 0%,
@@ -130,7 +110,6 @@
         );
 
       pointer-events: none;
-
     }
 
 
@@ -139,17 +118,14 @@
     ===================================================== */
 
     header {
-
       position: relative;
 
-      z-index: 10;
+      z-index: 50;
 
       width: 100%;
-
       height: 134px;
 
       display: flex;
-
       align-items: center;
 
       padding:
@@ -158,15 +134,18 @@
         0
         3.9%;
 
+      color: #fff;
     }
 
 
-    .brand {
+    /* =====================================================
+       LOGO
+    ===================================================== */
 
+    .brand {
       flex: 0 0 auto;
 
-      color: white;
-
+      color: #fff;
       text-decoration: none;
 
       font-family:
@@ -175,39 +154,34 @@
         serif;
 
       font-size: 29px;
+      font-weight: 400;
 
       line-height: 1;
 
       letter-spacing: -.6px;
 
       white-space: nowrap;
-
     }
 
 
     /* =====================================================
-       MENÚ
+       NAVEGACIÓN
     ===================================================== */
 
     nav {
-
       display: flex;
-
       align-items: center;
 
       gap: 33px;
 
       margin-left: 54px;
-
     }
 
 
     nav a {
-
       position: relative;
 
-      color: white;
-
+      color: #fff;
       text-decoration: none;
 
       font-family:
@@ -216,7 +190,6 @@
         sans-serif;
 
       font-size: 17px;
-
       font-weight: 400;
 
       line-height: 1;
@@ -225,21 +198,32 @@
 
       transition:
         opacity .25s ease;
-
     }
 
 
     nav a:hover {
-
       opacity: .65;
-
     }
 
 
-    nav a.active {
+    /* =====================================================
+       PÁGINA ACTIVA
+    ===================================================== */
 
-      opacity: .65;
+    nav a.active::after {
+      content: "";
 
+      position: absolute;
+
+      left: 0;
+      right: 0;
+
+      bottom: -9px;
+
+      height: 1px;
+
+      background:
+        rgba(255,255,255,.95);
     }
 
 
@@ -248,15 +232,12 @@
     ===================================================== */
 
     .header-right {
-
       margin-left: auto;
 
       display: flex;
-
       align-items: center;
 
       gap: 25px;
-
     }
 
 
@@ -265,89 +246,66 @@
     ===================================================== */
 
     .socials {
-
       display: flex;
-
       align-items: center;
 
       gap: 24px;
 
       margin-right: 22px;
-
     }
 
 
     .socials a {
-
       display: flex;
-
       align-items: center;
-
       justify-content: center;
 
       width: 25px;
-
       height: 25px;
 
-      color: white;
+      color: #fff;
 
       text-decoration: none;
 
       transition:
         transform .2s ease,
         opacity .2s ease;
-
     }
 
 
     .socials a:hover {
-
-      transform:
-        translateY(-2px);
-
+      transform: translateY(-2px);
       opacity: .7;
-
     }
 
 
     .socials svg {
-
       width: 23px;
-
       height: 23px;
 
       fill: none;
 
       stroke: currentColor;
-
       stroke-width: 1.8;
-
     }
 
 
     .socials .fill-icon {
-
       fill: currentColor;
-
       stroke: none;
-
     }
 
 
     /* =====================================================
-       HOME
+       BOTÓN HOME
     ===================================================== */
 
     .home-btn {
-
       display: flex;
-
       align-items: center;
-
       justify-content: center;
 
       width: 118px;
-
       height: 75px;
 
       border:
@@ -356,8 +314,7 @@
 
       border-radius: 50%;
 
-      color: white;
-
+      color: #fff;
       text-decoration: none;
 
       font-family:
@@ -370,30 +327,28 @@
       transition:
         background .25s ease,
         color .25s ease;
-
     }
 
 
     .home-btn:hover {
-
       background:
         rgba(255,255,255,.95);
 
       color: #111;
-
     }
 
 
     /* =====================================================
        MENÚ MÓVIL
+       EXACTAMENTE COMO GALLERY
     ===================================================== */
 
     .mobile-toggle {
-
       display: none;
 
-      width: 48px;
+      position: relative;
 
+      width: 48px;
       height: 48px;
 
       border:
@@ -403,101 +358,102 @@
       border-radius: 50%;
 
       align-items: center;
-
       justify-content: center;
 
       color: white;
-
       background: transparent;
 
       cursor: pointer;
-
     }
 
 
     .mobile-toggle span,
     .mobile-toggle span::before,
     .mobile-toggle span::after {
-
       display: block;
 
       position: absolute;
 
       width: 19px;
-
       height: 1px;
 
       background: currentColor;
 
       content: "";
-
     }
 
 
     .mobile-toggle span::before {
-
       transform:
         translateY(-6px);
-
     }
 
 
     .mobile-toggle span::after {
-
       transform:
         translateY(6px);
-
     }
 
 
+    /* =====================================================
+       MENÚ MÓVIL DESPLEGABLE
+       EXACTAMENTE COMO GALLERY
+    ===================================================== */
+
     .mobile-menu {
+      position: fixed;
+
+      top: 95px;
+      left: 0;
+
+      width: 100%;
+
+      z-index: 40;
 
       display: none;
 
-      position: absolute;
-
-      z-index: 20;
-
-      top: 95px;
-
-      right: 25px;
-
-      width: 220px;
-
       flex-direction: column;
 
-      background:
-        rgba(10,10,10,.97);
-
-      border:
-        1px solid
-        rgba(255,255,255,.15);
-
       padding:
-        10px 0;
+        20px
+        25px
+        25px;
 
+      background:
+        rgba(8,8,8,.96);
+
+      backdrop-filter:
+        blur(10px);
     }
 
 
     .mobile-menu a {
-
-      padding:
-        15px 20px;
-
       color: white;
-
       text-decoration: none;
 
-      font-size: 14px;
+      font-family:
+        "Montserrat",
+        Arial,
+        sans-serif;
 
+      font-size: 17px;
+
+      padding:
+        14px 0;
+
+      border-bottom:
+        1px solid
+        rgba(255,255,255,.12);
     }
 
 
-    .mobile-menu a:hover {
+    .mobile-menu a:last-child {
+      border-bottom: none;
+    }
 
-      background:
-        rgba(255,255,255,.08);
 
+    .mobile-menu a.active {
+      opacity: .65;
     }
 
 
@@ -506,18 +462,16 @@
     ===================================================== */
 
     .contact-page {
-
       width: 100%;
 
-      min-height: calc(100vh - 190px);
+      min-height:
+        calc(100vh - 190px);
 
       background: #080808;
-
     }
 
 
     .contact-section {
-
       width: 100%;
 
       max-width: 1200px;
@@ -538,7 +492,6 @@
       gap: 100px;
 
       align-items: start;
-
     }
 
 
@@ -547,29 +500,23 @@
     ===================================================== */
 
     .contact-intro {
-
       padding-top: 15px;
-
     }
 
 
     .eyebrow {
-
       color: #c9a96e;
 
       font-size: 12px;
-
       font-weight: 500;
 
       letter-spacing: 2.5px;
 
       margin-bottom: 18px;
-
     }
 
 
     .contact-intro h1 {
-
       color: white;
 
       font-family:
@@ -589,22 +536,18 @@
       line-height: .9;
 
       margin-bottom: 30px;
-
     }
 
 
     .intro-text {
-
       max-width: 420px;
 
       color: #aaa;
 
       font-size: 15px;
-
       font-weight: 300;
 
       line-height: 1.8;
-
     }
 
 
@@ -613,14 +556,11 @@
     ===================================================== */
 
     .contact-form {
-
       width: 100%;
-
     }
 
 
     .form-row {
-
       display: grid;
 
       grid-template-columns:
@@ -628,37 +568,30 @@
         1fr;
 
       gap: 20px;
-
     }
 
 
     .form-group {
-
       margin-bottom: 25px;
-
     }
 
 
     .form-group label {
-
       display: block;
 
       color: #ddd;
 
       font-size: 12px;
-
       font-weight: 400;
 
       letter-spacing: .5px;
 
       margin-bottom: 9px;
-
     }
 
 
     .form-group input,
     .form-group textarea {
-
       display: block;
 
       width: 100%;
@@ -682,29 +615,24 @@
         sans-serif;
 
       font-size: 14px;
-
       font-weight: 300;
 
       transition:
         border-color .25s ease,
         background .25s ease;
-
     }
 
 
     .form-group input {
-
       height: 48px;
 
       padding:
         0
         14px;
-
     }
 
 
     .form-group textarea {
-
       min-height: 150px;
 
       resize: vertical;
@@ -712,19 +640,16 @@
       padding: 14px;
 
       line-height: 1.6;
-
     }
 
 
     .form-group input:focus,
     .form-group textarea:focus {
-
       border-color:
         rgba(255,255,255,.7);
 
       background:
         rgba(255,255,255,.06);
-
     }
 
 
@@ -733,17 +658,14 @@
     ===================================================== */
 
     .hidden-field {
-
       position: absolute;
 
       left: -9999px;
 
       width: 1px;
-
       height: 1px;
 
       overflow: hidden;
-
     }
 
 
@@ -752,17 +674,14 @@
     ===================================================== */
 
     .send-btn {
-
       position: relative;
 
       display: inline-flex;
 
       align-items: center;
-
       justify-content: center;
 
       min-width: 165px;
-
       height: 48px;
 
       padding:
@@ -785,7 +704,6 @@
         sans-serif;
 
       font-size: 13px;
-
       font-weight: 400;
 
       cursor: pointer;
@@ -794,49 +712,38 @@
         background .25s ease,
         color .25s ease,
         border-color .25s ease;
-
     }
 
 
     .send-btn:hover {
-
       background: transparent;
 
       color: white;
 
       border-color: white;
-
     }
 
 
     .send-btn:disabled {
-
       opacity: .6;
 
       cursor:
         not-allowed;
-
     }
 
 
     .btn-loading {
-
       display: none;
-
     }
 
 
     .send-btn.loading .btn-text {
-
       display: none;
-
     }
 
 
     .send-btn.loading .btn-loading {
-
       display: inline;
-
     }
 
 
@@ -845,7 +752,6 @@
     ===================================================== */
 
     .form-message {
-
       min-height: 25px;
 
       margin-top: 18px;
@@ -853,21 +759,16 @@
       font-size: 13px;
 
       line-height: 1.5;
-
     }
 
 
     .form-message.success {
-
       color: #b9cdb3;
-
     }
 
 
     .form-message.error {
-
       color: #d98d8d;
-
     }
 
 
@@ -877,63 +778,44 @@
 
     @media (max-width: 1250px) {
 
-
       header {
-
         padding-left: 3%;
-
         padding-right: 3%;
-
       }
 
 
       nav {
-
         gap: 21px;
-
         margin-left: 35px;
-
       }
 
 
       nav a {
-
         font-size: 15px;
-
       }
 
 
       .socials {
-
         gap: 15px;
-
         margin-right: 8px;
-
       }
 
 
       .header-right {
-
         gap: 12px;
-
       }
 
 
       .home-btn {
-
         width: 100px;
-
         height: 64px;
 
         font-size: 19px;
-
       }
 
 
       .contact-section {
-
         gap: 60px;
-
       }
 
     }
@@ -945,16 +827,12 @@
 
     @media (max-width: 980px) {
 
-
       .top-section {
-
         min-height: 150px;
-
       }
 
 
       header {
-
         height: 95px;
 
         padding:
@@ -962,51 +840,40 @@
           25px
           0;
 
+        align-items: center;
       }
 
 
       .brand {
-
         font-size: 26px;
-
       }
 
 
       nav,
       .socials {
-
         display: none;
-
       }
 
 
       .header-right {
-
         margin-left: auto;
-
-      }
-
-
-      .mobile-toggle {
-
-        display: flex;
-
       }
 
 
       .home-btn {
-
         width: 88px;
-
         height: 54px;
 
         font-size: 18px;
+      }
 
+
+      .mobile-toggle {
+        display: flex;
       }
 
 
       .contact-section {
-
         grid-template-columns: 1fr;
 
         gap: 45px;
@@ -1015,26 +882,21 @@
           55px
           7%
           80px;
-
       }
 
 
       .contact-intro {
-
         padding-top: 0;
-
       }
 
 
       .contact-intro h1 {
-
         font-size:
           clamp(
             60px,
             10vw,
             82px
           );
-
       }
 
     }
@@ -1046,100 +908,109 @@
 
     @media (max-width: 560px) {
 
-
       .top-section {
-
         min-height: 125px;
 
         background-position:
           62% center;
+      }
 
+
+      header {
+        height: 90px;
+
+        padding:
+          20px
+          20px
+          0;
+      }
+
+
+      .brand {
+        font-size: 24px;
       }
 
 
       .home-btn {
-
         display: none;
+      }
 
+
+      .mobile-toggle {
+        width: 45px;
+        height: 45px;
+      }
+
+
+      .mobile-menu {
+        top: 90px;
       }
 
 
       .contact-section {
-
         padding:
           45px
           20px
           65px;
 
         gap: 35px;
-
       }
 
 
       .contact-intro h1 {
-
         font-size: 65px;
-
       }
 
 
       .intro-text {
-
         font-size: 14px;
 
         line-height: 1.7;
-
       }
 
 
       .form-row {
-
         grid-template-columns: 1fr;
 
         gap: 0;
-
       }
 
 
       .form-group {
-
         margin-bottom: 22px;
-
       }
 
 
       .form-group input {
-
         height: 46px;
-
       }
 
 
       .form-group textarea {
-
         min-height: 140px;
-
       }
 
 
       .send-btn {
-
         width: 100%;
-
       }
 
     }
 
-    /* =========================================================
+
+    /* =====================================================
        FOOTER
-    ========================================================= */
+    ===================================================== */
 
     footer {
       position: relative;
 
       width: 100%;
 
-      padding: 20px 20px 30px;
+      padding:
+        20px
+        20px
+        30px;
 
       color: #666;
 
@@ -1180,7 +1051,7 @@
       </a>
 
 
-      <!-- MENÚ -->
+      <!-- MENÚ DESKTOP -->
 
       <nav aria-label="Main navigation">
 
@@ -1332,7 +1203,7 @@
               viewBox="0 0 24 24">
 
               <path
-                d="M22 7.2c-.2-1.1-1.1-2-2.2-2.2C18 4.7 15.1 4.5 12 4.5s-6 .2-7.8.5C3.1 5.2 2.2 6.1 2 7.2c-.3 1.5-.4 3-.4 4.8s.1 3.3.4 4.8c.2 1.1 1.1 2 2.2 2.2 1.8.3 4.7.5 7.8.5s6-.2 7.8-.5c1.1-.2 2-1.1-2.2-2.2.3-1.5.4-3 .4-4.8s-.1-3.3-.4-4.8zM10 15.5v-7l6 3.5-6 3.5z">
+                d="M22 7.2c-.2-1.1-1.1-2-2.2-2.2C18 4.7 15.1 4.5 12 4.5s-6 .2-7.8.5C3.1 5.2 2.2 6.1 2 7.2c-.3 1.5-.4 3-.4 4.8s.1 3.3.4 4.8c.2 1.1 1.1 2 2.2 2.2 1.8.3 4.7.5 7.8.5s6-.2 7.8-.5c1.1-.2 2-1.1 2.2-2.2.3-1.5.4-3 .4-4.8s-.1-3.3-.4-4.8zM10 15.5v-7l6 3.5-6 3.5z">
               </path>
 
             </svg>
@@ -1357,10 +1228,10 @@
 
         <button
           class="mobile-toggle"
+          type="button"
           aria-label="Open menu"
           aria-expanded="false"
-          aria-controls="mobile-menu"
-          type="button">
+          aria-controls="mobile-menu">
 
           <span></span>
 
@@ -1373,6 +1244,7 @@
 
     <!-- ===================================================
          MENÚ MÓVIL
+         IGUAL QUE GALLERY
     ==================================================== -->
 
     <div
@@ -1395,8 +1267,12 @@
         Concerts
       </a>
 
-      <a href="contact.html">
+      <a
+        href="contact.html"
+        class="active">
+
         Contact
+
       </a>
 
     </div>
@@ -1421,16 +1297,12 @@
 
 
         <p class="eyebrow">
-
           CONTACT
-
         </p>
 
 
         <h1>
-
           Get in touch
-
         </h1>
 
 
@@ -1460,9 +1332,7 @@
           <div class="form-group">
 
             <label for="nombre">
-
               First name
-
             </label>
 
 
@@ -1479,9 +1349,7 @@
           <div class="form-group">
 
             <label for="apellido">
-
               Last name
-
             </label>
 
 
@@ -1503,9 +1371,7 @@
         <div class="form-group">
 
           <label for="email">
-
             Email
-
           </label>
 
 
@@ -1524,9 +1390,7 @@
         <div class="form-group">
 
           <label for="mensaje">
-
             Message
-
           </label>
 
 
@@ -1545,11 +1409,8 @@
           class="hidden-field"
           aria-hidden="true">
 
-
           <label for="website">
-
             Website
-
           </label>
 
 
@@ -1570,11 +1431,8 @@
           class="send-btn"
           id="send-btn">
 
-
           <span class="btn-text">
-
             Send message
-
           </span>
 
 
@@ -1585,7 +1443,6 @@
             Sending...
 
           </span>
-
 
         </button>
 
@@ -1609,6 +1466,7 @@
 
   </main>
 
+
   <!-- =======================================================
        FOOTER
   ======================================================== -->
@@ -1618,6 +1476,7 @@
     © 2026 Daniel Buades. All rights reserved.
 
   </footer>
+
 
   <!-- =====================================================
        JAVASCRIPT
@@ -1837,6 +1696,7 @@
 
     /* =====================================================
        MENÚ MÓVIL
+       IGUAL QUE GALLERY
     ===================================================== */
 
     const mobileToggle =
