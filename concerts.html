@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Daniel Buades — Concerts</title>
 
+
   <!-- GOOGLE FONTS -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
+
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
@@ -15,7 +21,9 @@
     rel="stylesheet"
   >
 
+
   <style>
+
 
     /* =========================================================
        GENERAL
@@ -27,20 +35,27 @@
       padding: 0;
     }
 
+
     html {
       width: 100%;
       min-height: 100%;
       background: #080808;
     }
 
+
     body {
       width: 100%;
       min-height: 100vh;
+
       background: #080808;
+
       color: #fff;
+
       font-family: "Montserrat", Arial, sans-serif;
+
       overflow-x: hidden;
     }
+
 
 
     /* =========================================================
@@ -48,8 +63,11 @@
     ========================================================= */
 
     .top-section {
+
       position: relative;
+
       width: 100%;
+
       min-height: 190px;
 
       background:
@@ -59,9 +77,13 @@
       overflow: hidden;
     }
 
+
     .top-section::after {
+
       content: "";
+
       position: absolute;
+
       inset: 0;
 
       background: linear-gradient(
@@ -75,18 +97,23 @@
     }
 
 
+
     /* =========================================================
        HEADER
     ========================================================= */
 
     header {
+
       position: relative;
+
       z-index: 50;
 
       width: 100%;
+
       height: 134px;
 
       display: flex;
+
       align-items: center;
 
       padding: 0 5.4% 0 3.9%;
@@ -94,24 +121,33 @@
       color: #fff;
     }
 
+
     .brand {
+
       flex: 0 0 auto;
 
       color: #fff;
+
       text-decoration: none;
 
       font-family: "Cormorant Garamond", Georgia, serif;
+
       font-size: 29px;
+
       font-weight: 400;
 
       line-height: 1;
+
       letter-spacing: -.6px;
 
       white-space: nowrap;
     }
 
+
     nav {
+
       display: flex;
+
       align-items: center;
 
       gap: 33px;
@@ -119,14 +155,19 @@
       margin-left: 54px;
     }
 
+
     nav a {
+
       position: relative;
 
       color: #fff;
+
       text-decoration: none;
 
       font-family: "Montserrat", Arial, sans-serif;
+
       font-size: 17px;
+
       font-weight: 400;
 
       line-height: 1;
@@ -136,62 +177,78 @@
       transition: opacity .25s ease;
     }
 
+
     nav a:hover {
       opacity: .65;
     }
 
-    /* Página activa */
-nav a.active::after {
-  content: "";
 
-  position: absolute;
+    nav a.active::after {
 
-  left: 0;
-  right: 0;
+      content: "";
 
-  bottom: -9px;
+      position: absolute;
 
-  height: 1px;
+      left: 0;
 
-  background: rgba(255,255,255,.95);
-}
+      right: 0;
+
+      bottom: -9px;
+
+      height: 1px;
+
+      background: rgba(255,255,255,.95);
+    }
+
 
 
     /* =========================================================
-       PARTE DERECHA DEL HEADER
+       PARTE DERECHA
     ========================================================= */
 
     .header-right {
+
       margin-left: auto;
 
       display: flex;
+
       align-items: center;
 
       gap: 25px;
     }
 
 
+
     /* =========================================================
-       REDES SOCIALES
+       REDES
     ========================================================= */
 
     .socials {
+
       display: flex;
+
       align-items: center;
 
       gap: 24px;
+
       margin-right: 22px;
     }
 
+
     .socials a {
+
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
       width: 25px;
+
       height: 25px;
 
       color: #fff;
+
       text-decoration: none;
 
       transition:
@@ -199,45 +256,64 @@ nav a.active::after {
         opacity .2s ease;
     }
 
+
     .socials a:hover {
+
       transform: translateY(-2px);
+
       opacity: .7;
     }
 
+
     .socials svg {
+
       width: 23px;
+
       height: 23px;
 
       fill: none;
+
       stroke: currentColor;
+
       stroke-width: 1.8;
     }
 
+
     .socials .fill-icon {
+
       fill: currentColor;
+
       stroke: none;
     }
 
 
+
     /* =========================================================
-       BOTÓN HOME
+       HOME
     ========================================================= */
 
     .home-btn {
+
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
       width: 118px;
+
       height: 75px;
 
       border: 1px solid rgba(255,255,255,.95);
+
       border-radius: 50%;
 
       color: #fff;
+
       text-decoration: none;
 
       font-family: "Cormorant Garamond", Georgia, serif;
+
       font-size: 21px;
 
       transition:
@@ -245,23 +321,28 @@ nav a.active::after {
         color .25s ease;
     }
 
+
     .home-btn:hover {
+
       background: rgba(255,255,255,.95);
+
       color: #111;
     }
 
 
+
     /* =========================================================
        BOTÓN MENÚ MÓVIL
-       IGUAL QUE GALLERY
     ========================================================= */
 
     .mobile-toggle {
+
       display: none;
 
       position: relative;
 
       width: 48px;
+
       height: 48px;
 
       border: 1px solid rgba(255,255,255,.8);
@@ -269,22 +350,27 @@ nav a.active::after {
       border-radius: 50%;
 
       align-items: center;
+
       justify-content: center;
 
       color: white;
+
       background: transparent;
 
       cursor: pointer;
     }
 
+
     .mobile-toggle span,
     .mobile-toggle span::before,
     .mobile-toggle span::after {
+
       display: block;
 
       position: absolute;
 
       width: 19px;
+
       height: 1px;
 
       background: currentColor;
@@ -292,24 +378,28 @@ nav a.active::after {
       content: "";
     }
 
+
     .mobile-toggle span::before {
       transform: translateY(-6px);
     }
+
 
     .mobile-toggle span::after {
       transform: translateY(6px);
     }
 
 
+
     /* =========================================================
        MENÚ MÓVIL
-       IGUAL QUE GALLERY
     ========================================================= */
 
     .mobile-menu {
+
       position: fixed;
 
       top: 95px;
+
       left: 0;
 
       width: 100%;
@@ -327,8 +417,11 @@ nav a.active::after {
       backdrop-filter: blur(10px);
     }
 
+
     .mobile-menu a {
+
       color: white;
+
       text-decoration: none;
 
       font-family: "Montserrat", Arial, sans-serif;
@@ -340,21 +433,26 @@ nav a.active::after {
       border-bottom: 1px solid rgba(255,255,255,.12);
     }
 
+
     .mobile-menu a:last-child {
       border-bottom: none;
     }
+
 
     .mobile-menu a.active {
       opacity: .65;
     }
 
 
+
     /* =========================================================
-       TÍTULO DE LA PÁGINA
+       TÍTULO
     ========================================================= */
 
     .page-title {
+
       position: relative;
+
       z-index: 5;
 
       text-align: center;
@@ -362,11 +460,15 @@ nav a.active::after {
       padding: 15px 20px 25px;
     }
 
+
     .page-title h1 {
+
       color: #fff;
 
       font-family: "Allura", "Brush Script MT", cursive;
+
       font-size: clamp(52px, 5vw, 78px);
+
       font-weight: 400;
 
       line-height: .95;
@@ -375,11 +477,13 @@ nav a.active::after {
     }
 
 
+
     /* =========================================================
-       CONTENIDO DE CONCIERTOS
+       CONCIERTOS
     ========================================================= */
 
     .concerts-section {
+
       position: relative;
 
       width: 100%;
@@ -393,10 +497,14 @@ nav a.active::after {
         );
     }
 
+
     .concerts-container {
+
       max-width: 1200px;
+
       margin: 0 auto;
     }
+
 
 
     /* =========================================================
@@ -404,8 +512,11 @@ nav a.active::after {
     ========================================================= */
 
     .tabs {
+
       display: flex;
+
       justify-content: center;
+
       align-items: center;
 
       gap: 12px;
@@ -413,7 +524,9 @@ nav a.active::after {
       margin-bottom: 40px;
     }
 
+
     .tab {
+
       cursor: pointer;
 
       border: 1px solid rgba(255,255,255,.35);
@@ -423,10 +536,13 @@ nav a.active::after {
       border-radius: 30px;
 
       background: transparent;
+
       color: #fff;
 
       font-family: "Montserrat", Arial, sans-serif;
+
       font-size: 14px;
+
       font-weight: 400;
 
       transition:
@@ -435,16 +551,22 @@ nav a.active::after {
         border-color .25s ease;
     }
 
+
     .tab:hover {
+
       border-color: rgba(255,255,255,.8);
     }
 
+
     .tab.active {
+
       background: #fff;
+
       color: #111;
 
       border-color: #fff;
     }
+
 
 
     /* =========================================================
@@ -452,13 +574,17 @@ nav a.active::after {
     ========================================================= */
 
     .grid {
+
       display: grid;
 
       grid-template-columns:
         repeat(auto-fill, minmax(320px, 1fr));
 
       gap: 28px;
+
+      align-items: start;
     }
+
 
 
     /* =========================================================
@@ -466,6 +592,7 @@ nav a.active::after {
     ========================================================= */
 
     .card {
+
       background: #171717;
 
       border: 1px solid rgba(255,255,255,.08);
@@ -482,7 +609,9 @@ nav a.active::after {
         box-shadow .25s ease;
     }
 
+
     .card:hover {
+
       transform: translateY(-4px);
 
       box-shadow:
@@ -490,33 +619,44 @@ nav a.active::after {
     }
 
 
+
     /* =========================================================
-       FOTO DEL CONCIERTO
+       FOTO
     ========================================================= */
 
-    .card img {
+    .card-photo {
+
       display: block;
 
       width: 100%;
+
       height: 220px;
 
       object-fit: cover;
+
+      background: #111;
     }
+
 
 
     /* =========================================================
-       INFORMACIÓN DE LA TARJETA
+       INFORMACIÓN
     ========================================================= */
 
     .info {
+
       padding: 22px;
     }
 
+
     .fecha {
+
       color: #c9a96e;
 
       font-family: "Montserrat", Arial, sans-serif;
+
       font-size: 13px;
+
       font-weight: 500;
 
       letter-spacing: .5px;
@@ -526,34 +666,94 @@ nav a.active::after {
       text-transform: uppercase;
     }
 
+
     .ciudad {
+
       color: #fff;
 
       font-family: "Cormorant Garamond", Georgia, serif;
+
       font-size: 31px;
+
       font-weight: 400;
 
-      line-height: 1;
+      line-height: 1.08;
 
-      margin-bottom: 8px;
+      margin-bottom: 10px;
+
+      overflow-wrap: anywhere;
     }
 
+
     .sala {
+
       color: #bbb;
 
       font-size: 14px;
+
       font-weight: 300;
 
-      margin-bottom: 22px;
+      line-height: 1.5;
+
+      margin-bottom: 20px;
+
+      white-space: pre-line;
+
+      overflow-wrap: anywhere;
     }
 
 
+
     /* =========================================================
-       BOTÓN ENTRADAS
+       TÍTULO DEL CONCIERTO
     ========================================================= */
 
+    .concert-title {
+
+      color: #fff;
+
+      font-family: "Cormorant Garamond", Georgia, serif;
+
+      font-size: 28px;
+
+      font-weight: 400;
+
+      line-height: 1.12;
+
+      margin-top: 4px;
+
+      margin-bottom: 20px;
+
+      white-space: pre-line;
+
+      overflow-wrap: anywhere;
+    }
+
+
+
+    /* =========================================================
+       ENLACES
+    ========================================================= */
+
+    .links {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+
+      margin-top: 6px;
+    }
+
+
     .boton {
-      display: inline-block;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
 
       text-decoration: none;
 
@@ -568,7 +768,10 @@ nav a.active::after {
       border-radius: 30px;
 
       font-family: "Montserrat", Arial, sans-serif;
+
       font-size: 13px;
+
+      line-height: 1.2;
 
       transition:
         background .25s ease,
@@ -576,12 +779,16 @@ nav a.active::after {
         border-color .25s ease;
     }
 
+
     .boton:hover {
+
       background: #fff;
+
       color: #111;
 
       border-color: #fff;
     }
+
 
 
     /* =========================================================
@@ -589,6 +796,7 @@ nav a.active::after {
     ========================================================= */
 
     .realizado {
+
       display: inline-block;
 
       background: transparent;
@@ -605,6 +813,7 @@ nav a.active::after {
     }
 
 
+
     /* =========================================================
        MENSAJES
     ========================================================= */
@@ -613,7 +822,9 @@ nav a.active::after {
       display: none;
     }
 
+
     .mensaje {
+
       grid-column: 1 / -1;
 
       text-align: center;
@@ -626,11 +837,13 @@ nav a.active::after {
     }
 
 
+
     /* =========================================================
        FOOTER
     ========================================================= */
 
     footer {
+
       position: relative;
 
       width: 100%;
@@ -647,6 +860,7 @@ nav a.active::after {
     }
 
 
+
     /* =========================================================
        RESPONSIVE
     ========================================================= */
@@ -654,30 +868,43 @@ nav a.active::after {
     @media (max-width: 1250px) {
 
       header {
+
         padding-left: 3%;
+
         padding-right: 3%;
       }
 
+
       nav {
+
         gap: 21px;
+
         margin-left: 35px;
       }
+
 
       nav a {
         font-size: 15px;
       }
 
+
       .socials {
+
         gap: 15px;
+
         margin-right: 8px;
       }
+
 
       .header-right {
         gap: 12px;
       }
 
+
       .home-btn {
+
         width: 100px;
+
         height: 64px;
 
         font-size: 19px;
@@ -686,13 +913,16 @@ nav a.active::after {
     }
 
 
+
     @media (max-width: 980px) {
 
       .top-section {
         min-height: 150px;
       }
 
+
       header {
+
         height: 95px;
 
         padding: 24px 25px 0;
@@ -700,40 +930,54 @@ nav a.active::after {
         align-items: center;
       }
 
+
       .brand {
         font-size: 26px;
       }
+
 
       nav,
       .socials {
         display: none;
       }
 
+
       .header-right {
+
         margin-left: auto;
       }
 
+
       .home-btn {
+
         width: 88px;
+
         height: 54px;
 
         font-size: 18px;
       }
 
+
       .mobile-toggle {
         display: flex;
       }
+
 
       .page-title {
         padding-top: 8px;
       }
 
+
       .concerts-section {
+
         padding-left: 4%;
+
         padding-right: 4%;
       }
 
+
       .grid {
+
         grid-template-columns:
           repeat(auto-fill, minmax(280px, 1fr));
       }
@@ -741,73 +985,105 @@ nav a.active::after {
     }
 
 
+
     @media (max-width: 560px) {
 
       .top-section {
+
         min-height: 125px;
 
         background-position: 62% center;
       }
 
+
       header {
+
         height: 90px;
 
         padding: 20px 20px 0;
       }
 
+
       .brand {
         font-size: 24px;
       }
+
 
       .home-btn {
         display: none;
       }
 
+
       .mobile-toggle {
+
         width: 45px;
+
         height: 45px;
       }
+
 
       .mobile-menu {
         top: 90px;
       }
 
+
       .page-title {
+
         padding: 12px 15px 20px;
       }
+
 
       .page-title h1 {
         font-size: 58px;
       }
 
+
       .concerts-section {
+
         padding: 30px 18px 45px;
       }
 
+
       .tabs {
+
         gap: 8px;
+
         margin-bottom: 30px;
       }
 
+
       .tab {
+
         padding: 10px 16px;
+
         font-size: 12px;
       }
 
+
       .grid {
+
         grid-template-columns: 1fr;
+
         gap: 20px;
       }
 
-      .card img {
+
+      .card-photo {
         height: 210px;
       }
+
 
       .ciudad {
         font-size: 28px;
       }
 
+
+      .concert-title {
+        font-size: 26px;
+      }
+
     }
+
 
 
     @media (max-width: 400px) {
@@ -819,25 +1095,30 @@ nav a.active::after {
     }
 
   </style>
+
 </head>
+
 
 
 <body>
 
 
   <!-- =======================================================
-       CABECERA CON LA FOTO DE LA PÁGINA PRINCIPAL
+       CABECERA
   ======================================================== -->
 
   <section class="top-section">
 
+
     <header>
+
 
       <!-- NOMBRE -->
 
       <a class="brand" href="index.html">
         Daniel Buades
       </a>
+
 
 
       <!-- MENÚ ESCRITORIO -->
@@ -867,19 +1148,25 @@ nav a.active::after {
       </nav>
 
 
+
       <!-- PARTE DERECHA -->
 
       <div class="header-right">
 
 
-        <!-- REDES SOCIALES -->
+        <!-- REDES -->
 
         <div class="socials" aria-label="Social networks">
 
 
           <!-- INSTAGRAM -->
 
-          <a href="https://www.instagram.com/daniel.buades/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <a
+            href="https://www.instagram.com/daniel.buades/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
 
             <svg viewBox="0 0 24 24">
 
@@ -909,13 +1196,18 @@ nav a.active::after {
           </a>
 
 
+
           <!-- SPOTIFY -->
 
-          <a href="#" aria-label="Spotify">
+          <a
+            href="#"
+            aria-label="Spotify"
+          >
 
             <svg
               class="fill-icon"
-              viewBox="0 0 24 24">
+              viewBox="0 0 24 24"
+            >
 
               <circle
                 cx="12"
@@ -952,13 +1244,20 @@ nav a.active::after {
           </a>
 
 
+
           <!-- FACEBOOK -->
 
-          <a href="https://www.facebook.com/daniel.buadestasa/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <a
+            href="https://www.facebook.com/daniel.buadestasa/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+          >
 
             <svg
               class="fill-icon"
-              viewBox="0 0 24 24">
+              viewBox="0 0 24 24"
+            >
 
               <path
                 d="M13.8 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.2V10H8v3h2.6v8h3.2z">
@@ -969,13 +1268,20 @@ nav a.active::after {
           </a>
 
 
+
           <!-- YOUTUBE -->
 
-          <a href="https://www.youtube.com/channel/UCTxzPLnae5thfbqeOa5Lqow" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <a
+            href="https://www.youtube.com/channel/UCTxzPLnae5thfbqeOa5Lqow"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube"
+          >
 
             <svg
               class="fill-icon"
-              viewBox="0 0 24 24">
+              viewBox="0 0 24 24"
+            >
 
               <path
                 d="M22 7.2c-.2-1.1-1.1-2-2.2-2.2C18 4.7 15.1 4.5 12 4.5s-6 .2-7.8.5C3.1 5.2 2.2 6.1 2 7.2c-.3 1.5-.4 3-.4 4.8s.1 3.3.4 4.8c.2 1.1 1.1 2 2.2 2.2 1.8.3 4.7.5 7.8.5s6-.2 7.8-.5c1.1-.2 2-1.1 2.2-2.2.3-1.5.4-3 .4-4.8s-.1-3.3-.4-4.8zM10 15.5v-7l6 3.5-6 3.5z">
@@ -988,24 +1294,26 @@ nav a.active::after {
         </div>
 
 
+
         <!-- HOME -->
 
         <a
           class="home-btn"
-          href="index.html">
-
+          href="index.html"
+        >
           Home
-
         </a>
 
 
-        <!-- BOTÓN MÓVIL -->
+
+        <!-- MENÚ MÓVIL -->
 
         <button
           class="mobile-toggle"
           type="button"
           aria-label="Open menu"
-          aria-expanded="false">
+          aria-expanded="false"
+        >
 
           <span></span>
 
@@ -1016,14 +1324,15 @@ nav a.active::after {
     </header>
 
 
+
     <!-- =====================================================
          MENÚ MÓVIL
-         IGUAL QUE GALLERY
     ====================================================== -->
 
     <div
       class="mobile-menu"
-      id="mobile-menu">
+      id="mobile-menu"
+    >
 
       <a href="biography.html">
         Biography
@@ -1037,7 +1346,10 @@ nav a.active::after {
         Gallery
       </a>
 
-      <a href="concerts.html" class="active">
+      <a
+        href="concerts.html"
+        class="active"
+      >
         Concerts
       </a>
 
@@ -1048,6 +1360,7 @@ nav a.active::after {
     </div>
 
   </section>
+
 
 
   <!-- =======================================================
@@ -1061,6 +1374,7 @@ nav a.active::after {
     </h1>
 
   </section>
+
 
 
   <!-- =======================================================
@@ -1078,44 +1392,45 @@ nav a.active::after {
 
         <button
           class="tab active"
-          id="btnFuturos">
-
+          id="btnFuturos"
+        >
           Upcoming concerts
-
         </button>
 
 
         <button
           class="tab"
-          id="btnPasados">
-
+          id="btnPasados"
+        >
           Past concerts
-
         </button>
 
       </div>
 
 
-      <!-- CONCIERTOS FUTUROS -->
+
+      <!-- FUTUROS -->
 
       <div
         id="futuros"
-        class="grid">
-
+        class="grid"
+      >
       </div>
 
 
-      <!-- CONCIERTOS PASADOS -->
+
+      <!-- PASADOS -->
 
       <div
         id="pasados"
-        class="grid oculto">
-
+        class="grid oculto"
+      >
       </div>
 
     </div>
 
   </main>
+
 
 
   <!-- =======================================================
@@ -1129,11 +1444,13 @@ nav a.active::after {
   </footer>
 
 
+
   <!-- =======================================================
        JAVASCRIPT
   ======================================================== -->
 
   <script>
+
 
     /* =======================================================
        GOOGLE SHEETS
@@ -1143,67 +1460,711 @@ nav a.active::after {
       "https://docs.google.com/spreadsheets/d/e/2PACX-1vQT3WRJmZJrhXe_cdV5yy3sR9UchUccNSRkujL4M8xys56NvGQF2YueJkLzcVJSS6WL3pTkic5o7QhI/pub?gid=0&single=true&output=csv";
 
 
+
+    /* =======================================================
+       ESCAPAR HTML
+    ======================================================== */
+
+    function escaparHTML(texto) {
+
+      return String(texto || "")
+
+        .replace(/&/g, "&amp;")
+
+        .replace(/</g, "&lt;")
+
+        .replace(/>/g, "&gt;")
+
+        .replace(/"/g, "&quot;")
+
+        .replace(/'/g, "&#039;");
+    }
+
+
+
+    /* =======================================================
+       PARSER CSV CORRECTO
+       
+       Permite:
+       - comas dentro de celdas
+       - comillas
+       - saltos de línea
+    ======================================================== */
+
+    function parseCSV(texto) {
+
+      const filas = [];
+
+      let fila = [];
+
+      let campo = "";
+
+      let dentroDeComillas = false;
+
+
+      for (let i = 0; i < texto.length; i++) {
+
+        const caracter = texto[i];
+
+        const siguiente = texto[i + 1];
+
+
+        if (caracter === '"' && dentroDeComillas && siguiente === '"') {
+
+          campo += '"';
+
+          i++;
+
+          continue;
+        }
+
+
+        if (caracter === '"') {
+
+          dentroDeComillas = !dentroDeComillas;
+
+          continue;
+        }
+
+
+        if (caracter === "," && !dentroDeComillas) {
+
+          fila.push(campo);
+
+          campo = "";
+
+          continue;
+        }
+
+
+        if (
+          (caracter === "\n" || caracter === "\r") &&
+          !dentroDeComillas
+        ) {
+
+          if (caracter === "\r" && siguiente === "\n") {
+            i++;
+          }
+
+          fila.push(campo);
+
+          campo = "";
+
+          if (fila.some(c => c.trim() !== "")) {
+            filas.push(fila);
+          }
+
+          fila = [];
+
+          continue;
+        }
+
+
+        campo += caracter;
+      }
+
+
+      if (campo !== "" || fila.length > 0) {
+
+        fila.push(campo);
+
+        if (fila.some(c => c.trim() !== "")) {
+          filas.push(fila);
+        }
+      }
+
+
+      return filas;
+    }
+
+
+
+    /* =======================================================
+       BUSCAR URLS
+    ======================================================== */
+
+    function extraerURLs(texto) {
+
+      const regex =
+        /https?:\/\/[^\s<>"']+/gi;
+
+      return String(texto || "").match(regex) || [];
+    }
+
+
+
+    /* =======================================================
+       QUITAR URLS DE UN TEXTO
+    ======================================================== */
+
+    function quitarURLs(texto) {
+
+      return String(texto || "")
+
+        .replace(
+          /https?:\/\/[^\s<>"']+/gi,
+          ""
+        )
+
+        .trim();
+    }
+
+
+
+    /* =======================================================
+       LIMPIAR URL
+    ======================================================== */
+
+    function limpiarURL(url) {
+
+      return String(url || "")
+
+        .trim()
+
+        .replace(/[),.;]+$/, "");
+    }
+
+
+
+    /* =======================================================
+       COMPROBAR SI ES IMAGEN
+    ======================================================== */
+
+    function pareceImagen(url) {
+
+      const valor =
+        limpiarURL(url).toLowerCase();
+
+
+      return (
+
+        /\.(jpg|jpeg|png|gif|webp|avif|svg)(\?.*)?$/i.test(valor)
+
+        ||
+
+        valor.includes("images.unsplash.com")
+
+        ||
+
+        valor.includes("imagekit.io")
+
+        ||
+
+        valor.includes("cloudinary.com")
+
+      );
+    }
+
+
+
+    /* =======================================================
+       FORMATEAR FECHA
+    ======================================================== */
+
+    function formatearFecha(fecha) {
+
+      if (!fecha) {
+        return "";
+      }
+
+
+      const partes =
+        String(fecha).trim().split("-");
+
+
+      if (partes.length === 3) {
+
+        const año = partes[0];
+
+        const mes = partes[1];
+
+        const dia = partes[2];
+
+
+        const meses = [
+          "JAN",
+          "FEB",
+          "MAR",
+          "APR",
+          "MAY",
+          "JUN",
+          "JUL",
+          "AUG",
+          "SEP",
+          "OCT",
+          "NOV",
+          "DEC"
+        ];
+
+
+        const numeroMes =
+          parseInt(mes, 10);
+
+
+        if (
+          numeroMes >= 1 &&
+          numeroMes <= 12
+        ) {
+
+          return `${dia} ${meses[numeroMes - 1]} ${año}`;
+        }
+      }
+
+
+      return escaparHTML(fecha);
+    }
+
+
+
+    /* =======================================================
+       CREAR ENLACE
+    ======================================================== */
+
+    function crearBoton(url, texto) {
+
+      const urlLimpia =
+        limpiarURL(url);
+
+
+      if (!urlLimpia) {
+        return "";
+      }
+
+
+      return `
+
+        <a
+          class="boton"
+          href="${escaparHTML(urlLimpia)}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          ${escaparHTML(texto)}
+        </a>
+
+      `;
+    }
+
+
+
+    /* =======================================================
+       PROCESAR COLUMNA ENTRADAS
+       
+       Puede contener:
+
+       1. Solo URL:
+          https://entradas.com
+
+       2. Texto + URL:
+          Recital de Daniel Buades
+          https://berklee.edu/...
+
+    ======================================================== */
+
+    function procesarEntradas(valor) {
+
+      const texto =
+        String(valor || "").trim();
+
+
+      if (!texto) {
+
+        return {
+          titulo: "",
+          botones: []
+        };
+      }
+
+
+      const urls =
+        extraerURLs(texto);
+
+
+      const textoSinURLs =
+        quitarURLs(texto).trim();
+
+
+      const botones = [];
+
+
+      urls.forEach((url, indice) => {
+
+        if (indice === 0) {
+
+          botones.push(
+            crearBoton(
+              url,
+              textoSinURLs
+                ? "More information"
+                : "Tickets"
+            )
+          );
+
+        } else {
+
+          botones.push(
+            crearBoton(
+              url,
+              "More information"
+            )
+          );
+
+        }
+
+      });
+
+
+      return {
+
+        titulo: textoSinURLs,
+
+        botones
+
+      };
+    }
+
+
+
+    /* =======================================================
+       PROCESAR FOTO
+       
+       Si E contiene una URL de imagen:
+       se muestra como imagen.
+
+       Si E contiene otra URL y D ya tiene título:
+       se interpreta como enlace de información.
+    ======================================================== */
+
+    function procesarFoto(
+      foto,
+      tieneTitulo
+    ) {
+
+      const valor =
+        String(foto || "").trim();
+
+
+      if (!valor) {
+
+        return {
+          imagen: "",
+          enlace: ""
+        };
+      }
+
+
+      const urls =
+        extraerURLs(valor);
+
+
+      if (!urls.length) {
+
+        return {
+          imagen: "",
+          enlace: ""
+        };
+      }
+
+
+      const url =
+        limpiarURL(urls[0]);
+
+
+      if (pareceImagen(url)) {
+
+        return {
+
+          imagen: `
+
+            <img
+              class="card-photo"
+              src="${escaparHTML(url)}"
+              alt="Concert"
+              loading="lazy"
+              onerror="this.style.display='none'"
+            >
+
+          `,
+
+          enlace: ""
+
+        };
+      }
+
+
+      /*
+       Si no parece una imagen y la columna D
+       contiene un título, consideramos que E
+       es un enlace adicional.
+      */
+
+      if (tieneTitulo) {
+
+        return {
+
+          imagen: "",
+
+          enlace:
+            crearBoton(
+              url,
+              "More information"
+            )
+
+        };
+      }
+
+
+      return {
+
+        imagen: "",
+
+        enlace: ""
+
+      };
+    }
+
+
+
+    /* =======================================================
+       CREAR TARJETA
+    ======================================================== */
+
+    function crearTarjeta(concierto, esFuturo) {
+
+
+      const entradas =
+        procesarEntradas(
+          concierto.entradas
+        );
+
+
+      const foto =
+        procesarFoto(
+          concierto.foto,
+          Boolean(entradas.titulo)
+        );
+
+
+      let contenido = "";
+
+
+      /*
+       FOTO
+      */
+
+      contenido += foto.imagen;
+
+
+
+      /*
+       INFORMACIÓN
+      */
+
+      contenido += `
+
+        <div class="info">
+
+          <div class="fecha">
+            ${formatearFecha(concierto.fecha)}
+          </div>
+
+          <div class="ciudad">
+            ${escaparHTML(concierto.ciudad)}
+          </div>
+
+          ${
+            concierto.sala
+              ? `
+                <div class="sala">
+                  ${escaparHTML(concierto.sala)}
+                </div>
+              `
+              : ""
+          }
+
+          ${
+            entradas.titulo
+              ? `
+                <div class="concert-title">
+                  ${escaparHTML(entradas.titulo)}
+                </div>
+              `
+              : ""
+          }
+
+          <div class="links">
+
+      `;
+
+
+      /*
+       ENLACES PARA CONCIERTOS FUTUROS
+      */
+
+      if (esFuturo) {
+
+        entradas.botones.forEach(
+          boton => {
+
+            contenido += boton;
+
+          }
+        );
+
+
+        if (foto.enlace) {
+
+          contenido +=
+            foto.enlace;
+
+        }
+
+      }
+
+
+      /*
+       CONCIERTOS PASADOS
+      */
+
+      else {
+
+        contenido += `
+
+          <span class="realizado">
+            ✓ Concert completed
+          </span>
+
+        `;
+
+
+        /*
+         Si existe un enlace de información
+         incluso en un concierto pasado,
+         también lo mostramos.
+        */
+
+        if (foto.enlace) {
+
+          contenido +=
+            foto.enlace;
+
+        }
+
+      }
+
+
+      contenido += `
+
+          </div>
+
+        </div>
+
+      `;
+
+
+      return `
+
+        <article class="card">
+
+          ${contenido}
+
+        </article>
+
+      `;
+    }
+
+
+
     /* =======================================================
        CARGAR CONCIERTOS
     ======================================================== */
 
     async function cargarConciertos() {
 
+      const futuros =
+        document.getElementById("futuros");
+
+
+      const pasados =
+        document.getElementById("pasados");
+
+
       try {
 
-        const respuesta = await fetch(CSV_URL);
+        const respuesta =
+          await fetch(CSV_URL);
+
 
         if (!respuesta.ok) {
-          throw new Error("Could not load Google Sheets");
+
+          throw new Error(
+            "Could not load Google Sheets"
+          );
+
         }
 
-        const csv = await respuesta.text();
+
+        const csv =
+          await respuesta.text();
 
 
-        const filas = csv
-          .trim()
-          .split(/\r?\n/)
-          .slice(1);
+        const filas =
+          parseCSV(csv);
 
 
-        const conciertos = filas
-          .filter(fila => fila.trim() !== "")
-          .map(fila => {
+        /*
+         La primera fila es la cabecera
+        */
 
-            const columnas = fila.split(",");
-
-            return {
-
-              fecha:
-                columnas[0]?.trim() || "",
-
-              ciudad:
-                columnas[1]?.trim() || "",
-
-              sala:
-                columnas[2]?.trim() || "",
-
-              entradas:
-                columnas[3]?.trim() || "",
-
-              foto:
-                columnas[4]?.trim() || ""
-
-            };
-
-          });
+        const datos =
+          filas.slice(1);
 
 
-        const futuros =
-          document.getElementById("futuros");
+        const conciertos =
+          datos
 
-        const pasados =
-          document.getElementById("pasados");
+            .filter(
+              fila =>
+                fila.some(
+                  celda =>
+                    String(celda).trim() !== ""
+                )
+            )
+
+            .map(fila => {
+
+              return {
+
+                fecha:
+                  fila[0]?.trim() || "",
+
+                ciudad:
+                  fila[1]?.trim() || "",
+
+                sala:
+                  fila[2]?.trim() || "",
+
+                entradas:
+                  fila[3]?.trim() || "",
+
+                foto:
+                  fila[4]?.trim() || ""
+
+              };
+
+            });
 
 
-        const hoy = new Date();
+        const hoy =
+          new Date();
 
-        hoy.setHours(0, 0, 0, 0);
+
+        hoy.setHours(
+          0,
+          0,
+          0,
+          0
+        );
 
 
         let numFuturos = 0;
@@ -1211,115 +2172,112 @@ nav a.active::after {
         let numPasados = 0;
 
 
-        conciertos
-          .sort((a, b) => {
+        /*
+         ORDENAR POR FECHA
+        */
 
-            return new Date(a.fecha) -
-                   new Date(b.fecha);
+        conciertos.sort(
+          (a, b) => {
 
-          })
+            return (
+              new Date(a.fecha) -
+              new Date(b.fecha)
+            );
+
+          }
+        );
 
 
-          .forEach(c => {
+        /*
+         CREAR TARJETAS
+        */
+
+        conciertos.forEach(
+          concierto => {
+
+
+            if (!concierto.fecha) {
+              return;
+            }
 
 
             const fechaConcierto =
-              new Date(c.fecha);
+              new Date(concierto.fecha);
 
 
-            fechaConcierto.setHours(0, 0, 0, 0);
+            fechaConcierto.setHours(
+              0,
+              0,
+              0,
+              0
+            );
 
 
             const esFuturo =
               fechaConcierto >= hoy;
 
 
-            const fotoHTML =
-              c.foto || "";
-
-
-            let accion;
-
-
-            if (esFuturo) {
-
-              accion = `
-
-                ${c.entradas}
-
-              `;
-
-            } else {
-
-              accion = `
-
-                <span class="realizado">
-                  ✓ Concert completed
-                </span>
-
-              `;
-
-            }
-
-
-            const tarjeta = `
-
-              <article class="card">
-
-                ${fotoHTML}
-
-                <div class="info">
-
-                  <div class="fecha">
-                    ${c.fecha}
-                  </div>
-
-                  <div class="ciudad">
-                    ${c.ciudad}
-                  </div>
-
-                  <div class="sala">
-                    ${c.sala}
-                  </div>
-
-                  ${accion}
-
-                </div>
-
-              </article>
-
-            `;
+            const tarjeta =
+              crearTarjeta(
+                concierto,
+                esFuturo
+              );
 
 
             if (esFuturo) {
 
-              futuros.innerHTML += tarjeta;
+              futuros.insertAdjacentHTML(
+                "beforeend",
+                tarjeta
+              );
 
               numFuturos++;
 
             } else {
 
-              pasados.innerHTML += tarjeta;
+              pasados.insertAdjacentHTML(
+                "beforeend",
+                tarjeta
+              );
 
               numPasados++;
 
             }
 
-          });
+          }
+        );
 
+
+        /*
+         SI NO HAY FUTUROS
+        */
 
         if (numFuturos === 0) {
 
-          futuros.innerHTML =
-            '<p class="mensaje">There are no concerts scheduled.</p>';
+          futuros.innerHTML = `
+
+            <p class="mensaje">
+              There are no concerts scheduled.
+            </p>
+
+          `;
 
         }
 
 
+        /*
+         SI NO HAY PASADOS
+        */
+
         if (numPasados === 0) {
 
-          pasados.innerHTML =
-            '<p class="mensaje">There are no past concerts yet.</p>';
+          pasados.innerHTML = `
+
+            <p class="mensaje">
+              There are no past concerts yet.
+            </p>
+
+          `;
 
         }
 
@@ -1328,14 +2286,24 @@ nav a.active::after {
 
       catch (error) {
 
-        console.error(error);
+        console.error(
+          "Error loading concerts:",
+          error
+        );
 
-        document.getElementById("futuros").innerHTML =
-          '<p class="mensaje">Error loading concerts.</p>';
+
+        futuros.innerHTML = `
+
+          <p class="mensaje">
+            Error loading concerts.
+          </p>
+
+        `;
 
       }
 
     }
+
 
 
     /* =======================================================
@@ -1345,78 +2313,125 @@ nav a.active::after {
     cargarConciertos();
 
 
+
     /* =======================================================
        PESTAÑAS
     ======================================================== */
 
     const btnFuturos =
-      document.getElementById("btnFuturos");
+      document.getElementById(
+        "btnFuturos"
+      );
+
 
     const btnPasados =
-      document.getElementById("btnPasados");
+      document.getElementById(
+        "btnPasados"
+      );
+
 
     const futuros =
-      document.getElementById("futuros");
+      document.getElementById(
+        "futuros"
+      );
+
 
     const pasados =
-      document.getElementById("pasados");
+      document.getElementById(
+        "pasados"
+      );
 
 
     btnFuturos.onclick = () => {
 
-      futuros.classList.remove("oculto");
+      futuros.classList.remove(
+        "oculto"
+      );
 
-      pasados.classList.add("oculto");
+      pasados.classList.add(
+        "oculto"
+      );
 
-      btnFuturos.classList.add("active");
 
-      btnPasados.classList.remove("active");
+      btnFuturos.classList.add(
+        "active"
+      );
+
+      btnPasados.classList.remove(
+        "active"
+      );
 
     };
 
 
     btnPasados.onclick = () => {
 
-      futuros.classList.add("oculto");
+      futuros.classList.add(
+        "oculto"
+      );
 
-      pasados.classList.remove("oculto");
+      pasados.classList.remove(
+        "oculto"
+      );
 
-      btnPasados.classList.add("active");
 
-      btnFuturos.classList.remove("active");
+      btnPasados.classList.add(
+        "active"
+      );
+
+      btnFuturos.classList.remove(
+        "active"
+      );
 
     };
 
 
+
     /* =======================================================
        MENÚ MÓVIL
-       EXACTAMENTE IGUAL QUE GALLERY
     ======================================================== */
 
     const mobileToggle =
-      document.querySelector(".mobile-toggle");
-
-    const mobileMenu =
-      document.getElementById("mobile-menu");
-
-
-    mobileToggle.addEventListener("click", () => {
-
-      const abierto =
-        mobileToggle.getAttribute("aria-expanded") === "true";
-
-      mobileToggle.setAttribute(
-        "aria-expanded",
-        String(!abierto)
+      document.querySelector(
+        ".mobile-toggle"
       );
 
-      mobileMenu.style.display =
-        abierto ? "none" : "flex";
 
-    });
+    const mobileMenu =
+      document.getElementById(
+        "mobile-menu"
+      );
+
+
+    mobileToggle.addEventListener(
+      "click",
+      () => {
+
+
+        const abierto =
+          mobileToggle.getAttribute(
+            "aria-expanded"
+          ) === "true";
+
+
+        mobileToggle.setAttribute(
+          "aria-expanded",
+          String(!abierto)
+        );
+
+
+        mobileMenu.style.display =
+          abierto
+            ? "none"
+            : "flex";
+
+      }
+    );
+
 
   </script>
 
 
 </body>
+
 </html>
