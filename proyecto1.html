@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Daniel Buades — Jazz & Tradición</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+    --black: #080808;
+    --white: #f4f1eb;
+    --orange: #e95d32;
+    --orange-light: #ff7650;
+    --grey: #a6a29b;
+    --line: rgba(244,241,235,.16);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--black);
+    color: var(--white);
+    font-family: "DM Sans", sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* NAVIGATION */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 25px 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    mix-blend-mode: difference;
+}
+
+.logo {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 600;
+    letter-spacing: -.04em;
+    font-size: 18px;
+}
+
+.nav-right {
+    display: flex;
+    gap: 30px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 8vw 5vw 7vw;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 65vw;
+    height: 65vw;
+    right: -20vw;
+    top: -15vw;
+    background:
+        radial-gradient(
+            circle,
+            rgba(233,93,50,.34) 0%,
+            rgba(233,93,50,.12) 30%,
+            transparent 68%
+        );
+    filter: blur(30px);
+}
+
+.hero-image {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(8,8,8,.95) 0%,
+            rgba(8,8,8,.72) 38%,
+            rgba(8,8,8,.18) 100%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(8,8,8,.95) 0%,
+            transparent 55%
+        );
+}
+
+/*
+  Sustituir esta imagen por una de tus fotografías.
+  Ejemplo:
+  background-image: url("images/proyecto-callosa.jpg");
+*/
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+}
+
+.eyebrow {
+    color: var(--orange-light);
+    text-transform: uppercase;
+    letter-spacing: .18em;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(58px, 9vw, 145px);
+    line-height: .86;
+    letter-spacing: -.075em;
+    max-width: 1050px;
+    font-weight: 600;
+}
+
+h1 span {
+    color: var(--orange);
+}
+
+.hero-description {
+    max-width: 610px;
+    margin-top: 35px;
+    font-size: clamp(17px, 2vw, 23px);
+    line-height: 1.45;
+    color: #d7d3cc;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 42px;
+    flex-wrap: wrap;
+}
+
+.button {
+    padding: 15px 23px;
+    border: 1px solid rgba(244,241,235,.4);
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    font-size: 11px;
+    transition: .25s ease;
+}
+
+.button.primary {
+    background: var(--orange);
+    border-color: var(--orange);
+    color: white;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    background: white;
+    border-color: white;
+    color: black;
+}
+
+.button.primary:hover {
+    background: var(--orange-light);
+    border-color: var(--orange-light);
+    color: white;
+}
+
+.scroll {
+    position: absolute;
+    bottom: 28px;
+    right: 5vw;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: .15em;
+    color: var(--grey);
+}
+
+/* INTRO */
+
+.section {
+    padding: 130px 5vw;
+}
+
+.intro {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 8vw;
+    border-top: 1px solid var(--line);
+}
+
+.section-number {
+    font-size: 12px;
+    color: var(--orange);
+    letter-spacing: .12em;
+}
+
+.intro h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(38px, 5vw, 72px);
+    line-height: .98;
+    letter-spacing: -.055em;
+    max-width: 800px;
+}
+
+.intro p {
+    margin-top: 35px;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #aaa69f;
+    max-width: 700px;
+}
+
+/* DIFFERENCE */
+
+.difference {
+    background: #11100f;
+}
+
+.statement {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(45px, 7vw, 105px);
+    line-height: .92;
+    letter-spacing: -.065em;
+    max-width: 1100px;
+}
+
+.statement em {
+    color: var(--orange);
+    font-style: normal;
+}
+
+.features {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--line);
+}
+
+.feature {
+    padding: 35px 30px 35px 0;
+    border-right: 1px solid var(--line);
+}
+
+.feature:not(:first-child) {
+    padding-left: 30px;
+}
+
+.feature:last-child {
+    border-right: 0;
+}
+
+.feature-number {
+    color: var(--orange);
+    font-size: 12px;
+    margin-bottom: 30px;
+}
+
+.feature h3 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 25px;
+    margin-bottom: 18px;
+}
+
+.feature p {
+    color: var(--grey);
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+/* VIDEO */
+
+.video-section {
+    padding-bottom: 150px;
+}
+
+.video-frame {
+    margin-top: 65px;
+    aspect-ratio: 16 / 9;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(233,93,50,.3),
+            transparent 40%
+        ),
+        #161412;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: 1px solid var(--line);
+}
+
+.play {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: var(--orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s ease;
+}
+
+.play::after {
+    content: "";
+    margin-left: 5px;
+    border-left: 18px solid white;
+    border-top: 11px solid transparent;
+    border-bottom: 11px solid transparent;
+}
+
+.play:hover {
+    transform: scale(1.1);
+}
+
+.video-caption {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .15em;
+    color: var(--grey);
+}
+
+/* PROGRAMMERS */
+
+.programmers {
+    background: var(--orange);
+    color: #090909;
+}
+
+.programmers .section-number {
+    color: #090909;
+}
+
+.programmers-content {
+    max-width: 1100px;
+}
+
+.programmers h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(50px, 8vw, 120px);
+    line-height: .88;
+    letter-spacing: -.07em;
+}
+
+.programmers p {
+    margin-top: 35px;
+    max-width: 650px;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.programmer-button {
+    display: inline-block;
+    margin-top: 45px;
+    background: #080808;
+    color: white;
+    padding: 20px 30px;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: .15em;
+    transition: .25s ease;
+}
+
+.programmer-button:hover {
+    background: white;
+    color: black;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 50px 5vw;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid var(--line);
+    color: var(--grey);
+    font-size: 12px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 25px;
+}
+
+/* MOBILE */
+
+@media (max-width: 750px) {
+
+    nav {
+        padding: 20px;
+    }
+
+    .nav-right {
+        display: none;
+    }
+
+    .hero {
+        padding: 120px 20px 60px;
+    }
+
+    h1 {
+        font-size: clamp(52px, 15vw, 85px);
+    }
+
+    .hero-description {
+        font-size: 17px;
+    }
+
+    .section {
+        padding: 90px 20px;
+    }
+
+    .intro {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .feature,
+    .feature:not(:first-child) {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+        padding: 30px 0;
+    }
+
+    .feature:last-child {
+        border-bottom: 0;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .video-section {
+        padding-bottom: 90px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<nav>
+
+    <a href="index.html" class="logo">
+        DANIEL BUADES
+    </a>
+
+    <div class="nav-right">
+        <a href="#proyecto">Proyecto</a>
+        <a href="#video">Vídeo</a>
+        <a href="#programar">Programar</a>
+    </div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-image"></div>
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
+            Nuevo proyecto · Jazz contemporáneo · Tradición valenciana
+        </div>
+
+        <h1>
+            UNA TRADICIÓN.<br>
+            <span>UN NUEVO RITMO.</span>
+        </h1>
+
+        <p class="hero-description">
+            Las danzas tradicionales de Callosa d'en Sarrià
+            reinterpretadas desde el lenguaje del jazz contemporáneo.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#video" class="button primary">
+                Escuchar / Ver
+            </a>
+
+            <a href="#programar" class="button">
+                Programar el proyecto
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="scroll">
+        ↓ Descubre el proyecto
+    </div>
+
+</section>
+
+
+<!-- WHAT IS IT -->
+
+<section class="section intro" id="proyecto">
+
+    <div>
+        <div class="section-number">
+            01 / EL PROYECTO
+        </div>
+    </div>
+
+    <div>
+
+        <h2>
+            De Callosa d'en Sarrià al jazz contemporáneo.
+        </h2>
+
+        <p>
+            Este proyecto parte de un material muy concreto:
+            las estructuras rítmicas y melódicas de las danzas
+            tradicionales de Callosa d'en Sarrià.
+        </p>
+
+        <p>
+            A partir de ellas, Daniel Buades crea nuevas composiciones,
+            espacios de improvisación y paisajes sonoros que conectan
+            la memoria de una comunidad con el lenguaje del jazz actual.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- STATEMENT -->
+
+<section class="section difference">
+
+    <div class="section-number">
+        02 / POR QUÉ ES DIFERENTE
+    </div>
+
+    <div style="margin-top:55px">
+
+        <div class="statement">
+            No es música tradicional.
+            <br><br>
+            No es simplemente jazz.
+            <br><br>
+            Es <em>tradición transformada.</em>
+        </div>
+
+    </div>
+
+    <div class="features">
+
+        <div class="feature">
+
+            <div class="feature-number">
+                01
+            </div>
+
+            <h3>
+                Identidad
+            </h3>
+
+            <p>
+                Un proyecto nacido de una tradición local concreta,
+                con una identidad cultural reconocible y una historia
+                que contar.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-number">
+                02
+            </div>
+
+            <h3>
+                Creación
+            </h3>
+
+            <p>
+                El material tradicional no se reproduce: se transforma
+                mediante composición, improvisación y experimentación.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-number">
+                03
+            </div>
+
+            <h3>
+                Escena contemporánea
+            </h3>
+
+            <p>
+                Una propuesta pensada para festivales, ciclos de jazz,
+                programación cultural y espacios dedicados a la creación
+                contemporánea.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- VIDEO -->
+
+<section class="section video-section" id="video">
+
+    <div class="section-number">
+        03 / VER Y ESCUCHAR
+    </div>
+
+    <div class="video-frame">
+
+        <!--
+        Aquí puedes insertar el vídeo principal de YouTube/Vimeo.
+        Sustituye este bloque por un iframe cuando tengas
+        el vídeo definitivo del proyecto.
+        -->
+
+        <a href="videos.html" class="play" aria-label="Ver vídeos"></a>
+
+        <div class="video-caption">
+            Daniel Buades · Jazz + tradición
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROGRAMMERS -->
+
+<section class="section programmers" id="programar">
+
+    <div class="programmers-content">
+
+        <div class="section-number">
+            04 / PARA PROGRAMADORES
+        </div>
+
+        <h2>
+            ¿Lo programamos?
+        </h2>
+
+        <p>
+            Una propuesta de creación propia que conecta patrimonio,
+            territorio y jazz contemporáneo.
+            Disponible para festivales, ciclos, centros culturales
+            y programación musical.
+        </p>
+
+        <a href="contact.html" class="programmer-button">
+            Contactar · Programar el proyecto →
+        </a>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <div>
+        © 2026 Daniel Buades
+    </div>
+
+    <div class="footer-links">
+        <a href="index.html">Web</a>
+        <a href="videos.html">Vídeos</a>
+        <a href="concerts.html">Conciertos</a>
+        <a href="contact.html">Contacto</a>
+    </div>
+
+</footer>
+
+
+</body>
+</html>
