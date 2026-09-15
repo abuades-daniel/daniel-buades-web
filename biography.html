@@ -1,913 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html> 
+<html lang="en"> 
 
-  <title>Biography — Daniel Buades | Drummer & Composer</title>
-  <meta name="description" content="Discover the biography and musical career of Daniel Buades, drummer and composer from Madrid, Spain, Boston, Massachusetts.">
+<head> 
 
-  <!-- Tipografías -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,500&family=Inter:wght@300;400;500&display=swap"
-    rel="stylesheet"
-  >
+  <title>Biography — Daniel Buades | Drummer & Composer</title> 
 
-  <style>
+  <meta name="description" content="Discover the biography and musical career of Daniel Buades, drummer and composer from Madrid, Spain, Boston, Massachusetts."> 
 
-    /* =========================================================
-       RESET
-    ========================================================= */
+  <!-- GOOGLE FONTS --> 
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" > 
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<style> 
 
-    html {
-      scroll-behavior: smooth;
-    }
+  /* =========================================================
+     GENERAL 
+  ========================================================= */ 
 
-    body {
-      min-height: 100%;
-      background:
-        #8c563d url("img/biography-bg.jpg") center center / cover fixed no-repeat;
-      color: #111;
-      font-family: "Inter", Arial, sans-serif;
-      overflow-x: hidden;
-    }
+  * { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+  } 
 
+  html { 
+    width: 100%; 
+    min-height: 100%; 
+    background: #080808; 
+  } 
 
-    /* =========================================================
-       HEADER
-       CABECERA COMÚN A TODAS LAS PÁGINAS
-    ========================================================= */
+  body { width: 100%; min-height: 100vh; background: #080808; color: #fff; font-family: "Montserrat", Arial, sans-serif; overflow-x: hidden; } /* ========================================================= CABECERA / FOTO DE FONDO IGUAL QUE CONCERTS ========================================================= */ .top-section { position: relative; width: 100%; min-height: 130px; background: linear-gradient(rgba(0,0,0,.10), rgba(0,0,0,.10)), url("img/foto-portada.jpg") center 98% / cover no-repeat; overflow: hidden; } .top-section::after { content: ""; position: absolute; inset: 0; background: linear-gradient( 90deg, rgba(0,0,0,.15) 0%, rgba(0,0,0,.03) 55%, rgba(0,0,0,.12) 100% ); pointer-events: none; } /* ========================================================= HEADER IGUAL QUE CONCERTS ========================================================= */ header { position: relative; z-index: 50; width: 100%; height: 134px; display: flex; align-items: center; padding: 0 5.4% 0 3.9%; color: #fff; } /* ========================================================= LOGO ========================================================= */ .brand { flex: 0 0 auto; color: #fff; text-decoration: none; font-family: "Cormorant Garamond", Georgia, serif; font-size: 29px; font-weight: 400; line-height: 1; letter-spacing: -.6px; white-space: nowrap; } .brand:hover { opacity: .65; } /* ========================================================= NAVEGACIÓN ========================================================= */ nav { display: flex; align-items: center; gap: 33px; margin-left: 54px; } nav a { position: relative; color: #fff; text-decoration: none; font-family: "Montserrat", Arial, sans-serif; font-size: 17px; font-weight: 400; line-height: 1; white-space: nowrap; transition: opacity .25s ease; } nav a:hover { opacity: .65; } nav a.active::after { content: ""; position: absolute; left: 0; right: 0; bottom: -9px; height: 1px; background: rgba(255,255,255,.95); } /* ========================================================= PARTE DERECHA ========================================================= */ .header-right { margin-left: auto; display: flex; align-items: center; gap: 25px; } /* ========================================================= REDES ========================================================= */ .socials { display: flex; align-items: center; gap: 24px; margin-right: 22px; } .socials a { display: flex; align-items: center; justify-content: center; width: 25px; height: 25px; color: #fff; text-decoration: none; transition: transform .2s ease, opacity .2s ease; } .socials a:hover { transform: translateY(-2px); opacity: .7; } .socials svg { width: 23px; height: 23px; fill: none; stroke: currentColor; stroke-width: 1.8; } .socials .fill-icon { fill: currentColor; stroke: none; } /* ========================================================= HOME ========================================================= */ .home-btn { display: flex; align-items: center; justify-content: center; width: 118px; height: 75px; border: 1px solid rgba(255,255,255,.95); border-radius: 50%; color: #fff; text-decoration: none; font-family: "Cormorant Garamond", Georgia, serif; font-size: 21px; transition: background .25s ease, color .25s ease; } .home-btn:hover { background: rgba(255,255,255,.95); color: #111; } /* ========================================================= BOTÓN MENÚ MÓVIL ========================================================= */ .mobile-toggle { display: none; position: relative; width: 48px; height: 48px; border: 1px solid rgba(255,255,255,.8); border-radius: 50%; align-items: center; justify-content: center; color: white; background: transparent; cursor: pointer; } .mobile-toggle span, .mobile-toggle span::before, .mobile-toggle span::after { display: block; position: absolute; width: 19px; height: 1px; background: currentColor; content: ""; } .mobile-toggle span::before { transform: translateY(-6px); } .mobile-toggle span::after { transform: translateY(6px); } /* ========================================================= MENÚ MÓVIL IGUAL QUE CONCERTS ========================================================= */ .mobile-menu { position: fixed; top: 95px; left: 0; width: 100%; z-index: 40; display: none; flex-direction: column; padding: 20px 25px 25px; background: rgba(8,8,8,.96); backdrop-filter: blur(10px); } .mobile-menu a { color: white; text-decoration: none; font-family: "Montserrat", Arial, sans-serif; font-size: 17px; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.12); } .mobile-menu a:last-child { border-bottom: none; } .mobile-menu a.active { opacity: .65; } /* ========================================================= BIOGRAPHY — CONTENIDO FONDO NEGRO ========================================================= */ .page { min-height: 100vh; padding: 45px 3.95% 14px; display: grid; grid-template-columns: minmax(0, 1fr) 30.1%; gap: 5%; align-items: stretch; background: #080808; } /* ========================================================= TARJETA DE BIOGRAFÍA ========================================================= */ .bio-card { background: #171717; border: 1px solid rgba(255,255,255,.08); border-radius: 3px; padding: 39px 38px 44px; min-height: calc(100vh - 179px); display: flex; flex-direction: column; box-shadow: 0 5px 20px rgba(0,0,0,.35); } .bio-title { margin: 0 0 43px; text-align: center; color: #fff; font-family: "Allura", "Brush Script MT", cursive; font-size: clamp(52px, 5vw, 78px); font-weight: 400; font-style: normal; line-height: .95; letter-spacing: 0; } .bio-text { max-width: none; margin: 0; color: #ddd; font-family: "Montserrat", Arial, sans-serif; font-size: clamp(15px, 1.05vw, 17px); font-weight: 300; line-height: 1.65; letter-spacing: .05px; } .bio-text p { margin: 0 0 22px; } .bio-text p:last-child { margin-bottom: 0; } /* ========================================================= FOTOGRAFÍA ========================================================= */ .portrait-card { min-height: calc(100vh - 179px); border-radius: 3px; overflow: hidden; background: #111; border: 1px solid rgba(255,255,255,.08); box-shadow: 0 5px 20px rgba(0,0,0,.35); } .portrait-card img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center center; filter: grayscale(100%); } /* ========================================================= FOOTER ========================================================= */ footer { position: relative; width: 100%; padding: 20px 20px 30px; color: #666; font-size: 11px; text-align: center; background: #080808; } /* ========================================================= RESPONSIVE ========================================================= */ @media (max-width: 1250px) { header { padding-left: 3%; padding-right: 3%; } nav { gap: 21px; margin-left: 35px; } nav a { font-size: 15px; } .socials { gap: 15px; margin-right: 8px; } .header-right { gap: 12px; } .home-btn { width: 100px; height: 64px; font-size: 19px; } .page { padding-left: 3%; padding-right: 3%; } } /* ========================================================= TABLET ========================================================= */ @media (max-width: 1050px) { .page { padding: 35px 24px 24px; grid-template-columns: 1fr; gap: 24px; } .bio-card, .portrait-card { min-height: auto; } .bio-card { padding: 42px 34px; } .portrait-card { height: min(80vh, 760px); } .bio-text { max-width: 900px; font-size: 17px; line-height: 1.6; } } /* ========================================================= MÓVIL ========================================================= */ @media (max-width: 980px) { .top-section { min-height: 150px; } header { height: 95px; padding: 24px 25px 0; align-items: center; } .brand { font-size: 26px; } nav, .socials { display: none; } .header-right { margin-left: auto; } .home-btn { display: none; } .mobile-toggle { display: flex; } .page { padding-left: 24px; padding-right: 24px; } } /* ========================================================= MÓVIL PEQUEÑO ========================================================= */ @media (max-width: 560px) { .top-section { min-height: 125px; background-position: 62% center; } header { height: 90px; padding: 20px 20px 0; } .brand { font-size: 24px; } .mobile-toggle { width: 45px; height: 45px; } .mobile-menu { top: 90px; } .page { padding: 30px 18px 45px; } .bio-card, .portrait-card { border-radius: 3px; } .bio-card { padding: 30px 22px; } .bio-title { margin-bottom: 30px; font-size: 58px; } .bio-text { font-size: 15px; line-height: 1.6; } .portrait-card { height: 600px; } footer { padding: 20px 15px 25px; font-size: 11px; } } /* ========================================================= MÓVIL MUY PEQUEÑO ========================================================= */ @media (max-width: 400px) { .brand { font-size: 24px; } .bio-card { padding: 28px 18px; } .bio-title { font-size: 54px; } .portrait-card { height: 500px; } } </style> </head> <body> <!-- ======================================================= CABECERA ======================================================== --> <section class="top-section">
 
-    header {
-      position: absolute;
-      z-index: 100;
-      top: 0;
-      left: 0;
+<header>
 
-      width: 100%;
-      height: 136px;
+  <!-- NOMBRE -->
 
-      display: flex;
-      align-items: center;
+  <a class="brand" href="index.html">
+    Daniel Buades
+  </a>
 
-      padding: 0 3.9%;
 
-      color: #fff;
-    }
+  <!-- MENÚ ESCRITORIO -->
 
-
-    /* =========================================================
-       LOGO
-    ========================================================= */
-
-    .brand {
-      flex: 0 0 auto;
-
-      color: #fff;
-      text-decoration: none;
-
-      font-family: "Cormorant Garamond", Georgia, serif;
-
-      font-size: 29px;
-      font-weight: 400;
-
-      line-height: 1;
-      letter-spacing: -.6px;
-
-      white-space: nowrap;
-    }
-
-    .brand:hover {
-      opacity: .65;
-    }
-
-
-    /* =========================================================
-       NAVEGACIÓN
-    ========================================================= */
-
-    nav {
-      display: flex;
-      align-items: center;
-
-      gap: 33px;
-
-      margin-left: 54px;
-
-      height: 100%;
-    }
-
-    nav a {
-      position: relative;
-
-      display: flex;
-      align-items: center;
-
-      height: 32px;
-
-      color: #fff;
-      text-decoration: none;
-
-      font-family: "Inter", Arial, sans-serif;
-
-      font-size: 17px;
-      font-weight: 400;
-
-      line-height: 1;
-
-      white-space: nowrap;
-
-      padding: 0;
-
-      transition: opacity .25s ease;
-    }
-
-    nav a:hover {
-      opacity: .55;
-    }
-
-    /*
-       IMPORTANTE:
-       SOLO EL ENLACE CON .active SE SUBRAYA.
-    */
-
-    nav a.active {
-      opacity: 1;
-    }
-
-    nav a.active::after {
-      content: "";
-
-      position: absolute;
-
-      left: 0;
-      right: 0;
-
-      bottom: -7px;
-
-      height: 1px;
-
-      background: #fff;
-
-      opacity: .9;
-    }
-
-
-    /* =========================================================
-       PARTE DERECHA DEL HEADER
-    ========================================================= */
-
-    .header-right {
-      margin-left: auto;
-
-      display: flex;
-      align-items: center;
-
-      gap: 25px;
-
-      height: 100%;
-    }
-
-
-    /* =========================================================
-       REDES SOCIALES
-    ========================================================= */
-
-    .socials {
-      display: flex;
-      align-items: center;
-
-      gap: 24px;
-
-      height: 32px;
-
-      margin-right: 22px;
-    }
-
-    .socials a {
-      width: 25px;
-      height: 25px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      color: #fff;
-
-      text-decoration: none;
-
-      transition:
-        opacity .25s ease,
-        transform .25s ease;
-    }
-
-    .socials a:hover {
-      opacity: .55;
-      transform: translateY(-1px);
-    }
-
-    .socials svg {
-      width: 23px;
-      height: 23px;
-
-      display: block;
-
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 1.8;
-    }
-
-    .socials .fill-icon {
-      fill: currentColor;
-      stroke: none;
-    }
-
-
-    /* =========================================================
-       BOTÓN HOME
-    ========================================================= */
-
-    .home-btn {
-      width: 118px;
-      height: 68px;
-
-      flex: 0 0 118px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      border: 1px solid rgba(255,255,255,.95);
-
-      border-radius: 50%;
-
-      color: #fff;
-
-      text-decoration: none;
-
-      font-family: Georgia, "Times New Roman", serif;
-
-      font-size: 21px;
-      font-weight: 400;
-
-      line-height: 1;
-
-      transition:
-        background .25s ease,
-        color .25s ease;
-    }
-
-    .home-btn:hover {
-      background: rgba(255,255,255,.95);
-      color: #111;
-    }
-
-
-    /* =========================================================
-       MENÚ MÓVIL
-    ========================================================= */
-
-    .mobile-toggle {
-      display: none;
-
-      width: 48px;
-      height: 48px;
-
-      border: 1px solid rgba(255,255,255,.8);
-
-      border-radius: 50%;
-
-      align-items: center;
-      justify-content: center;
-
-      color: #fff;
-
-      background: transparent;
-
-      cursor: pointer;
-    }
-
-    .mobile-toggle span,
-    .mobile-toggle span::before,
-    .mobile-toggle span::after {
-      display: block;
-
-      width: 18px;
-      height: 1px;
-
-      background: #fff;
-
-      position: relative;
-    }
-
-    .mobile-toggle span::before,
-    .mobile-toggle span::after {
-      content: "";
-
-      position: absolute;
-
-      left: 0;
-    }
-
-    .mobile-toggle span::before {
-      top: -6px;
-    }
-
-    .mobile-toggle span::after {
-      top: 6px;
-    }
-
-
-    /* =========================================================
-       MENÚ MÓVIL DESPLEGABLE
-       IGUAL QUE GALLERY
-    ========================================================= */
-
-    .mobile-menu {
-      position: fixed;
-
-      top: 95px;
-      left: 0;
-
-      width: 100%;
-
-      z-index: 90;
-
-      display: none;
-
-      flex-direction: column;
-
-      padding: 20px 25px 25px;
-
-      background: rgba(8,8,8,.96);
-
-      backdrop-filter: blur(10px);
-    }
-
-    .mobile-menu a {
-      color: white;
-      text-decoration: none;
-
-      font-family: "Inter", Arial, sans-serif;
-
-      font-size: 17px;
-
-      padding: 14px 0;
-
-      border-bottom: 1px solid rgba(255,255,255,.12);
-    }
-
-    .mobile-menu a:last-child {
-      border-bottom: none;
-    }
-
-    .mobile-menu a.active {
-      opacity: .65;
-    }
-
-
-    /* =========================================================
-       BIOGRAPHY — CONTENIDO
-    ========================================================= */
-
-    .page {
-      min-height: 100vh;
-
-      padding: 185px 3.95% 14px;
-
-      display: grid;
-
-      grid-template-columns:
-        minmax(0, 1fr)
-        30.1%;
-
-      gap: 5%;
-
-      align-items: stretch;
-    }
-
-
-    /* =========================================================
-       TARJETA DE BIOGRAFÍA
-    ========================================================= */
-
-    .bio-card {
-      background: #eadfce;
-
-      border-radius: 72px;
-
-      padding: 39px 26px 44px;
-
-      min-height: calc(100vh - 199px);
-
-      display: flex;
-      flex-direction: column;
-    }
-
-    .bio-title {
-      margin: 0 0 43px;
-
-      text-align: center;
-
-      font-family: "Cormorant Garamond", Georgia, serif;
-
-      font-size: clamp(52px, 4vw, 64px);
-
-      font-weight: 400;
-
-      font-style: italic;
-
-      line-height: .9;
-
-      letter-spacing: 2px;
-    }
-
-    .bio-text {
-      max-width: none;
-
-      margin: 0;
-
-      font-size: clamp(16px, 1.27vw, 20px);
-
-      line-height: 1.34;
-
-      letter-spacing: .15px;
-    }
-
-    .bio-text p {
-      margin: 0 0 20px;
-    }
-
-    .bio-text p:last-child {
-      margin-bottom: 0;
-    }
-
-
-    /* =========================================================
-       FOTOGRAFÍA
-    ========================================================= */
-
-    .portrait-card {
-      min-height: calc(100vh - 199px);
-
-      border-radius: 72px;
-
-      overflow: hidden;
-
-      background: #111;
-    }
-
-    .portrait-card img {
-      display: block;
-
-      width: 100%;
-      height: 100%;
-
-      object-fit: cover;
-
-      object-position: center center;
-
-      filter: grayscale(100%);
-    }
-
-
-    /* =========================================================
-       FOOTER
-    ========================================================= */
-
-    footer {
-      position: relative;
-
-      width: 100%;
-
-      padding: 20px 20px 25px;
-
-      color: #ccc;
-
-      font-size: .9rem;
-
-      text-align: center;
-
-      background: transparent;
-    }
-
-
-    /* =========================================================
-       TABLET / PANTALLAS MEDIANAS
-    ========================================================= */
-
-    @media (max-width: 1250px) {
-
-      header {
-        padding-left: 3%;
-        padding-right: 3%;
-      }
-
-      nav {
-        gap: 21px;
-        margin-left: 35px;
-      }
-
-      nav a {
-        font-size: 15px;
-      }
-
-      .socials {
-        gap: 15px;
-        margin-right: 8px;
-      }
-
-      .header-right {
-        gap: 12px;
-      }
-
-      .home-btn {
-        width: 100px;
-        height: 64px;
-
-        flex-basis: 100px;
-
-        font-size: 19px;
-      }
-
-      .page {
-        padding-left: 3%;
-        padding-right: 3%;
-      }
-    }
-
-
-    /* =========================================================
-       TABLET
-    ========================================================= */
-
-    @media (max-width: 1050px) {
-
-      .page {
-        padding: 135px 24px 24px;
-
-        grid-template-columns: 1fr;
-
-        gap: 24px;
-      }
-
-      .bio-card,
-      .portrait-card {
-        min-height: auto;
-      }
-
-      .bio-card {
-        padding: 42px 34px;
-      }
-
-      .portrait-card {
-        height: min(80vh, 760px);
-      }
-
-      .bio-text {
-        max-width: 900px;
-
-        font-size: 18px;
-
-        line-height: 1.4;
-      }
-    }
-
-
-    /* =========================================================
-       MÓVIL
-    ========================================================= */
-
-    @media (max-width: 980px) {
-
-      header {
-        height: 95px;
-
-        padding: 0 25px;
-
-        align-items: center;
-      }
-
-      .brand {
-        font-size: 26px;
-      }
-
-      nav,
-      .socials {
-        display: none;
-      }
-
-      .header-right {
-        margin-left: auto;
-
-        height: auto;
-      }
-
-      .home-btn {
-        display: none;
-      }
-
-      .mobile-toggle {
-        display: flex;
-      }
-    }
-
-
-    /* =========================================================
-       MÓVIL PEQUEÑO
-    ========================================================= */
-
-    @media (max-width: 600px) {
-
-      header {
-        height: 78px;
-
-        padding: 0 20px;
-      }
-
-      .brand {
-        font-size: 22px;
-      }
-
-      .page {
-        padding: 95px 8px 8px;
-      }
-
-      .mobile-menu {
-        top: 78px;
-      }
-
-      .bio-card,
-      .portrait-card {
-        border-radius: 42px;
-      }
-
-      .bio-card {
-        padding: 30px 22px;
-      }
-
-      .bio-title {
-        margin-bottom: 30px;
-
-        font-size: 52px;
-      }
-
-      .bio-text {
-        font-size: 16px;
-
-        line-height: 1.42;
-      }
-
-      .portrait-card {
-        height: 600px;
-      }
-
-      footer {
-        padding: 20px 15px 25px;
-
-        font-size: .8rem;
-      }
-    }
-
-
-    /* =========================================================
-       MÓVIL MUY PEQUEÑO
-    ========================================================= */
-
-    @media (max-width: 400px) {
-
-      .brand {
-        font-size: 19px;
-      }
-
-      .mobile-toggle {
-        width: 44px;
-        height: 44px;
-      }
-
-      .bio-card {
-        padding: 28px 18px;
-      }
-
-      .bio-title {
-        font-size: 47px;
-      }
-
-      .portrait-card {
-        height: 500px;
-      }
-    }
-
-  </style>
-</head>
-
-
-<body>
-
-
-  <!-- =======================================================
-       HEADER
-  ======================================================== -->
-
-  <header>
-
-    <a class="brand" href="index.html">
-      Daniel Buades
-    </a>
-
-
-    <nav aria-label="Main navigation">
-
-      <!-- SOLO BIOGRAPHY está activa en esta página -->
-
-      <a href="biography.html" class="active">
-        Biography
-      </a>
-
-      <a href="videos.html">
-        Videos
-      </a>
-
-      <a href="gallery.html">
-        Gallery
-      </a>
-
-      <a href="concerts.html">
-        Concerts
-      </a>
-
-      <a href="contact.html">
-        Contact
-      </a>
-
-    </nav>
-
-
-    <div class="header-right">
-
-
-      <!-- ===================================================
-           REDES SOCIALES
-      ==================================================== -->
-
-      <div class="socials" aria-label="Social networks">
-
-
-        <!-- Instagram -->
-
-        <a href="https://www.instagram.com/daniel.buades/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-
-          <svg viewBox="0 0 24 24">
-
-            <rect
-              x="3.2"
-              y="3.2"
-              width="17.6"
-              height="17.6"
-              rx="5">
-            </rect>
-
-            <circle
-              cx="12"
-              cy="12"
-              r="4.1">
-            </circle>
-
-            <circle
-              class="fill-icon"
-              cx="17.5"
-              cy="6.7"
-              r="1.1">
-            </circle>
-
-          </svg>
-
-        </a>
-
-
-        <!-- Spotify -->
-
-        <a href="#" aria-label="Spotify">
-
-          <svg
-            class="fill-icon"
-            viewBox="0 0 24 24">
-
-            <circle
-              cx="12"
-              cy="12"
-              r="11">
-            </circle>
-
-            <path
-              d="M7 9.1c3.8-1.1 7.5-.8 10.5.4"
-              stroke="#111"
-              stroke-width="1.5"
-              fill="none"
-              stroke-linecap="round">
-            </path>
-
-            <path
-              d="M7.7 12c3.1-.8 6.3-.5 8.8.5"
-              stroke="#111"
-              stroke-width="1.5"
-              fill="none"
-              stroke-linecap="round">
-            </path>
-
-            <path
-              d="M8.5 14.8c2.4-.5 4.8-.3 6.7.5"
-              stroke="#111"
-              stroke-width="1.5"
-              fill="none"
-              stroke-linecap="round">
-            </path>
-
-          </svg>
-
-        </a>
-
-
-        <!-- Facebook -->
-
-        <a href="https://www.facebook.com/daniel.buadestasa/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-
-          <svg
-            class="fill-icon"
-            viewBox="0 0 24 24">
-
-            <path
-              d="M13.8 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.2V10H8v3h2.6v8h3.2z">
-            </path>
-
-          </svg>
-
-        </a>
-
-
-        <!-- YouTube -->
-
-        <a href="https://www.youtube.com/channel/UCTxzPLnae5thfbqeOa5Lqow" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-
-          <svg
-            class="fill-icon"
-            viewBox="0 0 24 24">
-
-            <path
-              d="M22 7.2c-.2-1.1-1.1-2-2.2-2.2C18 4.7 15.1 4.5 12 4.5s-6 .2-7.8.5C3.1 5.2 2.2 6.1 2 7.2c-.3 1.5-.4 3-.4 4.8s.1 3.3.4 4.8c.2 1.1 1.1 2 2.2 2.2 1.8.3 4.7.5 7.8.5s6-.2 7.8-.5c-1.1-.2-2-1.1-2.2-2.2.3-1.5.4-3 .4-4.8s-.1-3.3-.4-4.8zM10 15.5v-7l6 3.5-6 3.5z">
-            </path>
-
-          </svg>
-
-        </a>
-
-      </div>
-
-
-      <!-- ===================================================
-           HOME
-      ==================================================== -->
-
-      <a
-        class="home-btn"
-        href="index.html">
-        Home
-      </a>
-
-
-      <!-- ===================================================
-           MENÚ MÓVIL
-      ==================================================== -->
-
-      <button
-        class="mobile-toggle"
-        aria-label="Open menu"
-        aria-expanded="false"
-        type="button">
-
-        <span></span>
-
-      </button>
-
-    </div>
-
-  </header>
-
-
-  <!-- =======================================================
-       MENÚ MÓVIL
-  ======================================================== -->
-
-  <div class="mobile-menu" id="mobile-menu">
+  <nav aria-label="Main navigation">
 
     <a href="biography.html" class="active">
       Biography
@@ -929,111 +68,272 @@
       Contact
     </a>
 
+  </nav>
+
+
+  <!-- PARTE DERECHA -->
+
+  <div class="header-right">
+
+    <!-- REDES -->
+
+    <div class="socials" aria-label="Social networks">
+
+
+      <!-- INSTAGRAM -->
+
+      <a
+        href="https://www.instagram.com/daniel.buades/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+      >
+
+        <svg viewBox="0 0 24 24">
+
+          <rect
+            x="3.2"
+            y="3.2"
+            width="17.6"
+            height="17.6"
+            rx="5">
+          </rect>
+
+          <circle
+            cx="12"
+            cy="12"
+            r="4.1">
+          </circle>
+
+          <circle
+            class="fill-icon"
+            cx="17.5"
+            cy="6.7"
+            r="1.1">
+          </circle>
+
+        </svg>
+
+      </a>
+
+
+      <!-- SPOTIFY -->
+
+      <a
+        href="#"
+        aria-label="Spotify"
+      >
+
+        <svg
+          class="fill-icon"
+          viewBox="0 0 24 24"
+        >
+
+          <circle
+            cx="12"
+            cy="12"
+            r="11">
+          </circle>
+
+          <path
+            d="M7 9.1c3.8-1.1 7.5-.8 10.5.4"
+            stroke="#111"
+            stroke-width="1.5"
+            fill="none"
+            stroke-linecap="round">
+          </path>
+
+          <path
+            d="M7.7 12c3.1-.8 6.3-.5 8.8.5"
+            stroke="#111"
+            stroke-width="1.5"
+            fill="none"
+            stroke-linecap="round">
+          </path>
+
+          <path
+            d="M8.5 14.8c2.4-.5 4.8-.3 6.7.5"
+            stroke="#111"
+            stroke-width="1.5"
+            fill="none"
+            stroke-linecap="round">
+          </path>
+
+        </svg>
+
+      </a>
+
+
+      <!-- FACEBOOK -->
+
+      <a
+        href="https://www.facebook.com/daniel.buadestasa/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Facebook"
+      >
+
+        <svg
+          class="fill-icon"
+          viewBox="0 0 24 24"
+        >
+
+          <path
+            d="M13.8 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.2V10H8v3h2.6v8h3.2z">
+          </path>
+
+        </svg>
+
+      </a>
+
+
+      <!-- YOUTUBE -->
+
+      <a
+        href="https://www.youtube.com/channel/UCTxzPLnae5thfbqeOa5Lqow"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="YouTube"
+      >
+
+        <svg
+          class="fill-icon"
+          viewBox="0 0 24 24"
+        >
+
+          <path
+            d="M22 7.2c-.2-1.1-1.1-2-2.2-2.2C18 4.7 15.1 4.5 12 4.5s-6 .2-7.8.5C3.1 5.2 2.2 6.1 2 7.2c-.3 1.5-.4 3-.4 4.8s.1 3.3.4 4.8c.2 1.1 1.1 2 2.2 2.2 1.8.3 4.7.5 7.8.5s6-.2 7.8-.5c1.1-.2 2-1.1 2.2-2.2.3-1.5.4-3 .4-4.8s-.1-3.3-.4-4.8zM10 15.5v-7l6 3.5-6 3.5z">
+          </path>
+
+        </svg>
+
+      </a>
+
+    </div>
+
+
+    <!-- HOME -->
+
+    <a
+      class="home-btn"
+      href="index.html"
+    >
+      Home
+    </a>
+
+
+    <!-- MENÚ MÓVIL -->
+
+    <button
+      class="mobile-toggle"
+      type="button"
+      aria-label="Open menu"
+      aria-expanded="false"
+    >
+
+      <span></span>
+
+    </button>
+
   </div>
 
-
-  <!-- =======================================================
-       CONTENIDO PRINCIPAL
-  ======================================================== -->
-
-  <main class="page">
+</header>
 
 
-    <!-- =====================================================
-         BIOGRAFÍA
-    ====================================================== -->
+<!-- =====================================================
+     MENÚ MÓVIL
+====================================================== -->
 
-    <section class="bio-card">
+<div
+  class="mobile-menu"
+  id="mobile-menu"
+>
 
-      <h1 class="bio-title">
-        Biography
-      </h1>
+  <a
+    href="biography.html"
+    class="active"
+  >
+    Biography
+  </a>
 
+  <a href="videos.html">
+    Videos
+  </a>
 
-      <div class="bio-text">
+  <a href="gallery.html">
+    Gallery
+  </a>
 
-        <p>
-          Daniel Buades is a Spanish drummer, percussionist, and composer whose career is rooted in contemporary jazz and improvised music. Known for a versatile and evolving sound, Daniel combines the technical discipline of classical percussion with the creative openness of jazz, resulting in a personal voice that balances rhythmic detail with expressive energy. His performances have taken him to renowned venues and festivals, including JAZZMADRID, CLAZZ Continental Latin Jazz, Teatro Fernán Gómez, and Café El Despertar, establishing him as a promising presence in the Spanish jazz scene. He is currently an official endorser of Mapex Drums Spain.
-        </p>
+  <a href="concerts.html">
+    Concerts
+  </a>
 
+  <a href="contact.html">
+    Contact
+  </a>
 
-        <p>
-          Daniel’s musical journey began in Madrid with a foundation in classical percussion at CIEM Federico Moreno Torroba, where he graduated with an Honor Mention. He went on to complete his Bachelor’s Degree in Jazz Performance and Contemporary Music at the Centro Superior de Música Creativa (2020–2024). His artistic growth has been shaped by mentors such as Naima Acuña, Moisés Sánchez, David Sancho, Álvaro del Valle, and Daniel Juárez, along with masterclasses and workshops by international figures like Paul Wertico, Pepe Rivero, Jorge Pardo and Or Bareket.
-        </p>
+</div>
 
+</section> 
 
-        <p>
-          Throughout his career, Daniel has collected notable achievements. In 2019, he won Second Prize at the Concursarte Soloists and Orchestra Competition, and in 2016, he contributed to the First Prize awarded to Banda Sinfónica La Lira de Pozuelo at the Certamen Internacional de Bandas de Música in Valencia. Beyond jazz, his versatility has led him to collaborations in pop, pop-rock, indie, urban and experimental music. As a marimbist, he recorded the debut album of the Pacífico Progresivo Project in 2021, reflecting his ongoing interest in exploring diverse sonic landscapes.
-        </p>
+<!-- ======================================================= 
+CONTENIDO PRINCIPAL 
+======================================================== --> 
+<main class="page">
 
+<!-- =====================================================
+     BIOGRAFÍA
+====================================================== -->
 
-        <p>
-          Most recently, Daniel has been active in collaborations with Anders Boye, Álvaro del Valle, and Daniel Juárez, projects that highlight his openness to dialogue across musical traditions. At the same time, he is developing his own creative projects with an international perspective, seeking to expand his personal sound while engaging in cross-cultural collaborations. With a unique combination of tradition and innovation, Daniel’s music aims to transcend boundaries, offering a vision that is both deeply personal and globally connected.
-        </p>
+<section class="bio-card">
 
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         FOTOGRAFÍA
-    ====================================================== -->
-
-    <aside class="portrait-card">
-
-      <img
-        src="img/biography-photo.jpg"
-        alt="Daniel Buades playing drums">
-
-    </aside>
-
-  </main>
-
-
-  <!-- =======================================================
-       FOOTER
-  ======================================================== -->
-
-  <footer>
-    ©© 2026 Daniel Buades. All rights reserved.
-  </footer>
+  <h1 class="bio-title">
+    Biography
+  </h1>
 
 
-  <!-- =======================================================
-       JAVASCRIPT
-  ======================================================== -->
+  <div class="bio-text">
 
-  <script>
-
-    /* =========================================================
-       MENÚ MÓVIL
-    ========================================================= */
-
-    const mobileToggle =
-      document.querySelector(".mobile-toggle");
-
-    const mobileMenu =
-      document.getElementById("mobile-menu");
+    <p>
+      Daniel Buades is a Spanish drummer, percussionist, and composer whose career is rooted in contemporary jazz and improvised music. Known for a versatile and evolving sound, Daniel combines the technical discipline of classical percussion with the creative openness of jazz, resulting in a personal voice that balances rhythmic detail with expressive energy. His performances have taken him to renowned venues and festivals, including JAZZMADRID, CLAZZ Continental Latin Jazz, Teatro Fernán Gómez, and Café El Despertar, establishing him as a promising presence in the Spanish jazz scene. He is currently an official endorser of Mapex Drums Spain.
+    </p>
 
 
-    mobileToggle.addEventListener("click", () => {
-
-      const abierto =
-        mobileToggle.getAttribute("aria-expanded") === "true";
-
-      mobileToggle.setAttribute(
-        "aria-expanded",
-        String(!abierto)
-      );
-
-      mobileMenu.style.display =
-        abierto ? "none" : "flex";
-
-    });
-
-  </script>
+    <p>
+      Daniel’s musical journey began in Madrid with a foundation in classical percussion at CIEM Federico Moreno Torroba, where he graduated with an Honor Mention. He went on to complete his Bachelor’s Degree in Jazz Performance and Contemporary Music at the Centro Superior de Música Creativa (2020–2024). His artistic growth has been shaped by mentors such as Naima Acuña, Moisés Sánchez, David Sancho, Álvaro del Valle, and Daniel Juárez, along with masterclasses and workshops by international figures like Paul Wertico, Pepe Rivero, Jorge Pardo and Or Bareket.
+    </p>
 
 
-</body>
-</html>
+    <p>
+      Throughout his career, Daniel has collected notable achievements. In 2019, he won Second Prize at the Concursarte Soloists and Orchestra Competition, and in 2016, he contributed to the First Prize awarded to Banda Sinfónica La Lira de Pozuelo at the Certamen Internacional de Bandas de Música in Valencia. Beyond jazz, his versatility has led him to collaborations in pop, pop-rock, indie, urban and experimental music. As a marimbist, he recorded the debut album of the Pacífico Progresivo Project in 2021, reflecting his ongoing interest in exploring diverse sonic landscapes.
+    </p>
+
+
+    <p>
+      Most recently, Daniel has been active in collaborations with Anders Boye, Álvaro del Valle, and Daniel Juárez, projects that highlight his openness to dialogue across musical traditions. At the same time, he is developing his own creative projects with an international perspective, seeking to expand his personal sound while engaging in cross-cultural collaborations. With a unique combination of tradition and innovation, Daniel’s music aims to transcend boundaries, offering a vision that is both deeply personal and globally connected.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOTOGRAFÍA
+====================================================== -->
+
+<aside class="portrait-card">
+
+  <img
+    src="img/biography-photo.jpg"
+    alt="Daniel Buades playing drums"
+  >
+
+</aside>
+
+
+</main> <!-- ======================================================= FOOTER ======================================================== --> <footer>
+
+© 2026 Daniel Buades. All rights reserved.
+
+</footer> <!-- ======================================================= JAVASCRIPT ======================================================== --> <script> /* ========================================================= MENÚ MÓVIL ========================================================= */ const mobileToggle = document.querySelector(".mobile-toggle"); const mobileMenu = document.getElementById("mobile-menu"); mobileToggle.addEventListener( "click", () => { const abierto = mobileToggle.getAttribute( "aria-expanded" ) === "true"; mobileToggle.setAttribute( "aria-expanded", String(!abierto) ); mobileMenu.style.display = abierto ? "none" : "flex"; } ); </script> </body> </html>
