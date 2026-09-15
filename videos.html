@@ -11,15 +11,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Montserrat:wght@300;400;600&family=Caveat:wght@400;500&display=swap"
-    rel="stylesheet"
-  >
+<link
+  href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500&family=Montserrat:wght@300;400;500;600&family=Caveat:wght@400;500&display=swap"
+  rel="stylesheet"
+>
+
 
   <style>
 
     /* =====================================================
-       RESET
+       GENERAL
     ===================================================== */
 
     * {
@@ -41,357 +42,440 @@
       overflow-x: hidden;
     }
 
+/* =====================================================
+   CABECERA / MENÚ
+   IGUAL QUE CONCERTS.HTML
+===================================================== */
+
+.top-section {
+
+  position: relative;
+
+  width: 100%;
+
+  min-height: 130px;
+
+  background:
+    linear-gradient(rgba(0,0,0,.10), rgba(0,0,0,.10)),
+    url("img/foto-portada.jpg") center 98% / cover no-repeat;
+
+  overflow: hidden;
+}
+
+
+.top-section::after {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(
+    90deg,
+    rgba(0,0,0,.15) 0%,
+    rgba(0,0,0,.03) 55%,
+    rgba(0,0,0,.12) 100%
+  );
+
+  pointer-events: none;
+}
+
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header {
+
+  position: relative;
+
+  z-index: 50;
+
+  width: 100%;
+
+  height: 134px;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 0 5.4% 0 3.9%;
+
+  color: #fff;
+}
+
+
+
+/* =====================================================
+   BRAND
+===================================================== */
+
+.brand {
+
+  flex: 0 0 auto;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+
+  font-size: 29px;
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  letter-spacing: -.6px;
+
+  white-space: nowrap;
+}
+
+
+
+/* =====================================================
+   NAVEGACIÓN
+===================================================== */
+
+nav {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 33px;
+
+  margin-left: 54px;
+}
+
+
+nav a {
+
+  position: relative;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  font-family: "Montserrat", Arial, sans-serif;
+
+  font-size: 17px;
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  white-space: nowrap;
+
+  transition: opacity .25s ease;
+}
+
+
+nav a:hover {
+  opacity: .65;
+}
+
+
+nav a.active::after {
+
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  right: 0;
+
+  bottom: -9px;
+
+  height: 1px;
+
+  background: rgba(255,255,255,.95);
+}
+
+
+
+/* =====================================================
+   PARTE DERECHA
+===================================================== */
+
+.header-right {
+
+  margin-left: auto;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+}
+
+
+
+/* =====================================================
+   REDES
+===================================================== */
+
+.socials {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 24px;
+
+  margin-right: 22px;
+}
+
+
+.socials a {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 25px;
+
+  height: 25px;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  transition:
+    transform .2s ease,
+    opacity .2s ease;
+}
+
+
+.socials a:hover {
+
+  transform: translateY(-2px);
+
+  opacity: .7;
+}
+
+
+.socials svg {
+
+  width: 23px;
+
+  height: 23px;
+
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 1.8;
+}
+
+
+.socials .fill-icon {
+
+  fill: currentColor;
+
+  stroke: none;
+}
+
+
+
+/* =====================================================
+   HOME
+===================================================== */
+
+.home-btn {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 118px;
+
+  height: 75px;
+
+  border: 1px solid rgba(255,255,255,.95);
+
+  border-radius: 50%;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+
+  font-size: 21px;
+
+  transition:
+    background .25s ease,
+    color .25s ease;
+}
+
+
+.home-btn:hover {
+
+  background: rgba(255,255,255,.95);
+
+  color: #111;
+}
+
+
+
+/* =====================================================
+   BOTÓN MENÚ MÓVIL
+===================================================== */
+
+.mobile-toggle {
+
+  display: none;
+
+  position: relative;
+
+  width: 48px;
+
+  height: 48px;
+
+  border: 1px solid rgba(255,255,255,.8);
+
+  border-radius: 50%;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: white;
+
+  background: transparent;
+
+  cursor: pointer;
+}
+
+
+.mobile-toggle span,
+.mobile-toggle span::before,
+.mobile-toggle span::after {
+
+  display: block;
+
+  position: absolute;
+
+  width: 19px;
+
+  height: 1px;
+
+  background: currentColor;
+
+  content: "";
+}
+
+
+.mobile-toggle span::before {
+  transform: translateY(-6px);
+}
+
+
+.mobile-toggle span::after {
+  transform: translateY(6px);
+}
+
+
+
+/* =====================================================
+   MENÚ MÓVIL
+===================================================== */
+
+.mobile-menu {
+
+  position: fixed;
+
+  top: 95px;
+
+  left: 0;
+
+  width: 100%;
+
+  z-index: 90;
+
+  display: none;
+
+  flex-direction: column;
+
+  padding: 20px 25px 25px;
+
+  background: rgba(8,8,8,.96);
+
+  backdrop-filter: blur(10px);
+}
+
+
+.mobile-menu a {
+
+  color: white;
+
+  text-decoration: none;
+
+  font-family: "Montserrat", Arial, sans-serif;
+
+  font-size: 17px;
+
+  padding: 14px 0;
+
+  border-bottom: 1px solid rgba(255,255,255,.12);
+}
+
+
+.mobile-menu a:last-child {
+  border-bottom: none;
+}
+
+
+.mobile-menu a.active {
+  opacity: .65;
+}
+
 
     /* =====================================================
-       HEADER
-       MISMA ESTRUCTURA QUE INDEX.HTML
+       TÍTULO
+       IGUAL QUE CONCERTS
     ===================================================== */
 
-    header {
-      position: absolute;
-      z-index: 50;
-      top: 0;
-      left: 0;
+    .page-title {
 
-      width: 100%;
-      height: 134px;
-
-      display: flex;
-      align-items: center;
-
-      padding: 0 5.4% 0 3.9%;
-    }
-
-
-    /* =====================================================
-       BRAND
-    ===================================================== */
-
-    .brand {
-      flex: 0 0 auto;
-
-      color: #fff;
-      text-decoration: none;
-
-      font-family: "Cormorant Garamond", Georgia, serif;
-
-      font-size: 29px;
-      font-weight: 400;
-
-      line-height: 1;
-      letter-spacing: -.6px;
-
-      white-space: nowrap;
-    }
-
-
-    /* =====================================================
-       NAVEGACIÓN
-    ===================================================== */
-
-    nav {
-      display: flex;
-      align-items: center;
-
-      gap: 33px;
-
-      margin-left: 54px;
-    }
-
-    nav a {
       position: relative;
 
-      color: #fff;
-      text-decoration: none;
-
-      font-family: "Montserrat", Arial, sans-serif;
-
-      font-size: 17px;
-      font-weight: 400;
-
-      line-height: 1;
-
-      white-space: nowrap;
-
-      transition: opacity .25s ease;
-    }
-
-    nav a:hover {
-      opacity: .65;
-    }
-
-
-    /* =====================================================
-       PÁGINA ACTIVA
-       SOLO "VIDEOS" LLEVA SUBRAYADO
-    ===================================================== */
-
-    nav a.active::after {
-      content: "";
-
-      position: absolute;
-
-      left: 0;
-      right: 0;
-
-      bottom: -9px;
-
-      height: 1px;
-
-      background: #fff;
-
-      opacity: .95;
-    }
-
-
-    /* =====================================================
-       PARTE DERECHA DEL HEADER
-    ===================================================== */
-
-    .header-right {
-      margin-left: auto;
-
-      display: flex;
-      align-items: center;
-
-      gap: 25px;
-    }
-
-
-    /* =====================================================
-       REDES SOCIALES
-    ===================================================== */
-
-    .socials {
-      display: flex;
-      align-items: center;
-
-      gap: 24px;
-
-      margin-right: 22px;
-    }
-
-    .socials a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      width: 25px;
-      height: 25px;
-
-      color: #fff;
-
-      text-decoration: none;
-
-      transition:
-        transform .2s ease,
-        opacity .2s ease;
-    }
-
-    .socials a:hover {
-      transform: translateY(-2px);
-      opacity: .7;
-    }
-
-    .socials svg {
-      width: 23px;
-      height: 23px;
-
-      fill: none;
-
-      stroke: currentColor;
-
-      stroke-width: 1.8;
-    }
-
-    .socials .fill-icon {
-      fill: currentColor;
-      stroke: none;
-    }
-
-
-    /* =====================================================
-       BOTÓN HOME
-    ===================================================== */
-
-    .home-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      width: 118px;
-      height: 75px;
-
-      border: 1px solid rgba(255,255,255,.95);
-
-      border-radius: 50%;
-
-      color: #fff;
-      text-decoration: none;
-
-      font-family: "Cormorant Garamond", Georgia, serif;
-
-      font-size: 21px;
-      font-weight: 400;
-
-      transition:
-        background .25s ease,
-        color .25s ease;
-    }
-
-    .home-btn:hover {
-      background: rgba(255,255,255,.95);
-      color: #111;
-    }
-
-
-    /* =====================================================
-       BOTÓN MENÚ MÓVIL
-       IGUAL QUE GALLERY / BIOGRAPHY
-    ===================================================== */
-
-    .mobile-toggle {
-      display: none;
-
-      position: relative;
-
-      width: 48px;
-      height: 48px;
-
-      border: 1px solid rgba(255,255,255,.8);
-
-      border-radius: 50%;
-
-      align-items: center;
-      justify-content: center;
-
-      color: white;
-      background: transparent;
-
-      cursor: pointer;
-    }
-
-    .mobile-toggle span,
-    .mobile-toggle span::before,
-    .mobile-toggle span::after {
-      display: block;
-
-      position: absolute;
-
-      width: 19px;
-      height: 1px;
-
-      background: currentColor;
-
-      content: "";
-    }
-
-    .mobile-toggle span::before {
-      transform: translateY(-6px);
-    }
-
-    .mobile-toggle span::after {
-      transform: translateY(6px);
-    }
-
-
-    /* =====================================================
-       MENÚ MÓVIL DESPLEGABLE
-       IGUAL QUE GALLERY / BIOGRAPHY
-    ===================================================== */
-
-    .mobile-menu {
-      position: fixed;
-
-      top: 95px;
-      left: 0;
-
-      width: 100%;
-
-      z-index: 90;
-
-      display: none;
-
-      flex-direction: column;
-
-      padding: 20px 25px 25px;
-
-      background: rgba(8,8,8,.96);
-
-      backdrop-filter: blur(10px);
-    }
-
-    .mobile-menu a {
-      color: white;
-
-      text-decoration: none;
-
-      font-family: "Montserrat", Arial, sans-serif;
-
-      font-size: 17px;
-
-      padding: 14px 0;
-
-      border-bottom: 1px solid rgba(255,255,255,.12);
-    }
-
-    .mobile-menu a:last-child {
-      border-bottom: none;
-    }
-
-    .mobile-menu a.active {
-      opacity: .65;
-    }
-
-
-    /* =====================================================
-       HERO / CABECERA DE VIDEOS
-       MISMA ALTURA QUE LAS OTRAS PÁGINAS
-    ===================================================== */
-
-    .video-hero {
-      position: relative;
-
-      width: 100%;
-
-      height: 365px;
-
-      overflow: hidden;
-
-      display: flex;
-      align-items: flex-end;
-
-      padding: 0 46px 137px;
-
-      background:
-        linear-gradient(
-          rgba(5,10,12,.10),
-          rgba(5,10,12,.10)
-        ),
-        url("./img/foto1.webp")
-        center center / cover no-repeat;
-    }
-
-    .video-hero-content {
-      position: relative;
       z-index: 5;
+
+      text-align: center;
+
+      padding: 15px 20px 25px;
+
+      background: #080808;
     }
 
-    .video-hero h1 {
-      margin: 0;
+
+    .page-title h1 {
 
       color: #fff;
 
-      font-family: "Cormorant Garamond", serif;
+      font-family:
+        "Allura",
+        "Brush Script MT",
+        cursive;
 
-      font-size: 52px;
+      font-size:
+        clamp(52px, 5vw, 78px);
+
       font-weight: 400;
 
-      font-style: italic;
+      line-height: .95;
 
-      line-height: 1;
-
-      letter-spacing: 2px;
+      text-shadow:
+        0 1px 7px rgba(0,0,0,.25);
     }
 
 
@@ -400,11 +484,10 @@
     ===================================================== */
 
     .videos-section {
-      max-width: 1295px;
-
+      width: 100%;
+      max-width: 1355px;
       margin: 0 auto;
-
-      padding: 132px 0 95px;
+      padding: 132px 30PX 95px;
     }
 
 
@@ -571,202 +654,169 @@
        RESPONSIVE
     ===================================================== */
 
-    @media (max-width: 1350px) {
 
-      .videos-section {
-        padding-left: 7.9%;
-        padding-right: 7.9%;
-      }
+@media (max-width: 1250px) {
 
-    }
+  header {
 
+    padding-left: 3%;
 
-    @media (max-width: 1250px) {
-
-      header {
-        padding-left: 3%;
-        padding-right: 3%;
-      }
-
-      nav {
-        gap: 21px;
-        margin-left: 35px;
-      }
-
-      nav a {
-        font-size: 15px;
-      }
-
-      .socials {
-        gap: 15px;
-        margin-right: 8px;
-      }
-
-      .header-right {
-        gap: 12px;
-      }
-
-      .home-btn {
-        width: 100px;
-        height: 64px;
-
-        font-size: 19px;
-      }
-
-      .video-grid {
-        column-gap: 28px;
-      }
-
-    }
+    padding-right: 3%;
+  }
 
 
-    @media (max-width: 980px) {
+  nav {
 
-      header {
-        height: 95px;
+    gap: 21px;
 
-        padding:
-          24px
-          25px
-          0;
-
-        align-items: center;
-      }
-
-      .brand {
-        font-size: 26px;
-      }
-
-      nav,
-      .socials {
-        display: none;
-      }
-
-      .header-right {
-        margin-left: auto;
-      }
-
-      .home-btn {
-        display: none;
-      }
-
-      .mobile-toggle {
-        display: flex;
-      }
-
-      .videos-section {
-        padding-top: 80px;
-      }
-
-      .video-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-    }
+    margin-left: 35px;
+  }
 
 
-    @media (max-width: 640px) {
-
-      .video-hero {
-        height: 365px;
-
-        padding:
-          0
-          28px
-          70px;
-      }
-
-      .video-hero h1 {
-        font-size: 48px;
-      }
-
-      .videos-section {
-        padding:
-          65px
-          8%
-          70px;
-      }
-
-      .filters {
-        flex-wrap: wrap;
-
-        gap:
-          12px
-          18px;
-
-        line-height: 1.2;
-
-        margin-bottom: 38px;
-      }
-
-      .video-grid {
-        grid-template-columns: 1fr;
-
-        row-gap: 65px;
-      }
-
-      .video-meta {
-        margin-top: 22px;
-
-        font-size: 17px;
-      }
-
-      .video-title {
-        margin-top: 14px;
-
-        font-size: 31px;
-      }
-
-    }
+  nav a {
+    font-size: 15px;
+  }
 
 
-    @media (max-width: 560px) {
+  .socials {
 
-      header {
-        padding-left: 25px;
-        padding-right: 25px;
-      }
+    gap: 15px;
 
-      .brand {
-        font-size: 26px;
-      }
-
-      .mobile-menu {
-        top: 95px;
-      }
-
-      .video-hero {
-        background-position: center center;
-      }
-
-    }
+    margin-right: 8px;
+  }
 
 
-    @media (max-width: 400px) {
+  .header-right {
+    gap: 12px;
+  }
 
-      .brand {
-        font-size: 24px;
-      }
 
-      .mobile-toggle {
-        width: 44px;
-        height: 44px;
-      }
+  .home-btn {
 
-      .mobile-menu {
-        top: 95px;
-      }
+    width: 100px;
 
-      .video-hero {
-        padding-left: 22px;
-        padding-right: 22px;
-      }
+    height: 64px;
 
-      .video-hero h1 {
-        font-size: 44px;
-      }
+    font-size: 19px;
+  }
 
-    }
+}
+
+
+@media (max-width: 980px) {
+
+  .top-section {
+    min-height: 150px;
+  }
+
+
+  header {
+
+    height: 95px;
+
+    padding: 24px 25px 0;
+
+    align-items: center;
+  }
+
+
+  .brand {
+    font-size: 26px;
+  }
+
+
+  nav,
+  .socials {
+    display: none;
+  }
+
+
+  .header-right {
+
+    margin-left: auto;
+  }
+
+
+  .home-btn {
+    display: none;
+  }
+
+
+  .mobile-toggle {
+    display: flex;
+  }
+
+
+  .page-title {
+    padding-top: 8px;
+  }
+
+}
+
+
+@media (max-width: 560px) {
+
+  .top-section {
+
+    min-height: 125px;
+
+    background-position: 62% center;
+  }
+
+
+  header {
+
+    height: 90px;
+
+    padding: 20px 20px 0;
+  }
+
+
+  .brand {
+    font-size: 24px;
+  }
+
+
+  .mobile-toggle {
+
+    width: 45px;
+
+    height: 45px;
+  }
+
+
+  .mobile-menu {
+    top: 90px;
+  }
+
+
+  .page-title {
+
+    padding: 12px 15px 20px;
+  }
+
+
+  .page-title h1 {
+    font-size: 58px;
+  }
+
+}
+
+@media (max-width: 560px) {
+  .videos-section {
+    padding: 80px 20px 70px;
+  }
+}
+
+
+@media (max-width: 400px) {
+
+  .brand {
+    font-size: 24px;
+  }
+
+}
+
 
   </style>
 </head>
@@ -775,16 +825,22 @@
 <body>
 
 
-  <!-- =====================================================
-       HEADER
-  ===================================================== -->
+<!-- =====================================================
+     CABECERA
+===================================================== -->
+
+<section class="top-section">
 
   <header>
+
+    <!-- NOMBRE -->
 
     <a class="brand" href="index.html">
       Daniel Buades
     </a>
 
+
+    <!-- MENÚ ESCRITORIO -->
 
     <nav aria-label="Main navigation">
 
@@ -811,19 +867,22 @@
     </nav>
 
 
+    <!-- PARTE DERECHA -->
+
     <div class="header-right">
 
-
-      <!-- =================================================
-           REDES
-      ================================================== -->
+      <!-- REDES -->
 
       <div class="socials" aria-label="Social networks">
 
-
         <!-- INSTAGRAM -->
 
-        <a href="https://www.instagram.com/daniel.buades/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <a
+          href="https://www.instagram.com/daniel.buades/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+        >
 
           <svg viewBox="0 0 24 24">
 
@@ -855,11 +914,15 @@
 
         <!-- SPOTIFY -->
 
-        <a href="#" aria-label="Spotify">
+        <a
+          href="#"
+          aria-label="Spotify"
+        >
 
           <svg
             class="fill-icon"
-            viewBox="0 0 24 24">
+            viewBox="0 0 24 24"
+          >
 
             <circle
               cx="12"
@@ -898,11 +961,17 @@
 
         <!-- FACEBOOK -->
 
-        <a href="https://www.facebook.com/daniel.buadestasa/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+        <a
+          href="https://www.facebook.com/daniel.buadestasa/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook"
+        >
 
           <svg
             class="fill-icon"
-            viewBox="0 0 24 24">
+            viewBox="0 0 24 24"
+          >
 
             <path
               d="M13.8 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.2V10H8v3h2.6v8h3.2z">
@@ -915,14 +984,20 @@
 
         <!-- YOUTUBE -->
 
-        <a href="https://www.youtube.com/channel/UCTxzPLnae5thfbqeOa5Lqow" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+        <a
+          href="https://www.youtube.com/channel/UCTxzPLnae5thfbqeOa5Lqow"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="YouTube"
+        >
 
           <svg
             class="fill-icon"
-            viewBox="0 0 24 24">
+            viewBox="0 0 24 24"
+          >
 
             <path
-              d="M22 7.2c-.2-1.1-1.1-2-2.2-2.2C18 4.7 15.1 4.5 12 4.5s-6 .2-7.8.5C3.1 5.2 2.2 6.1 2 7.2c-.3 1.5-.4 3-.4 4.8s.1 3.3.4 4.8c.2 1.1 1.1 2 2.2 2.2 1.8.3 4.7.5 7.8.5s6-.2 7.8-.5c1.1-.2 2-1.1 2.2-2.2.3-1.5.4-3 .4-4.8s-.1-3.3-.4-4.8zM10 15.5v-7l6 3.5-6 3.5z">
+              d="M22 7.2c-.2-1.1-1.1-2-2.2-2.2C18 4.7 15.1 4.5 12 4.5s-6 .2-7.8.5C3.1 5.2 2.2 6.1 2 7.2c-.3 1.5-.4 3-.4 4.8s.1 3.3.4 4.8c.2 1.1 1.1 2 2.2 2.2 1.8.3 4.7.5 7.8.5s6-.2 7.8-.5c1.1-.2 2-1.1 2.2-2.2s.4-3 .4-4.8-.1-3.3-.4-4.8zM10 15.5v-7l6 3.5-6 3.5z">
             </path>
 
           </svg>
@@ -936,21 +1011,21 @@
 
       <a
         class="home-btn"
-        href="index.html">
-
+        href="index.html"
+      >
         Home
-
       </a>
 
 
-      <!-- MOBILE -->
+      <!-- MENÚ MÓVIL -->
 
       <button
         class="mobile-toggle"
         type="button"
         aria-label="Open menu"
         aria-expanded="false"
-        aria-controls="mobile-menu">
+        aria-controls="mobile-menu"
+      >
 
         <span></span>
 
@@ -963,17 +1038,21 @@
 
   <!-- =====================================================
        MENÚ MÓVIL
-  ===================================================== -->
+  ====================================================== -->
 
   <div
     class="mobile-menu"
-    id="mobile-menu">
+    id="mobile-menu"
+  >
 
     <a href="biography.html">
       Biography
     </a>
 
-    <a href="videos.html" class="active">
+    <a
+      href="videos.html"
+      class="active"
+    >
       Videos
     </a>
 
@@ -991,24 +1070,20 @@
 
   </div>
 
+</section>
 
-  <!-- =====================================================
-       HERO
-  ===================================================== -->
 
-  <section
-    class="video-hero"
-    aria-label="Videos">
+<!-- =====================================================
+     TÍTULO
+===================================================== -->
 
-    <div class="video-hero-content">
+<section class="page-title">
 
-      <h1>
-        VIDEOS
-      </h1>
+  <h1>
+    Videos
+  </h1>
 
-    </div>
-
-  </section>
+</section>
 
 
   <!-- =====================================================
