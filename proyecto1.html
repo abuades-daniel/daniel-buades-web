@@ -298,57 +298,53 @@ h1 span {
 /* VIDEO */
 
 .video-section {
-    padding-bottom: 150px;
+padding-bottom: 150px;
 }
 
 .video-frame {
-    margin-top: 65px;
-    aspect-ratio: 16 / 9;
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(233,93,50,.3),
-            transparent 40%
-        ),
-        #161412;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    border: 1px solid var(--line);
+margin-top: 65px;
+aspect-ratio: 16 / 9;
+background: #161412;
+position: relative;
+border: 1px solid var(--line);
+overflow: hidden;
 }
 
-.play {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    background: var(--orange);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: .3s ease;
+/* VÍDEO */
+
+.main-video {
+width: 100%;
+height: 100%;
+display: block;
+object-fit: cover;
+background: #161412;
 }
 
-.play::after {
-    content: "";
-    margin-left: 5px;
-    border-left: 18px solid white;
-    border-top: 11px solid transparent;
-    border-bottom: 11px solid transparent;
-}
-
-.play:hover {
-    transform: scale(1.1);
-}
+/* CAPTION */
 
 .video-caption {
-    position: absolute;
-    bottom: 25px;
-    left: 25px;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: .15em;
-    color: var(--grey);
+position: absolute;
+z-index: 4;
+bottom: 25px;
+left: 25px;
+font-size: 11px;
+text-transform: uppercase;
+letter-spacing: .15em;
+color: var(--grey);
+pointer-events: none;
+}
+
+/* MÓVIL */
+
+@media (max-width: 750px) {
+
+.video-caption {
+    bottom: 15px;
+    left: 15px;
+    font-size: 9px;
+}
+
+
 }
 
 /* PROGRAMMERS */
@@ -654,25 +650,36 @@ footer {
 
 <section class="section video-section" id="video">
 
-    <div class="section-number">
-        03 / VER Y ESCUCHAR
+<!-- VIDEO --> <section class="section video-section" id="video">
+<div class="section-number">
+    03 / VER Y ESCUCHAR
+</div>
+
+<div class="video-frame">
+
+    <video
+        id="mainVideo"
+        class="main-video"
+        controls
+        playsinline
+        preload="metadata"
+        poster="img/videos/portada_video.jpg"
+    >
+        <source
+            
+            src="https://res.cloudinary.com/i2yh80z7/video/upload/v1790783506/Prueba_video_promocional_1.mp4"
+            type="video/mp4"
+        >
+
+        Tu navegador no permite reproducir este vídeo.
+
+    </video>
+
+    <div class="video-caption">
+        Daniel Buades · Jazz + tradición
     </div>
 
-    <div class="video-frame">
-
-        <!--
-        Aquí puedes insertar el vídeo principal de YouTube/Vimeo.
-        Sustituye este bloque por un iframe cuando tengas
-        el vídeo definitivo del proyecto.
-        -->
-
-        <a href="videos.html" class="play" aria-label="Ver vídeos"></a>
-
-        <div class="video-caption">
-            Daniel Buades · Jazz + tradición
-        </div>
-
-    </div>
+</div>
 
 </section>
 
@@ -721,6 +728,8 @@ footer {
     </div>
 
 </footer>
+
+<script> const video = document.getElementById("mainVideo"); const playButton = document.getElementById("playButton"); /* Reproducir */ playButton.addEventListener("click", function () { video.play(); playButton.style.display = "none"; }); /* Pausar / reproducir haciendo clic sobre el vídeo */ video.addEventListener("click", function () { if (video.paused) { video.play(); playButton.style.display = "none"; } else { video.pause(); playButton.style.display = "flex"; } }); /* Volver a mostrar Play cuando termina */ video.addEventListener("ended", function () { playButton.style.display = "flex"; }); </script>
 
 
 </body>
