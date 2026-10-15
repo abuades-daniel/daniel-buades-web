@@ -2162,99 +2162,93 @@
             });
 
 
-        const hoy =
-          new Date();
+/* =======================================================
+   SEPARAR Y ORDENAR CONCIERTOS POR FECHA
+
+   FUTUROS: del más próximo al más lejano.
+   PASADOS: del más reciente al más antiguo.
+======================================================= */
+
+const hoy = new Date();
+
+hoy.setHours(0, 0, 0, 0);
 
 
-        hoy.setHours(
-          0,
-          0,
-          0,
-          0
-        );
+/* Convertir fechas YYYY-MM-DD de forma segura */
+
+function convertirFecha(fecha) {
+  const partes = String(fecha || "").trim().split("-");
+
+  if (partes.length !== 3) {
+    return null;
+  }
+
+  const [anio, mes, dia] = partes.map(Number);
+
+  const fechaConvertida = new Date(anio, mes - 1, dia);
+
+  if (
+    !anio ||
+    mes < 1 || mes > 12 ||
+    dia < 1 || dia > 31 ||
+    fechaConvertida.getFullYear() !== anio ||
+    fechaConvertida.getMonth() !== mes - 1 ||
+    fechaConvertida.getDate() !== dia
+  ) {
+    return null;
+  }
+
+  fechaConvertida.setHours(0, 0, 0, 0);
+
+  return fechaConvertida;
+}
 
 
-        let numFuturos = 0;
+/* Ignorar conciertos sin fecha válida */
 
-        let numPasados = 0;
-
-
-        /*
-         ORDENAR POR FECHA
-         De más modernos a más antiguos
-        */
-
-        conciertos.sort(
-          (a, b) => {
-
-            return (
-              new Date(b.fecha) -
-              new Date(a.fecha)
-            );
-
-          }
-        );
+const conciertosValidos = conciertos
+  .map(concierto => ({
+    ...concierto,
+    fechaOrden: convertirFecha(concierto.fecha)
+  }))
+  .filter(concierto => concierto.fechaOrden !== null);
 
 
-        /*
-         CREAR TARJETAS
-        */
+/* Separar conciertos futuros y pasados */
 
-        conciertos.forEach(
-          concierto => {
+const listaFuturos = conciertosValidos
+  .filter(concierto => concierto.fechaOrden >= hoy)
+  .sort((a, b) => a.fechaOrden - b.fechaOrden);
 
-
-            if (!concierto.fecha) {
-              return;
-            }
+const listaPasados = conciertosValidos
+  .filter(concierto => concierto.fechaOrden < hoy)
+  .sort((a, b) => b.fechaOrden - a.fechaOrden);
 
 
-            const fechaConcierto =
-              new Date(concierto.fecha);
+/* Crear tarjetas de próximos conciertos */
+
+listaFuturos.forEach(concierto => {
+  futuros.insertAdjacentHTML(
+    "beforeend",
+    crearTarjeta(concierto, true)
+  );
+});
 
 
-            fechaConcierto.setHours(
-              0,
-              0,
-              0,
-              0
-            );
+/* Crear tarjetas de conciertos pasados */
+
+listaPasados.forEach(concierto => {
+  pasados.insertAdjacentHTML(
+    "beforeend",
+    crearTarjeta(concierto, false)
+  );
+});
 
 
-            const esFuturo =
-              fechaConcierto >= hoy;
+/* Actualizar contadores */
 
-
-            const tarjeta =
-              crearTarjeta(
-                concierto,
-                esFuturo
-              );
-
-
-            if (esFuturo) {
-
-              futuros.insertAdjacentHTML(
-                "beforeend",
-                tarjeta
-              );
-
-              numFuturos++;
-
-            } else {
-
-              pasados.insertAdjacentHTML(
-                "beforeend",
-                tarjeta
-              );
-
-              numPasados++;
-
-            }
-
-          }
-        );
-
+const numFuturos = listaFuturos.length;
+const numPasados = listaPasados.length;
 
         /*
          SI NO HAY FUTUROS
